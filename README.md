@@ -1,9 +1,5 @@
 <!-- PROJECT TITLE -->
   <h1 align="center">Junior-Developer-Test</h1>
- <h2 2 align="center">
-    REACT.js
-    <br />
-    </h2>
 
 ## Application Description
 
