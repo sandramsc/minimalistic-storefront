@@ -75,4 +75,4 @@ yarn start
 
 ## License
 
-[![GitLicense](https://img.shields.io/badge/License-Apache-red.svg)](https://github.com/sandramsc/../blob/main/LICENSE)
+[![GitLicense](https://img.shields.io/badge/License-Apache-red.svg)](https://github.com/sandramsc/SCANDIWEB-Junior-Developer-Test/blob/main/LICENSE)
