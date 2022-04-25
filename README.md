@@ -1,5 +1,5 @@
 <!-- PROJECT TITLE -->
-  <h1 align="center">Junior-Developer-Test</h1>
+  <h1 align="center">Storefront</h1>
 
 ## Application Description
 
@@ -8,7 +8,7 @@ a minimalistic storefront
 ## Table of Contents
 
 <details>
-<summary>Junior-Developer-Test</summary>
+<summary>Storefront</summary>
 
 - [Application Description](#application-description)
 - [Table of Contents](#table-of-contents)
