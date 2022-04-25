@@ -3,7 +3,7 @@
 
 ## Application Description
 
-................
+a minimalistic storefront
 
 ## Table of Contents
 
@@ -33,7 +33,7 @@
 | Technology   | Description                                                              |
 | ------------ | ------------------------------------------------------------------------ |
 | Next.js      | an open-source web development framework                                 |
-| Tailwind CSS | utility-first library                                                    |
+| GraphQL | a query language for APIs and a runtime for fulfilling those queries                                                    |
 | React.js     | javaScript library                                                       |
 
 
