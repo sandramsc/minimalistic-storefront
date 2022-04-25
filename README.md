@@ -28,7 +28,7 @@
 
 ## Project Demo
 
-<!--Explore the [App](https://twitter-web3.vercel.app/)-->
+<!--Explore the [App](..)-->
 
 ## Screenshots
 
@@ -71,19 +71,6 @@ cd client
 yarn start
 ```
 
-**Step #3**
-
-```
-cd studio
-```
-
-- Install dependencies via npm or yarn: _npm i_ OR _yarn_
-
-- Website: To start it, run _npm start_ OR _yarn start_
-
-```
-yarn start
-```
 ## Author
 | Name   |                                                               |
 | ------------ | ------------------------------------------------------------------------ |
