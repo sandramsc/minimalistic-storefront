@@ -68,7 +68,7 @@ yarn start
 ```
 
 ## Author
-| Name   |                                                               |
+| Name   |               Link                                                |
 | ------------ | ------------------------------------------------------------------------ |
 | Sandra Ashipala      | https://github.com/sandramsc                                 |
 
