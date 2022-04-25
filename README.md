@@ -32,18 +32,14 @@ a minimalistic storefront
 
 | Technology   | Description                                                              |
 | ------------ | ------------------------------------------------------------------------ |
-| Next.js      | an open-source web development framework                                 |
 | GraphQL | a query language for APIs and a runtime for fulfilling those queries                                                    |
 | React.js     | javaScript library                                                       |
 
 
 ## Features
-
-1. ..
-
-2. ..
-
-3. ..
+- PLP - product listing page, a.k.a. category page
+- PDP - product description page, a.k.a. product page
+- Cart page + Cart overlay (minicart)
 
 ## How to use the app
 
