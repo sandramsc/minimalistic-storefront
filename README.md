@@ -32,7 +32,7 @@ a minimalistic storefront
 
 | Technology   | Description                                                              |
 | ------------ | ------------------------------------------------------------------------ |
-| GraphQL | a query language for APIs and a runtime for fulfilling those queries                                                    |
+|[GraphQL](https://github.com/scandiweb/junior-react-endpoint) | a query language for APIs and a runtime for fulfilling those queries  |
 | React.js     | javaScript library                                                       |
 
 
