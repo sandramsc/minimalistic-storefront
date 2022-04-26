@@ -52,7 +52,7 @@ $ git clone https://github.com/sandramsc/minimalistic-storefront.git
 **Step #2**
 
 ```
->cd client
+cd client
 ```
 
 - Install dependencies: `npm i` OR  `yarn`
@@ -60,7 +60,7 @@ $ git clone https://github.com/sandramsc/minimalistic-storefront.git
 - Website: To start it, run `npm start` OR `yarn start`
 
 ```
->cd backend
+cd backend
 ```
 - Install dependencies: `npm i` OR  `yarn`
 
