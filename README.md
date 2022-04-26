@@ -46,7 +46,7 @@ a minimalistic storefront
 **Step #1** - Clone the project
 
 ```bash
-$ git clone https://github.com/sandramsc/--.git
+$ git clone https://github.com/sandramsc/minimalistic-storefront.git
 ```
 
 **Step #2**
@@ -55,13 +55,16 @@ $ git clone https://github.com/sandramsc/--.git
 cd client
 ```
 
-- Install dependencies via npm or yarn: _npm i_ OR _yarn_
+- Install dependencies: _npm i_ OR _yarn_
 
 - Website: To start it, run _npm start_ OR _yarn start_
 
 ```
-yarn start
+cd backend
 ```
+- Install dependencies: _npm i_ OR _yarn_
+
+- Server: To start it, run _npm start_ OR _yarn start_
 
 ## Author
 | Name   |               Link                                                |
