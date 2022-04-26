@@ -55,16 +55,16 @@ $ git clone https://github.com/sandramsc/minimalistic-storefront.git
 cd client
 ```
 
-- Install dependencies: _npm i_ OR _yarn_
+- Install dependencies: `npm i` OR  `yarn`
 
-- Website: To start it, run _npm start_ OR _yarn start_
+- Website: To start it, run `npm start` OR `yarn start`
 
 ```
 cd backend
 ```
-- Install dependencies: _npm i_ OR _yarn_
+- Install dependencies: `npm i` OR  `yarn`
 
-- Server: To start it, run _npm start_ OR _yarn start_
+- Server: To start it, run `npm start` OR `yarn start`
 
 ## Author
 | Name   |               Link                                                |
