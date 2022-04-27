@@ -74,4 +74,4 @@ cd backend
 
 ## License
 
-[![GitLicense](https://img.shields.io/badge/License-Apache-red.svg)](https://github.com/sandramsc/SCANDIWEB-Junior-Developer-Test/blob/main/LICENSE)
+[![GitLicense](https://img.shields.io/badge/License-Apache-lime.svg)](https://github.com/sandramsc/SCANDIWEB-Junior-Developer-Test/blob/main/LICENSE)
