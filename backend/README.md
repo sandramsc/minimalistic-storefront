@@ -1,8 +1,8 @@
-# GraphQL endpoint
+# Backend
 
 ### Overview
 
-Endpoint required in order to implement the minimalistic storefront.
+GraphQL endpoint required in order to implement the minimalistic storefront.
 
 ### How to start the endpoint
 
