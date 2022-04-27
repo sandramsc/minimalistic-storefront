@@ -2,7 +2,7 @@
 
 ### Overview
 
-GraphQL endpoint required in order to implement the minimalistic storefront.
+[GraphQL endpoint](https://github.com/scandiweb/junior-react-endpoint) required in order to implement the minimalistic storefront.
 
 ### How to start the endpoint
 
