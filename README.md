@@ -57,14 +57,14 @@ cd client
 
 - Install dependencies: `npm i` OR  `yarn`
 
-- Website: To start it, run `npm start` OR `yarn start`
+- To start the webapp, run: `npm start` OR `yarn start`
 
 ```
 cd backend
 ```
 - Install dependencies: `npm i` OR  `yarn`
 
-- Server: To start it, run `npm start` OR `yarn start`
+- To start the server, run: `npm start` OR `yarn start`
 
 ## Author
 | Name   |               Link                                                |
@@ -74,4 +74,4 @@ cd backend
 
 ## License
 
-[![GitLicense](https://img.shields.io/badge/License-Apache-red.svg)](https://github.com/sandramsc/SCANDIWEB-Junior-Developer-Test/blob/main/LICENSE)
+[![GitLicense](https://img.shields.io/badge/License-Apache-lime.svg)](https://github.com/sandramsc/SCANDIWEB-Junior-Developer-Test/blob/main/LICENSE)
