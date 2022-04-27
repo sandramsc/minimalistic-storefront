@@ -57,7 +57,7 @@ cd client
 
 - Install dependencies: `npm i` OR  `yarn`
 
-- Website: To start it, run `npm start` OR `yarn start`
+- To start the webapp, run: `npm start` OR `yarn start`
 
 ```
 cd backend
