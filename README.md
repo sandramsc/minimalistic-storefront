@@ -64,7 +64,7 @@ cd backend
 ```
 - Install dependencies: `npm i` OR  `yarn`
 
-- Server: To start it, run `npm start` OR `yarn start`
+- To start the server, run: `npm start` OR `yarn start`
 
 ## Author
 | Name   |               Link                                                |
