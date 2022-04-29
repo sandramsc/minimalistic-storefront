@@ -1,18 +1,19 @@
 import React, { Component } from "react";
 
-export class UpArrow extends Component {
+export class leftArrow extends Component {
   render() {
     return (
       <svg
-        width="16"
-        height="8"
-        viewBox="0 0 8 4"
+        width="8"
+        height="14"
+        viewBox="0 0 8 14"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M1 3.5L4 0.5L7 3.5"
-          stroke="black"
+          d="M7 13L1 7L7 1"
+          stroke="white"
+          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
@@ -21,4 +22,4 @@ export class UpArrow extends Component {
   }
 }
 
-export default UpArrow;
+export default leftArrow;

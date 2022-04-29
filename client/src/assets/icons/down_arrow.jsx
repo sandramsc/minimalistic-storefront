@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class DownArrow extends Component {
+export class downArrow extends Component {
   render() {
     return (
       <svg
@@ -21,4 +21,4 @@ export class DownArrow extends Component {
   }
 }
 
-export default DownArrow;
+export default downArrow;
