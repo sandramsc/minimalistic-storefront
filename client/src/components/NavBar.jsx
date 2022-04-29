@@ -66,7 +66,7 @@ const NavBar = () => {
         <Language>EN</Language>
         <SearchContainer>
             <Input />
-            <Search />
+            <Search style={{marginTop: "-0.2rem"}}/>
         </SearchContainer>
         </Left>
         <Center>
