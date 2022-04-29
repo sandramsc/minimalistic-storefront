@@ -13,10 +13,10 @@ const Container = styled.div`
 `;
 
 
-const Announcements = () => {
+const PromotionBanner = () => {
   return (
     <Container>Über Savings! Free Shipping on Orders over €50</Container>
   )
 }
 
-export default Announcements
+export default PromotionBanner;

@@ -2,15 +2,17 @@
 import React from 'react';
 import Home from './pages/Home';
 import NavBar from './components/NavBar';
-import Announcements from './components/Announcements';
+import Promotion from './components/PromotionBanner';
 import Slider from './components/Slider';
+import Newsletter from './components/NewsLetter';
 
 const App = () => {
   return (
     <>
-    <Announcements />
+    <Promotion />
      <NavBar />
      <Slider />
+     <Newsletter />
     </>
   )
 };

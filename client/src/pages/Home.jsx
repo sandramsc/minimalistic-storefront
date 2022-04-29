@@ -1,16 +1,18 @@
 /* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React from 'react';
 import NavBar from '../components/NavBar';
-import Announcements from '../components/Announcements';
+import Promotion from '../components/PromotionBanner';
 import Slider from '../components/Slider';
+import Newsletter from '../components/NewsLetter';
 
 
 const Home = () => {
   return (
       <>
-    <Announcements />
+    <Promotion />
     <NavBar />
     <Slider />
+    <Newsletter />
     </>
   )
 }
