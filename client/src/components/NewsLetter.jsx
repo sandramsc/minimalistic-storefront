@@ -25,9 +25,19 @@ const InputContainer = styled.div`
     background-color: #ffffff;
     display: flex;
     justify-content: space-between;
+    border: 1px solid lightgray;
 `;
-const Input = styled.input``;
-const Button = styled.button``;
+const Input = styled.input`
+    border: none;
+    flex: 8;
+    padding-left: 20px;
+`;
+const Button = styled.button`
+    border: none;
+    flex: 1;
+    cursor: pointer;
+    background-color: #5ece7b;
+`;
 
 const NewsLetter = () => {
   return (
@@ -35,7 +45,7 @@ const NewsLetter = () => {
         <Title>Newsletter</Title>
         <Desc>Get timely updates on events & products at Storefont.</Desc>
         <InputContainer>
-            <Input placholder="Your email address..."/>
+            <Input placeholder="Your email address..."/>
             <Button>
                 <Send />
             </Button>
