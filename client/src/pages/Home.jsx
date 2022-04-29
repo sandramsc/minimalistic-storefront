@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar';
 import Promotion from '../components/PromotionBanner';
 import Slider from '../components/Slider';
 import Newsletter from '../components/NewsLetter';
+import Footer from '../components/Footer';
 
 
 const Home = () => {
@@ -13,8 +14,9 @@ const Home = () => {
     <NavBar />
     <Slider />
     <Newsletter />
+    <Footer />
     </>
   )
 }
 
-export default Home
+export default Home;

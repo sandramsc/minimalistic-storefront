@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import Promotion from './components/PromotionBanner';
 import Slider from './components/Slider';
 import Newsletter from './components/NewsLetter';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
      <NavBar />
      <Slider />
      <Newsletter />
+     <Footer />
     </>
   )
 };
