@@ -1,9 +1,7 @@
 /* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React from 'react';
 import styled from 'styled-components';
-import Search from '../assets/icons/search_icon';
 import Cart from '../assets/icons/cart_icon';
-import Logo from '../assets/img/logo';
 
 const Container = styled.div`
     height: 60px;
@@ -21,18 +19,6 @@ const Language = styled.span`
     cursor: pointer;
 `;
 
-const SearchContainer = styled.div`
-    border: 0.5px solid lightgray;
-    display: flex;
-    align-items: center;
-    margin-left: 25px;
-    padding: 5px;
-`;
-
-const Input = styled.input`
-    border: none;
-`;
-
 const Left = styled.div`
     flex: 1;
     display: flex;
@@ -42,6 +28,10 @@ const Left = styled.div`
 const Center = styled.div`
     flex: 1;
     align-items: center;
+`;
+
+const Logo = styled.h1`
+    font-weight: bold;
 `;
 
 const Right = styled.div`
@@ -64,13 +54,9 @@ const NavBar = () => {
         <Wrapper>
         <Left>
         <Language>EN</Language>
-        <SearchContainer>
-            <Input />
-            <Search style={{marginTop: "-0.2rem"}}/>
-        </SearchContainer>
         </Left>
         <Center>
-            <Logo />
+            <Logo>STOREFRONT.</Logo>
         </Center>
         <Right>
             <MenuItem>REGISTER</MenuItem>
