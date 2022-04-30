@@ -5,19 +5,20 @@ import Promotion from '../components/PromotionBanner';
 import Slider from '../components/Slider';
 import Newsletter from '../components/NewsLetter';
 import Footer from '../components/Footer';
-import CopyrightText from '../components/CopyrightText';
-
+import CopyRightText from '../components/CopyrightText';
 
 const Home = () => {
   return (
-      <>
+     <div className="App">
     <Promotion />
-    <NavBar />
-    <Slider />
-    <Newsletter />
-    <Footer />
-    <CopyrightText />
-    </>
+     <NavBar />
+     <div className="main">
+     <Slider />
+     <Newsletter />
+     <Footer />
+     <CopyRightText />
+     </div>
+     </div>
   )
 }
 

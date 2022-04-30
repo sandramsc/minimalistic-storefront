@@ -1,3 +1,4 @@
+/* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import ArrowLeft from '../assets/icons/slider_left';

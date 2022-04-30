@@ -19,4 +19,4 @@ const CopyrightText = () => {
   )
 }
 
-export default CopyrightText
+export default CopyrightText;

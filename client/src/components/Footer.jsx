@@ -1,3 +1,4 @@
+/* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React from 'react';
 import styled from 'styled-components';
 import TikTok  from '../assets/icons/tiktok_icon';
@@ -79,9 +80,6 @@ const PaymentMode = styled.div`
   display: flex;
   align-items: center;
   margin-right: 20px;
-`;
-const CopyRightContainer = styled.p`
-  display: block;
 `;
 
 const Footer = () => {
