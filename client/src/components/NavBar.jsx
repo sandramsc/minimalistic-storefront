@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Cart from '../assets/icons/cart_icon';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     height: 60px;
@@ -56,10 +57,10 @@ const NavBar = () => {
         <Language>EN</Language>
         </Left>
         <Center>
-            <Logo>STOREFRONT.</Logo>
+            <Link to="/" style={{textDecoration: "none", color: "black"}}><Logo>STOREFRONT.</Logo></Link>
         </Center>
         <Right>
-            <MenuItem>REGISTER</MenuItem>
+            <MenuItem><Link to="/register" style={{textDecoration: "none", color: "black"}}>REGISTER</Link></MenuItem>
             <MenuItem>LOGIN</MenuItem>
             <MenuItem>
                     <Cart />

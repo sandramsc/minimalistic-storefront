@@ -1,14 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
+import CopyRightText from '../components/CopyrightText';
 
-const Container = styled.h1`
-  font-size: 32px;
-  color: magenta;
-`;
 
 const Register = () => {
   return (
-    <Container>Register</Container>
+    <div className="App">
+     <NavBar />
+     <div className="main">
+    <div>Register</div>
+     <Footer />
+     <CopyRightText />
+     </div>
+     </div>
   )
 }
 
