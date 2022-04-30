@@ -6,6 +6,7 @@ import Promotion from './components/PromotionBanner';
 import Slider from './components/Slider';
 import Newsletter from './components/NewsLetter';
 import Footer from './components/Footer';
+import CopyRightText from './components/CopyrightText';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
      <Slider />
      <Newsletter />
      <Footer />
+     <CopyRightText />
     </>
   )
 };

@@ -5,6 +5,7 @@ import Promotion from '../components/PromotionBanner';
 import Slider from '../components/Slider';
 import Newsletter from '../components/NewsLetter';
 import Footer from '../components/Footer';
+import CopyrightText from '../components/CopyrightText';
 
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
     <Slider />
     <Newsletter />
     <Footer />
+    <CopyrightText />
     </>
   )
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import  Send  from '../assets/icons/send_icon';
 
 const Container = styled.div`
     height: 40vh;
@@ -37,6 +36,8 @@ const Button = styled.button`
     flex: 1;
     cursor: pointer;
     background-color: #5ece7b;
+    font-weight: 700;
+    color: white;
 `;
 
 const NewsLetter = () => {
@@ -47,7 +48,7 @@ const NewsLetter = () => {
         <InputContainer>
             <Input placeholder="Your email address..."/>
             <Button>
-                <Send />
+                SUBSCRIBE
             </Button>
         </InputContainer>
     </Container>

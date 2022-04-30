@@ -21,7 +21,7 @@ const Left = styled.div`
   padding: 20px;
 `;
 const Logo = styled.h1`
-  
+width: 60%;
 `;
 const Desc = styled.p`
   padding: 20px 0px;
@@ -58,12 +58,13 @@ const List = styled.ul`
 const ListItem = styled.li`
   width: 60%;
   margin-bottom: 10px;
+  cursor: pointer;
 `;
 const ContactItem = styled.div`
   margin-bottom: 10px;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 `;
 const Right = styled.div`
   flex: 1;
@@ -78,6 +79,9 @@ const PaymentMode = styled.div`
   display: flex;
   align-items: center;
   margin-right: 20px;
+`;
+const CopyRightContainer = styled.p`
+  display: block;
 `;
 
 const Footer = () => {
@@ -119,10 +123,10 @@ const Footer = () => {
           <Map />428 Schönhause Alle
         </ContactItem>
         <ContactItem>
-        <Phone /> +49 17624558712
+        <Phone />+49 17624558712
         </ContactItem>
         <ContactItem>
-        <Email /> info@storefront.com
+        <Email />info@storefront.com
         </ContactItem>
         <PaymentContainer>
           <PaymentMode>
@@ -136,7 +140,9 @@ const Footer = () => {
           </PaymentMode>
         </PaymentContainer>
       </Right>
+ 
     </Container>
+    
   )
 }
 
