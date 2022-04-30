@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const SVGComponent = (props) => (
+const instagramIcon = (props) => (
   <svg
     width="24px"
     height="24px"
@@ -12,4 +12,4 @@ const SVGComponent = (props) => (
   </svg>
 );
 
-export default SVGComponent;
+export default instagramIcon;
