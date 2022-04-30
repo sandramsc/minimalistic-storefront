@@ -15,20 +15,9 @@ const Wrapper = styled.div`
     align-items: center;
 `;
 
-const Language = styled.span`
-    font-size: 14px;
-    font-weight: none;
-    cursor: pointer;
-`;
-
-const Left = styled.div`
-    flex: 1;
-    display: flex;
-    align-items: center;
-`;
-
 const Center = styled.div`
-    flex: 1;
+    flex: 4;
+    display: flex;
     align-items: center;
 `;
 
@@ -46,18 +35,14 @@ const MenuItem = styled.div`
 `;
 
 
-const NavBar = () => {
+const Nav = () => {
   return (
     <Container>
         <Wrapper>
-        <Left>
-        <Language>EN</Language>
-        </Left>
         <Center>
             <Link to="/" style={{textDecoration: "none", color: "black"}}><Logo /></Link>
         </Center>
         <Right>
-            <MenuItem><Link to="/Main" style={{textDecoration: "none", color: "black"}}>LOGIN</Link></MenuItem>
             <MenuItem>
                     <Cart />
             </MenuItem>
@@ -67,4 +52,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar;
+export default Nav;

@@ -1,7 +1,7 @@
 /* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React from 'react';
 import Home from './pages/Home';
-import Login from './pages/Login';
+import Main from './pages/Main';
 import { Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
     <div className="App">
      <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/main" element={<Main />} />
       </Routes>
      </div>
   )
