@@ -5,17 +5,17 @@ import Footer from '../components/Footer';
 import CopyRightText from '../components/CopyrightText';
 
 
-const Register = () => {
+const Login = () => {
   return (
     <div className="App">
-     <NavBar />
-     <div className="main">
-    <div>Register</div>
-     <Footer />
-     <CopyRightText />
-     </div>
-     </div>
+    <NavBar />
+    <div className="main">
+   <div>Login</div>
+    <Footer />
+    <CopyRightText />
+    </div>
+    </div>
   )
 }
 
-export default Register;
+export default Login

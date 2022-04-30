@@ -60,8 +60,7 @@ const NavBar = () => {
             <Link to="/" style={{textDecoration: "none", color: "black"}}><Logo>STOREFRONT.</Logo></Link>
         </Center>
         <Right>
-            <MenuItem><Link to="/register" style={{textDecoration: "none", color: "black"}}>REGISTER</Link></MenuItem>
-            <MenuItem>LOGIN</MenuItem>
+            <MenuItem><Link to="/login" style={{textDecoration: "none", color: "black"}}>LOGIN</Link></MenuItem>
             <MenuItem>
                     <Cart />
             </MenuItem>
