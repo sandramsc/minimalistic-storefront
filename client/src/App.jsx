@@ -6,12 +6,14 @@ import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
+
     <div className="App">
      <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/main" element={<Main />} />
       </Routes>
      </div>
+
   )
 };
 
