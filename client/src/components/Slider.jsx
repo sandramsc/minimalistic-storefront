@@ -6,7 +6,6 @@ import ArrowRight from '../assets/icons/slider_right';
 import { sliderItems } from '../sliderData';
 import { Link } from 'react-router-dom';
 
-
 const Container = styled.div`
   width: 100%;
   height: 100vh;
