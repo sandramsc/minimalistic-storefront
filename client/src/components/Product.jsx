@@ -1,7 +1,10 @@
-import React from 'react';
+/*
+
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import Cart from '../assets/icons/cart_icon';
 import { BACKEND_URL } from '../graphql/helpers';
+
 
 const Info = styled.div`
   width: 100%;
@@ -37,7 +40,7 @@ const Image = styled.img`
   z-index: 2;
 `;
 
-const ID = styled.div`
+const Title = styled.div`
   display: flex;
 `;
 const Price = styled.div`
@@ -57,21 +60,10 @@ const Icon = styled.div`
     background-color: #e9f5f5;
     transform: scale(1.1);
   }
-`;
+`; 
 
-const Product = ({ id, name, inStock, gallery, prices }) => {
-  return (
-    <Container>
-        <Image src={`${BACKEND_URL+gallery}`} />
-        <Info>
-          <ID>{id}</ID>
-          <Price>{prices}</Price>
-            <Icon>
-                <Cart />
-            </Icon>
-        </Info>
-    </Container>
-  )
+const Product = ({ id, item}) => {
+
 }
 
-export default Product;
+export default Product; */

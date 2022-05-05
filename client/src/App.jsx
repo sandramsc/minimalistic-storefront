@@ -1,26 +1,16 @@
 /* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React from 'react';
-//import Home from './pages/Home';
+//import ProductList from './components/ProductList';
 import Main from './pages/Main';
-//import { Routes, Route } from "react-router-dom";
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider, 
-} from "@apollo/client";
+import {ApolloProvider} from "@apollo/client";
+import client from './graphql/client';
 
-const client = new ApolloClient({
-  uri: 'http://localhost:4000',
-  cache: new InMemoryCache()
-});
-
-const App = () => {
+function App(){
   return (
-  <ApolloProvider client={client}>
-    <div className="App">
+    <ApolloProvider client={client}>
+        {" "}
       <Main />
-    </div>
-  </ApolloProvider>
+    </ApolloProvider>
   )
 };
 

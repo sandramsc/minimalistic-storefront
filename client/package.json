@@ -4,15 +4,16 @@
   "private": true,
   "author": "Sandra Ashipala <https://github.com/sandramsc>",
   "dependencies": {
-    "@apollo/client": "^3.6.1",
+    "@apollo/client": "^3.6.2",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
+    "cors": "^2.8.5",
     "graphql": "^16.4.0",
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
@@ -42,5 +43,9 @@
   },
   "devDependencies": {
     "typescript": "^4.6.4"
+  },
+  "engines": {
+    "node": "16.13.0",
+    "npm": "8.1.0"
   }
 }

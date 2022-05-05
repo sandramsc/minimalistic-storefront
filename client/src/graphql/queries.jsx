@@ -1,40 +1,43 @@
 import { gql } from "@apollo/client";
 
-// fetch all categories
+// get all categories query
 export const GET_CATEGORIES = gql`
-  query fetchCategory {
+  query {
     categories {
       name
     }
   }
 `;
 
-// fetch all products in a specific category
-export const GET_ALL_PRODUCTS = gql`
-query fetchProducts {
-  category {
-    products {
-      id
-      name
-      inStock
-      gallery
-      prices {
-        currency {
-          symbol
+// get all products in a specific category query
+// take the category name as input
+export const GET_PRODUCTS = gql`
+  query GetProducts{
+    category {
+      products {
+        id
+        name
+        inStock
+        gallery
+        prices {
+          currency {
+            label
+            symbol
+          }
+          amount
         }
-        amount
       }
     }
   }
-}
 `;
 
-// fetch a specific product
+// get a specific product query
+// the product id is the input
 export const GET_PRODUCT = gql`
-  query fetchProduct ($id: String!) {
+  query GetProduct($id: String!) {
     product(id: $id) {
-      id
       name
+      id
       inStock
       gallery
       description
@@ -60,9 +63,9 @@ export const GET_PRODUCT = gql`
   }
 `;
 
-// fetch all currencies
+// get all currencies query
 export const GET_CURRENCIES = gql`
-  query fetchCurrencies {
+  query {
     currencies {
       label
       symbol
