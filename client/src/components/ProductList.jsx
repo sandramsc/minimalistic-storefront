@@ -30,7 +30,10 @@ function ProductList() {
     <Container>
      {""}
      {products.map((items) => {
-       return<h6>{items.id}</h6>
+       return(
+        <h6 key={items.id}>{items.name}</h6>
+       )
+      
      })}
     </Container>
   )
