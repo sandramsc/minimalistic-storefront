@@ -4,8 +4,8 @@ export class downArrow extends Component {
   render() {
     return (
       <svg
-        width="16"
-        height="8"
+        width="10"
+        height="6"
         viewBox="0 0 8 4"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

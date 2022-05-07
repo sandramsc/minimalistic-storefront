@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 //import ProductList from '../components/ProductList';
-import Nav from "../components/Navbar/Nav";
+import Nav from "../components/store/Navbar/Nav";
 import '../App.css'
 
 

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { GET_CATEGORIES  } from "../../graphql/queries";
-import client from "../../graphql/client";
-//import styled from "styled-components";
+import { GET_CATEGORIES  } from "../../../graphql/queries";
+import client from "../../../graphql/client";
+
 
 export class ScrollBtn extends Component {
     constructor(props) {

@@ -1,11 +1,11 @@
 /* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React, { Component } from "react";
 import styled from 'styled-components';
-import NavCart from '../../assets/icons/cart_icon';
+import NavCart from '../../../assets/icons/cart_icon';
 import ScrollBtn from './ScrollBtn'
 import './Navbar.css'
 import CurrencyOption from './CurrencyOptions'
-import Logo from '../../assets/icons/logo';
+import Logo from '../../../assets/icons/logo';
 import { Link } from 'react-router-dom';
 
 const Container = styled.div`

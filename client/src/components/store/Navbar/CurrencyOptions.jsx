@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { GET_CURRENCIES  } from "../../graphql/queries";
-import client from "../../graphql/client";
+import { GET_CURRENCIES  } from "../../../graphql/queries";
+import client from "../../../graphql/client";
 import styled from "styled-components";
-import UpArrow from "../../assets/icons/up_arrow";
-import DownArrow from "../../assets/icons/down_arrow";
+import UpArrow from "../../../assets/icons/up_arrow";
+import DownArrow from "../../../assets/icons/down_arrow";
 
 
 const Symbol = styled.div`
@@ -11,6 +11,9 @@ margin-right: 5px;
 `;
 const Currency = styled.div`
     font-size: 14px;
+`;
+const Arrow = styled.div`
+    color: pink;
 `;
 
 export class CurrencyOptions extends Component {
@@ -64,7 +67,7 @@ componentDidMount(){
         <div className="choose" ref={this.ref}>
             <div className="chosenCurrency" onClick={this.setShowCurrencyList}>
                 <Symbol>{currentCurrencySymbol}</Symbol>
-                {showCurrencyList ? <UpArrow /> : <DownArrow />}
+                <Arrow>{showCurrencyList ? <UpArrow /> : <DownArrow />}</Arrow>
             </div>
             <div className={showCurrencyList ? "chooseList": "chooseClosed"}>
                 {currencies.map((currency) => {
