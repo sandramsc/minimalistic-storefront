@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { GridLoader } from 'react-spinners'
+import { PacmanLoader } from 'react-spinners'
 import { css } from '@emotion/react';
 
 const Container = styled.div`
@@ -31,21 +31,21 @@ margin-bottom: 3rem;
     align-items: center;
 `;
 
-class Loader extends Component {
+class ErrorLoader extends Component {
     render() {
     
         return (
             <Container>
             <Wrapper>
-              <Title>Loading your shopping experience...</Title>
-              <GridLoader color={'#5ece7b'} loading={true} css={cssOverride} size={30} />
+              <Title>Something went wrong...</Title>
+              <PacmanLoader color={'#ff0000'} error={true} css={cssOverride} size={30} />
             </Wrapper>
             </Container>
           );
     }
   }
   
-  export default Loader;
+  export default ErrorLoader;
 
 
   

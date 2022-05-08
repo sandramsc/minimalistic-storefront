@@ -1,11 +1,10 @@
-import Main from "./pages/Main";
 import React, { Component } from 'react';
+import Main from "./pages/Main";
 import Loader from './components/store/NavItems/Loader';
+import ErrorLoader from './components/store/NavItems/ErrorLoader';
 
 class App extends Component {
   state = { loading: true, error: true };
-
-
   sleep = (milliseconds) => {
     return new Promise((resolve) => setTimeout(resolve, milliseconds));
   };
@@ -22,13 +21,14 @@ class App extends Component {
   componentDidMount() {
     this.wait(5000);
   }
-    render() {
-      if (this.state.loading) return <Loader />;
-      if (this.state.error) return <div>err</div>;
+
+  render() {
+    if (this.state.loading) return <Loader />;
+    if (this.state.error) return <ErrorLoader />;
       return <>
       <Main/>
       </>;
-    }
   }
+}
   
-  export default App;
+export default App;
