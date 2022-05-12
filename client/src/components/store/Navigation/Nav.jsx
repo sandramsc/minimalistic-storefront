@@ -7,6 +7,7 @@ import '../NavItems/Navigation.css';
 import CurrencyOption from '../NavItems/CurrencyOptions';
 import Logo from '../../../assets/icons/logo';
 import { Link } from 'react-router-dom';
+import MiniBasket from '../NavItems/miniBasket/miniBasket'
 
 const Container = styled.div`
     display:flex;
@@ -42,11 +43,11 @@ render() {
             </Center>
             <MenuItem>
                 <CurrencyOption setCurrency={this.props.setCurrency}/>
-                <NavCart 
-                miniCart={this.props.miniCart}
+                <MiniBasket 
+                miniBasket={this.props.basket}
                 currentCurrency={this.props.currentCurrency}
-                increaseQty={this.props.increaseQty}
-                decreaseQty={this.props.decreaseQty}
+                plusQnty={this.props.plusQnty}
+                minusQnty={this.props.minusQnty}
                 totalSum={this.props.totalSum}
                 checkOut={this.props.checkOut}
                 /> 

@@ -1,0 +1,31 @@
+
+
+  .addToBasket img,
+  .outOfStock img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+
+ .addToBasket,
+ .outOfStock {
+    padding: 10px;
+    margin: 10px 0px 10px 0px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;  
+ }
+
+ .outOfStock {
+    opacity: 0.5;
+ }
+  
+
+  
+  .addToBasket:hover,
+  .outOfStock:hover {
+    box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);
+  }
+  
+

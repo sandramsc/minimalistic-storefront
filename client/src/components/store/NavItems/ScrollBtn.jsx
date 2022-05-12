@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { GET_CATEGORIES  } from "../../../graphql/queries";
 import client from "../../../graphql/client";
 
-
 export class ScrollBtn extends Component {
     constructor(props) {
         super(props);
@@ -16,10 +15,10 @@ export class ScrollBtn extends Component {
         client
           .query({query: GET_CATEGORIES})
           .then((output) =>
-            this.setState((prev) => {
+            this.setState((previous) => {
               const categories = output.data.categories;
               this.props.setCategory(categories[0].name);
-              return { ...prev, categories };
+              return { ...previous, categories };
             })
           )
           .catch((error) => console.log(error));

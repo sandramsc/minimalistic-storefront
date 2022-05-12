@@ -12,9 +12,7 @@ margin-right: 5px;
 const Currency = styled.div`
     font-size: 14px;
 `;
-const Arrow = styled.div`
-    color: pink;
-`;
+
 
 export class CurrencyOptions extends Component {
     constructor(props){
@@ -23,7 +21,7 @@ export class CurrencyOptions extends Component {
             //fecth currency list
             currencies: [],
             currentCurrencySymbol: "",
-            showCurrencyList: false,
+            popCurrencyList: false,
         };
     this.ref = React.createRef();
 }
@@ -34,11 +32,11 @@ componentDidMount(){
     client
         .query({ query: GET_CURRENCIES})
         .then((output)=>
-            this.setState((prev)=> {
+            this.setState((previous)=> {
                 const currencies = output.data.currencies;
                 const currentCurrencySymbol = currencies[0].symbol;
                 this.props.setCurrency(currencies[0].label);
-                return{ ...prev, currencies, currentCurrencySymbol }
+                return{ ...previous, currencies, currentCurrencySymbol }
             })
         )
         .catch((error) => console.log(error));
@@ -49,34 +47,34 @@ componentDidMount(){
     //closes if clicks outside detected
     handleClickOutside(event){
         if (this.ref.current && !this.ref.current.contains(event.target)){
-            if(this.state.showCurrencyList){
-                this.setShowCurrencyList();
+            if(this.state.popCurrencyList){
+                this.setPopCurrencyList();
             }
         }
     }
     //user changed currency
     setCurrentCurrency = (currentCurrencySymbol) => {
-        this.setState.apply((prev)=> {
-            return{ ...prev, currentCurrencySymbol}
+        this.setState.apply((previous)=> {
+            return{ ...previous, currentCurrencySymbol}
         })
     } 
 
     render(){
-    const { showCurrencyList, currencies, currentCurrencySymbol} = this.state;
+    const { popCurrencyList, currencies, currentCurrencySymbol} = this.state;
     return(
         <div className="choose" ref={this.ref}>
-            <div className="chosenCurrency" onClick={this.setShowCurrencyList}>
+            <div className="chosenCurrency" onClick={this.setPopCurrencyList}>
                 <Symbol>{currentCurrencySymbol}</Symbol>
-                <Arrow>{showCurrencyList ? <UpArrow /> : <DownArrow />}</Arrow>
+                {popCurrencyList ? <UpArrow /> : <DownArrow />}
             </div>
-            <div className={showCurrencyList ? "chooseList": "chooseClosed"}>
+            <div className={popCurrencyList ? "chooseList": "chooseClosed"}>
                 {currencies.map((currency) => {
                     return(
                         <Currency 
                             className="chosen"
                             key={currency.label}
                             onClick={() => {
-                                this.setShowCurrencyList()
+                                this.setPopCurrencyList()
                                 this.setCurrentCurrency(currency.symbol);
                                 this.props.setCurrency(currency.label)
                             }}
