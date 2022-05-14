@@ -24,8 +24,8 @@ export class Basket extends Component {
           <Container>
               <CartNav>CART</CartNav>
                 {basket.map((item, idx) => {
-                    let price = item.product.prices.find((money) => {
-                        return money.currency.label === currentCurrency;
+                    let price = item.product.prices.find((due) => {
+                        return due.currency.label === currentCurrency;
                     });
 
                     return(
@@ -38,9 +38,9 @@ export class Basket extends Component {
                         price={price}
                         />
                     )
-                    })}
+                })}
           </Container>
-      )
+      );
     }
 }
 

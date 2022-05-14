@@ -1,7 +1,12 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { GET_CATEGORIES  } from "../../../graphql/queries";
-import client from "../../../graphql/client";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { GET_CATEGORIES  } from '../../../graphql/queries';
+import client from '../../../graphql/client';
+import styled from 'styled-components';
+
+const ScrollBtns = styled.div`
+
+`;
 
 export class ScrollBtn extends Component {
     constructor(props) {
@@ -13,7 +18,7 @@ export class ScrollBtn extends Component {
 
       componentDidMount() {
         client
-          .query({query: GET_CATEGORIES})
+          .query({ query: GET_CATEGORIES })
           .then((output) =>
             this.setState((previous) => {
               const categories = output.data.categories;
@@ -29,13 +34,13 @@ export class ScrollBtn extends Component {
     const { currentCategory, setCategory } = this.props;
 
     return(
-        <div className="scrollBtns">
+        <ScrollBtns>
             {categories.map((category) => {
                 const {name} = category;
                 let className = "scrollBtn";
 
                 if (name === currentCategory) {
-                    className += "scrollBtnSelected";
+                    className += "scrollBtnChosen";
                 }
                 return(
                     <Link to="/" key={name}>
@@ -45,7 +50,7 @@ export class ScrollBtn extends Component {
                     </Link>
                 );
             })}
-        </div>
+        </ScrollBtns>
     );
   }
 }

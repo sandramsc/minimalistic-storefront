@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-function withRouter(Task) {
+function withRouter(Child) {
   return (props) => {
     const params = useParams();
-    return <Task {...props} params={params} />;
+    return <Child {...props} params={params} />;
   };
 }
 

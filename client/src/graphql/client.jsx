@@ -1,6 +1,5 @@
-//import { onError } from '@apollo/client/link/error';
-import { ApolloClient, InMemoryCache, from, HttpLink } from "@apollo/client";
-import {onError} from "@apollo/client/link/error"
+import { ApolloClient, InMemoryCache, from, HttpLink } from '@apollo/client';
+import {onError} from '@apollo/client/link/error'
 
   const errorLink = onError(({ graphqlErrors, networkError}) => {
     if(graphqlErrors){

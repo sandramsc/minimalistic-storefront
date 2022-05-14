@@ -1,12 +1,17 @@
 import React, { Component } from "react";
-import { GET_PRODUCT } from '../../../graphql/queries';
-import client from "../../../graphql/client";
+import { GET_PRODUCT } from '../../../../graphql/queries';
+import client from "../../../../graphql/client";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
-import BasketIcon from "../../../assets/icons/cart_icon";
+import { Link } from "react-router-dom";
+import BasketIcon from "../../../../assets/icons/cart_icon";
 
 const Container = styled.div`
 position: relative;
+
+a{
+    color: inherit;
+    text-decoration: inherit;
+}
 &:hover {
     display: flex;
     align-items: center;
@@ -70,10 +75,9 @@ justify-content: center;
 `;
 
 export class Product extends Component {
+    // fetch product by id and add to cart with attributes added after
     addToBasket = () => {
-        client
-            .query({
-                query: GET_PRODUCT,
+        client.query({query: GET_PRODUCT,
                 variables: { id: this.props.product.id },
         })
         .then((output) => {
@@ -94,28 +98,25 @@ export class Product extends Component {
             return due.currency.label === this.props.currentCurrency;
           });
 
-          
-
             return (
                 <Container>
-                    <NavLink to={"/product/" + id}>
-                    <Item className={inStock ? "addToBasket" : "outOfStock"}>
+                    <Link to={"/product/" + id}>
+                    <div className={inStock ? "addToBasket" : "outOfStock"}>
                     <img
                         src={gallery[0]}
                         alt=""
                       />
                     <Name>{name}</Name>
-                    <Price> {price.currency.symbol + "" + price.amount}</Price>
+                    <Price>{price.currency.symbol + "" + price.amount}</Price>
                     {inStock ? "" : <NoStock>OUT OF STOCK</NoStock>}
-                    </Item>
-                    </NavLink>
+                    </div>
+                    </Link>
                     {inStock ? 
                     ( <AddToBasket onClick ={this.addToBasket}>
                         <BasketIcon />
                     </AddToBasket>
                     ) : ("")}
                 </Container>
-
               );
     
     }

@@ -1,17 +1,19 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import styled from 'styled-components';
-import LeftArrow from "../../../assets/icons/left_arrow";
-import RightArrow from "../../../assets/icons/right_arrow";
+import LeftArrow from '../../../assets/icons/left_arrow';
+import RightArrow from '../../../assets/icons/right_arrow';
 
 const BasketItemImgSlider = styled.div`
 width: 140px;
 position: relative;
+
+img {
+	width: 140px;
+  height: 180px;
+  object-fit: cover;
+}
 `;
-const BasketItemImg = styled.img`
-width: 140px;
-height: 180px;
-object-fit: cover;
-`;
+
 const Left = styled.div`
 position: absolute;
 top: 90px;
@@ -90,7 +92,7 @@ export class ItemImg extends Component {
                 <Left direction="left" onClick={ this.previousImg } >
                 <LeftArrow/>
                 </Left>
-                <BasketItemImg src={gallery[this.state.currentImage]} alt={id + " image"} />
+                <img src={gallery[this.state.lastImg]} alt={id + " image"} />
                 <Right direction="right" onClick={ this.nextImg } >
                 <RightArrow/>
                 </Right>

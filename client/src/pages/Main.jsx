@@ -1,13 +1,12 @@
 /* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-//import ProductList from '../components/ProductList';
-import Nav from "../components/store/Navigation/Nav";
-import '../App.css'
-import Basket from "../components/store/Basket/Basket";
-import Products from "../components/store/Categories/Products";
-import ProductDesc from "../components/store/Categories/ProductDesc";
-//import { ClassNames } from "@emotion/react";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Nav from '../components/store/Navigation/Nav';
+import '../components/store/Categories//ProductsListItems/Categories.css'
+import Basket from '../components/store/Basket/Basket';
+//import EmptyBasket from '../assets/img/emptyBasket';
+import Products from '../components/store/Categories/ProductsList/Products';
+import ProductDesc from '../components/store/Categories/ProductsListItems/ProductDesc';
 
 
 export class Main extends Component {
@@ -19,6 +18,7 @@ export class Main extends Component {
       currentCategory: "",
       basket: [],
       togglePopUp: "false",
+      taxSum :"",
     }
   }
   // add item to cart with selected atrributes
@@ -41,26 +41,58 @@ export class Main extends Component {
     if (!addedToBasket) {
       this.setState.apply((previous)=> {
         const basket = [...previous.basket];
-        basket.push({ item, qunty: 1 });
+        basket.push({ item, qnty: 1 });
         return { ...previous, basket}
-      })
+      });
     }
     this.togglePopUp();
   };
 
+  // Basket item quantity increase
+  plusQnty = (idx) => {
+    this.setState((previous) => {
+      const basket = [...previous.basket];
+      const item = previous.basket[idx].product;
+      const qnty = previous.basket[idx].qnty + 1;
+      basket[idx] = {item, qnty};
+      return { ...previous, basket}
+    });
+  };
+
+   // Basket item quantity increase
+   minusQnty = (idx) => {
+ if (this.state.basket[idx].qnty > 1) {
+  this.setState((previous) => {
+    const basket = [...previous.basket];
+    const item = previous.basket[idx].product;
+    const qnty = previous.basket[idx].qnty - 1;
+    basket[idx] = {item, qnty};
+    return { ...previous, basket}
+  });
+ } else {
+   this.setState((previous) => {
+     const basket = previous.basket.filter((item, itemIdx) => {
+       return idx !== itemIdx;
+     });
+     return { ...previous, basket}
+   })
+  }
+};
+
+
   // PopUp
   togglePopUp = () => {
-    let togglePopUpStyle = "pop";
+    let togglePopUpDesign = "popDesign";
     this.setState((previous)=> {
-      return { ...previous, togglePopUpStyle }
+      return { ...previous, togglePopUpDesign }
     })
     setTimeout(() => {
-      togglePopUpStyle = "false";
+      togglePopUpDesign = "false";
       this.setState((previous)=> {
-        return { ...previous, togglePopUpStyle }
+        return { ...previous, togglePopUpDesign }
       })
       
-    }, 2000)
+    }, 2500)
   }
 
   // currency label
@@ -76,7 +108,47 @@ export class Main extends Component {
       return { ...previous, currentCategory };
     });
   }
-  
+
+  // checkout basket clears basket
+  checkOut = () => {
+    alert("Your order has been placed!")
+    this.state((previous)=> {
+      const basket = [];
+      return { ...previous, basket}
+    })
+  }
+
+  // amount total based on set qnty & currency
+  sumTotal = () => {
+    let sum = 0;
+    let symbol = "";
+    this.state.basket.forEach((item) => {
+      let price = item.product.prices.filter((due)=> {
+        return due.currency.label === this.state.currentCurrency;
+      })
+      sum = sum + item.qnty * price[0].amount;
+      symbol = price[0].currency.symbol;
+    })
+    return symbol + "" + sum.toFixed(2);
+  } 
+
+  // tax
+  taxSum = () => {
+    let tax = 0;
+    let sum = 0;
+    let symbol = "";
+    this.state.basket.forEach((item) => {
+      let price = item.product.prices.filter((due)=> {
+        return due.currency.label === this.state.currentCurrency;
+      })
+      sum = sum + item.qnty * price[0].amount;
+      symbol = price[0].currency.symbol;
+      tax = sum  * 0.14;
+  })
+  return symbol + "" + sum + tax.toFixed(2);
+  }
+
+
   render() {
     const {  currentCurrency, currentCategory } = this.state;
 
@@ -87,12 +159,14 @@ export class Main extends Component {
         </div>
           <Nav
             basket={this.state.basket}
-            setCurrency={this.setCurrency}
             plusQnty={this.plusQnty}
             minusQnty={this.minusQnty}
+            checkOut={this.checkOut}
+            setCurrency={this.setCurrency}
             currentCurrency={this.state.currentCurrency}
             setCategory={this.setCategory}
             currentCategory={this.currentCategory}
+            sumTotal={this.sumTotal}
           />
           
           {
@@ -106,8 +180,7 @@ export class Main extends Component {
                   currentCurrency={this.state.currentCurrency}
                   plusQnty={this.plusQnty}
                   minusQnty={this.minusQnty}
-                  />
-                }
+                  />}
                 />
                 <Route
                   exact path="/" element={
@@ -124,8 +197,7 @@ export class Main extends Component {
                     <ProductDesc 
                     currentCurrency={this.state.currentCurrency}
                     addToBasket = {this.addToBasket}
-                    />
-                  }
+                    />}
                 />
               </Routes>
             ) : ("")

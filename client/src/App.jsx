@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Main from "./pages/Main";
+import Main from './pages/Main';
 import Loader from './components/store/NavItems/Loader';
 import ErrorLoader from './components/store/NavItems/ErrorLoader';
 
@@ -19,14 +19,14 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.wait(5000);
+    this.wait(4000);
   }
 
   render() {
     if (this.state.loading) return <Loader />;
     if (this.state.error) return <ErrorLoader />;
       return <>
-      <Main/>
+      <Main />
       </>;
   }
 }

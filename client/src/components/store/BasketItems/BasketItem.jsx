@@ -1,44 +1,46 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import styled from 'styled-components';
-import BItemAttribute from "./BItemAttribute";
-import ItemQty from "./ItemQty";
-import ItemImg from "./ItemImg";
+import BItemAttribute from './BItemAttribute';
+import  BItemQnty from './BItemQnty';
+import BItemImg from './BItemImg';
 
 
-const Container = styled.h3`
+const Container = styled.div`
 padding: 20px 0px;
 border-top: 1px solid #e5e5e5;
 display: flex;
 justify-content: space-between;
 `;
 
-const Brand = styled.h3`
- text-decoration: none;
- margin: 0px 0px 16px 0px;
- font-weight: 600;
-`;
-const Name = styled.h4`
-text-decoration: none;
-margin: 0px 0px 16px 0px;
-    font-weight: 400;
-`;
-const Price = styled.p`
-text-decoration: none;
-font-family: "Urbanist";
-font-weight: 700;
-font-size: 24px;
-color: #1d1f22;
-margin: 0px 0px 16px 0px;
-margin: 0px;
-`;
 const Info = styled.div`
 font-family: "Raleway";
 font-size: 30px;
 line-height: 30px;
 color: #1d1f22;
+h3{
+    margin: 0px 0px 16px 0px;
+  font-weight: 600;
+}
+
+h4 {
+    margin: 0px 0px 16px 0px;
+    font-weight: 400;
+}
+p {
+    font-family: "Raleway";
+    font-weight: 700;
+    font-size: 24px;
+    color: #1d1f22;
+    margin: 0px 0px 16px 0px;
+    margin: 0px;
+}
 `;
 const ItemOptions = styled.div`
 display: flex;
+`;
+
+const MiniBasket= styled.h3`
+
 `;
 
 export class BasketItem extends Component {
@@ -51,30 +53,30 @@ export class BasketItem extends Component {
         return(
             <Container key={item.product.id}>
                 <Info>
-                    <Brand>{brand}</Brand>
-                    <Name>{name}</Name>
-                    <Price>{price.currency.symbol + "" + price.amount}</Price>
-                    <div className="smallCart">
-                        {attributes.map((attribute,attrIdx) => {
+                    <h3>{brand}</h3>
+                    <h4>{name}</h4>
+                    <p>{price.currency.symbol + "" + price.amount}</p>
+                    <MiniBasket>
+                        {attributes.map((attr, attrIdx) => {
                             return(
                                 <BItemAttribute 
-                                    key= {id + "attribute" + attrIdx}
-                                    attribute={attribute}
+                                    key= {id + "attr" + attrIdx}
+                                    attribute={attr}
                                     attrIdx={attrIdx}
                                     chosenAttributes={chosenAttributes}
                                 />
                             );
                         })}
-                    </div>
+                    </MiniBasket>
                 </Info>
                 <ItemOptions>
-                <ItemQty 
+                <BItemQnty 
                     idx={idx}
                     qnty={qnty}
                     plusQnty={plusQnty}
                     minusQnty={minusQnty}
                 />
-                <ItemImg gallery={gallery}  id={id}/>   
+                <BItemImg gallery={gallery}  id={id} />   
                 </ItemOptions>
             </Container>
         );

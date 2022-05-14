@@ -1,17 +1,9 @@
-import React, { Component } from "react";
-import { GET_CURRENCIES  } from "../../../graphql/queries";
-import client from "../../../graphql/client";
-import styled from "styled-components";
-import UpArrow from "../../../assets/icons/up_arrow";
-import DownArrow from "../../../assets/icons/down_arrow";
-
-
-const Symbol = styled.div`
-margin-right: 5px;
-`;
-const Currency = styled.div`
-    font-size: 14px;
-`;
+import React, { Component } from 'react';
+import { GET_CURRENCIES  } from '../../../graphql/queries';
+import client from '../../../graphql/client';
+//import styled from 'styled-components';
+import UpArrow from '../../../assets/icons/up_arrow';
+import DownArrow from '../../../assets/icons/down_arrow';
 
 
 export class CurrencyOptions extends Component {
@@ -23,6 +15,7 @@ export class CurrencyOptions extends Component {
             currentCurrencySymbol: "",
             popCurrencyList: false,
         };
+        // assigning ref to instance property for referencing
     this.ref = React.createRef();
 }
 
@@ -30,7 +23,7 @@ export class CurrencyOptions extends Component {
 componentDidMount(){
     document.addEventListener("click", this.handleClickOutside.bind(this));
     client
-        .query({ query: GET_CURRENCIES})
+        .query({ query: GET_CURRENCIES })
         .then((output)=>
             this.setState((previous)=> {
                 const currencies = output.data.currencies;
@@ -48,40 +41,51 @@ componentDidMount(){
     handleClickOutside(event){
         if (this.ref.current && !this.ref.current.contains(event.target)){
             if(this.state.popCurrencyList){
+                //closes in set state
                 this.setPopCurrencyList();
             }
         }
     }
     //user changed currency
-    setCurrentCurrency = (currentCurrencySymbol) => {
-        this.setState.apply((previous)=> {
+    setChosenCurrency = (currentCurrencySymbol) => {
+        this.setState((previous)=> {
             return{ ...previous, currentCurrencySymbol}
         })
     } 
+
+    // toggle currency list
+    setPopCurrencyList = () => {
+        const popCurrencyList = !this.state.popCurrencyList;
+        this.setState((previous)=> {
+            return { ...previous, popCurrencyList };
+        })
+    }
 
     render(){
     const { popCurrencyList, currencies, currentCurrencySymbol} = this.state;
     return(
         <div className="choose" ref={this.ref}>
             <div className="chosenCurrency" onClick={this.setPopCurrencyList}>
-                <Symbol>{currentCurrencySymbol}</Symbol>
+                <p>{currentCurrencySymbol}</p>
                 {popCurrencyList ? <UpArrow /> : <DownArrow />}
             </div>
             <div className={popCurrencyList ? "chooseList": "chooseClosed"}>
                 {currencies.map((currency) => {
                     return(
-                        <Currency 
+                        <div 
                             className="chosen"
                             key={currency.label}
                             onClick={() => {
-                                this.setPopCurrencyList()
-                                this.setCurrentCurrency(currency.symbol);
+                                //close currency list
+                                this.setPopCurrencyList();
+                                //change curreny option
+                                this.setChosenCurrency(currency.symbol);
+                                //change curreny option in Main.js
                                 this.props.setCurrency(currency.label)
                             }}
                         >
                         {currency.symbol + " " + currency.label}
-                        </Currency>
-                      
+                        </div>
                     )
                 })}
             </div>

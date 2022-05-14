@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const AttrName = styled.div`
@@ -20,7 +20,7 @@ margin: 10px 0px;
 export class BItemAttribute extends Component { 
 
     render() {
-        const { attIdx, attribute, chosenAttributes } = this.props;
+        const { attrIdx, attribute, chosenAttributes } = this.props;
         const { id, type, name } = attribute;
 
         return(
@@ -30,9 +30,9 @@ export class BItemAttribute extends Component {
                     {attribute.item.map((itemAttr, itemIdx) => {
                         const { status, showStatus } = itemAttr;
                         let className = "basketItemAttr";
-                        let attr = {};
+                        let design = {};
 
-                        if (chosenAttributes[attIdx] === itemIdx){
+                        if (chosenAttributes[attrIdx] === itemIdx){
                             if (type === "swatch"){
                                 className += "chosenItemAttrSwatch";
                             } else {
@@ -41,18 +41,18 @@ export class BItemAttribute extends Component {
                         }
 
                         if (type === "swatch" && status ==="#000"){
-                            attr = {
+                            design = {
                                 bg: status,
                                 color: "#fff",
                             };
                         } else if (type === "swatch"){
-                            attr = {
+                            design = {
                                 bg: status,
                             };
                         }
 
                         return (
-                            <div key={id +"" + status} className={className} attr={attr}>
+                            <div key={id +"" + status} className={className} design={design}>
                                 {showStatus}
                             </div>
                         )

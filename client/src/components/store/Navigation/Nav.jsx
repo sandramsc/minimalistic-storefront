@@ -1,13 +1,12 @@
 /* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import styled from 'styled-components';
-import NavCart from '../../../assets/icons/cart_icon';
 import ScrollBtn from '../NavItems/ScrollBtn';
 import '../NavItems/Navigation.css';
 import CurrencyOption from '../NavItems/CurrencyOptions';
 import Logo from '../../../assets/icons/logo';
 import { Link } from 'react-router-dom';
-import MiniBasket from '../NavItems/miniBasket/miniBasket'
+import MiniBasket from '../NavItems/miniBasket/miniBasket';
 
 const Container = styled.div`
     display:flex;
@@ -42,9 +41,9 @@ render() {
                 <Link to="/" ><Logo /></Link>
             </Center>
             <MenuItem>
-                <CurrencyOption setCurrency={this.props.setCurrency}/>
+                <CurrencyOption setCurrency={this.props.setCurrency} />
                 <MiniBasket 
-                miniBasket={this.props.basket}
+                basket={this.props.basket}
                 currentCurrency={this.props.currentCurrency}
                 plusQnty={this.props.plusQnty}
                 minusQnty={this.props.minusQnty}
