@@ -10,7 +10,7 @@ img{
     height: 100px;
     object-fit: cover;
     margin: 0px 0px 10px 0px;
-    &hover:{
+    &:hover{
         cursor: pointer;
     transform: scale(1.1);
     }
@@ -33,48 +33,52 @@ div{
 }
 `;
 
+const Gallery= styled.div`
+
+`;
+
 export class PItemInfo extends Component {
     constructor(props){
         super(props);
-        this.state = { chosenURL: ""};
+       this.thumbImg=React.createRef();
     }
 
-    componentDidMount(){
+ /*   componentDidMount(){
         if (this.props.gallery[0]){
-            this.setState({chosenURL: this.props.gallery[0]});
+            this.setState({thumbnailURL: this.props.gallery[0]});
         }
     }
 
     componentDidUpdate(prevImg){
-        if(prevImg !==this.props){
+        if(prevImg !== this.props){
             if(this.props.gallery[0]){
-                this.setState({chosenURL: this.props.gallery[0]})
+                this.setState({thumbnailURL: this.props.gallery[0]})
             }
         }
     }
 
     // changes the chosen img URL
     changeImg = (URL) => {
-        this.setState({chosenURL: URL});
+        this.setState({thumbnailURL: URL});
     };
-
+*/
     render(){
         const { gallery, name } = this.props;
         return(
             <>
             <ImgShowcase>
-            {gallery.map((idx, url)=>{
-                return(
-                    <img src={url} alt={name +"image" + idx}
-                    key={"MiniImage" + idx}
-                    onClick={()=>this.changeImg(url)} />
-                );
-            })}
+            {gallery.map((item, idx)=>(
+                <Gallery key={item}>
+                <img src={item} alt={name + idx}
+                    onClick={()=>{this.thumbImg.current.src = item;
+                    }} />
+                </Gallery>
+                    
+            ))}
             </ImgShowcase>
-           
             <CenterImg>
                 <div>
-                <img src={this.state.chosenURL} alt={name + " center img"}/>
+                <img ref={this.thumbImg} src={gallery[0]} alt={name + " center img"}/>
                 </div>
             </CenterImg>
             </>

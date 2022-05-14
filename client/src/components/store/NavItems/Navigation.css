@@ -1,6 +1,6 @@
 body {
   margin: 0px;
-  padding: 0px 70px 0px 70px;
+  padding: 0px 70px 0px 80px;
 }
 
 .scrollBtns {
@@ -84,5 +84,8 @@ body {
   .chosen:hover,
   .chosenCurrency:hover {
     cursor: pointer;
-    
+  }
+  .chosen:hover {
+    cursor: pointer;
+    background-color: rgba(168, 172, 176, 0.19);;
   }

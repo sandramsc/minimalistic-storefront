@@ -9,7 +9,7 @@ margin-left: 40px;
 display: flex;
 flex-direction: column;
 h1{
-    font-family: "Raleway";
+    font-family: "Urbanist";
     font-weight: 600;
     font-size: 30px;
     line-height: 27px;
@@ -18,7 +18,7 @@ h1{
     color: #1d1f22;
 }
 h2 {
-    font-family: "Raleway";
+    font-family: "Urbanist";
     font-weight: 400;
     font-size: 30px;
     line-height: 27px;
@@ -31,7 +31,7 @@ button {
     padding: 16px 32px;
     min-height: 52px;
     background-color: #5ece7b;
-    font-family: "Raleway";
+    font-family: "Urbanist";
     font-weight: 600;
     font-size: 16px;
     color: white;
@@ -39,11 +39,11 @@ button {
     margin-bottom: 20px;
     box-sizing: border-box;
     text-align: center;
-    &hover:{
+    &:hover{
         background: #3fa35a;
         cursor: pointer;
     }
-    &active:{
+    &:active{
         background: #3fa35a;
         color: #1d1f22;
     }
