@@ -1,0 +1,95 @@
+body {
+  margin: 0px;
+  padding: 0px 70px 0px 80px;
+}
+
+.scrollBtns {
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .scrollBtn {
+    font-family: "Urbanist";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1d1f22;
+    border: 0px;
+    background-color: transparent;
+    width: 100px;
+    height: 80px;
+    margin-right: 5px;
+  }
+  
+  .scrollBtn:hover {
+    color: #5ece7b;
+    cursor: pointer;
+  }
+  
+  .scrollBtnSelected {
+    color: #5ece7b;
+    border-bottom: 2px solid #5ece7b;
+  }
+  .scrollBtnSelected a {
+    color: #5ece7b;
+    border-bottom: 2px solid #5ece7b;
+  }
+  
+  .choose {
+    font-family: "Urbanist";
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: #1d1f22;
+    margin-right: 10px;
+  }
+  
+  .chooseClosed {
+    display: none;
+  }
+  
+  .chooseList {
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    background-color: white;
+    position: absolute;
+    width: 100px;
+    right: 150px;
+    top: 60px;
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+  }
+  
+  .chosenCurrency {
+    width: 100px;
+    height: 40px;
+    padding: 0px 5px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  
+  .chosen {
+    margin: 2px 5px;
+    padding: 0px 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .chosen:hover,
+  .chosenCurrency:hover {
+    cursor: pointer;
+  }
+  .chosen:hover {
+    cursor: pointer;
+    background-color: rgba(168, 172, 176, 0.19);;
+  }

@@ -1,0 +1,51 @@
+  .attribute h2 {
+    font-family: "Urbanist";
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    margin: 0px;
+    margin-bottom: 10px;
+    color: #1d1f22;
+  }
+  
+  .attributeItems {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  
+  .attributeItem {
+    min-width: 65px;
+    height: 45px;
+    border: 1px solid #1d1f22;
+    box-sizing: border-box;
+    font-family: "Urbanist";
+    font-weight: 400;
+    font-size: 18px;
+    color: #1d1f22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    margin-bottom: 10px;
+    padding: 0px 5px;
+  }
+  
+  .attributeItem:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  
+  .selectedAttribute {
+    background-color: #1d1f22;
+    color: white;
+  }
+  
+  .swatchSelectedAttribute {
+    box-shadow: 5px 5px 5px 0px black;
+  }
+  
+
+  
+
+  
