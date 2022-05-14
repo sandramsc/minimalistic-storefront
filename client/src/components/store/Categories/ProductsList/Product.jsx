@@ -3,7 +3,7 @@ import { GET_PRODUCT } from '../../../../graphql/queries';
 import client from "../../../../graphql/client";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import BasketIcon from "../../../../assets/icons/cart_icon";
+import BasketIcon from "../../../../assets/icons/basket_icon";
 
 const Container = styled.div`
 position: relative;
@@ -19,7 +19,7 @@ a{
   }
 `;
 const Name = styled.div`
-font-family: "raleway";
+font-family: "Urbanist";
 font-weight: 300;
 font-size: 18px;
 line-height: 28px;
@@ -34,7 +34,7 @@ const Item = styled.div.attrs(props => ({
   
 `;
 const Price = styled.div`
-font-family: "raleway";
+font-family: "Urbanist";
 font-weight: 500;
 font-size: 18px;
 line-height: 28px;
@@ -42,7 +42,7 @@ color: #1d1f22;
 `;
 const NoStock = styled.div`
 color: #000000;
-font-family: "raleway";
+font-family: "Urbanist";
 font-weight: 400;
 font-size: 24px;
 line-height: 38.4px;
@@ -75,6 +75,12 @@ justify-content: center;
 `;
 
 export class Product extends Component {
+    constructor() {
+        super();
+        this.style = {
+           color: "white",
+        };
+      }
     // fetch product by id and add to cart with attributes added after
     addToBasket = () => {
         client.query({query: GET_PRODUCT,
@@ -112,8 +118,8 @@ export class Product extends Component {
                     </div>
                     </Link>
                     {inStock ? 
-                    ( <AddToBasket onClick ={this.addToBasket}>
-                        <BasketIcon />
+                    (<AddToBasket onClick ={this.addToBasket}>
+                    <BasketIcon />
                     </AddToBasket>
                     ) : ("")}
                 </Container>

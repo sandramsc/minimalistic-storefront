@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const AttrName = styled.div`
-font-family: "Roboto Condensed";
+font-family: "Urbanist";
 font-weight: 700;
 font-size: 20px;
 line-height: 20px;

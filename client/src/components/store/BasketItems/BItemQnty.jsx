@@ -19,7 +19,7 @@ justify-content: space-between;
     background-color: rgb(255, 235, 240);
   }
   p {
-    font-family: "Raleway";
+    font-family: "Urbanist";
 font-weight: 500;
 font-size: 24px;
 color: #1d1f22;

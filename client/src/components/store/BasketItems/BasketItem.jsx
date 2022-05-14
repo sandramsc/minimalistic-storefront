@@ -13,7 +13,7 @@ justify-content: space-between;
 `;
 
 const Info = styled.div`
-font-family: "Raleway";
+font-family: "Urbanist";
 font-size: 30px;
 line-height: 30px;
 color: #1d1f22;
@@ -27,7 +27,7 @@ h4 {
     font-weight: 400;
 }
 p {
-    font-family: "Raleway";
+    font-family: "Urbanist";
     font-weight: 700;
     font-size: 24px;
     color: #1d1f22;

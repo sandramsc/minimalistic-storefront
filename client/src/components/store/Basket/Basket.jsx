@@ -9,7 +9,7 @@ flex-direction: column;
 margin: 80px 0px;
 `;
 const CartNav = styled.div`
-font-family: "Raleway";
+font-family: "Urbanist";
 font-weight: 700;
 font-size: 32px;
 margin-bottom: 60px;

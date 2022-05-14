@@ -91,7 +91,7 @@ width: 100%;
     filter: brightness(0.8);
 `;
 const ItemDesc= styled.div`
-font-family: "Roboto";
+font-family: "Urbanist";
 font-weight: 400;
 font-size: 16px;
 line-height: 26px;
