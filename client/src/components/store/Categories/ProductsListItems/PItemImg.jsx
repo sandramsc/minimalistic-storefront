@@ -5,6 +5,7 @@ const ImgShowcase= styled.div`
 display: flex;
 flex-direction: column;
 margin-right: 10px;
+
 img{
     width: 100px;
     height: 100px;
@@ -14,7 +15,9 @@ img{
         cursor: pointer;
     transform: scale(1.1);
     }
+
 }
+
 `;
 const CenterImg= styled.div`
 width: 50%;
@@ -43,25 +46,6 @@ export class PItemInfo extends Component {
        this.thumbImg=React.createRef();
     }
 
- /*   componentDidMount(){
-        if (this.props.gallery[0]){
-            this.setState({thumbnailURL: this.props.gallery[0]});
-        }
-    }
-
-    componentDidUpdate(prevImg){
-        if(prevImg !== this.props){
-            if(this.props.gallery[0]){
-                this.setState({thumbnailURL: this.props.gallery[0]})
-            }
-        }
-    }
-
-    // changes the chosen img URL
-    changeImg = (URL) => {
-        this.setState({thumbnailURL: URL});
-    };
-*/
     render(){
         const { gallery, name } = this.props;
         return(
@@ -71,7 +55,7 @@ export class PItemInfo extends Component {
                 <Gallery key={item}>
                 <img src={item} alt={name + idx}
                     onClick={()=>{this.thumbImg.current.src = item;
-                    }} />
+                }} />
                 </Gallery>
                     
             ))}

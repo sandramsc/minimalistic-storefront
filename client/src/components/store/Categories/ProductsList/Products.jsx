@@ -11,9 +11,8 @@ const CategoryNav = styled.div`
 font-family: "Urbanist";
 font-weight: 400;
 font-size: 42px;
-margin: 80px 0;
+margin: 50px 0;
 color: #1d1f22;
-margin: 80px 0px;
 span {
     color: #5ece7b;
 }

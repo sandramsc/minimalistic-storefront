@@ -27,12 +27,7 @@ color: #1d1f22;
 margin-top: 24px;
 `;
 
-const Item = styled.div.attrs(props => ({
-    className:props.className,
-}))`
 
-  
-`;
 const Price = styled.div`
 font-family: "Urbanist";
 font-weight: 500;

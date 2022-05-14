@@ -11,7 +11,7 @@ flex-direction: column;
 h1{
     font-family: "Urbanist";
     font-weight: 600;
-    font-size: 30px;
+    font-size: 26px;
     line-height: 27px;
     margin: 0px;
     margin-bottom: 16px;
@@ -20,7 +20,7 @@ h1{
 h2 {
     font-family: "Urbanist";
     font-weight: 400;
-    font-size: 30px;
+    font-size: 18px;
     line-height: 27px;
     margin: 0px;
     margin-bottom: 32px;
@@ -58,7 +58,7 @@ const ItemPrice= styled.div`
 h2{
     font-family: "Urbanist";
     font-weight: 700;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 18px;
     margin: 0px;
     margin-bottom: 10px;

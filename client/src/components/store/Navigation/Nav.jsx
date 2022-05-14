@@ -12,6 +12,7 @@ const Container = styled.div`
     display:flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: -28px;
 `
 const Center = styled.div`
 margin: 20px 0px;
