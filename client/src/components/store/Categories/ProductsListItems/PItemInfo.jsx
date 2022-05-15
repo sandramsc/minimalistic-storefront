@@ -99,24 +99,26 @@ color: #1d1f22;
 `;
 export class PItemInfo extends Component {
     render(){
-        const {name, brand, attributes, description, addToBasket, id, price, inStock, chosenAttribute, chosenAttributes} = this.props;
+        const {name, brand, attributes,chosenAttributes,id, chosenAttribute, description, addToBasket, price, inStock } = this.props;
         return (
             <Info>
                 <h1>{brand}</h1>
                 <h2>{name}</h2>
-                <ItemAttr>
-                {attributes?.map((attr, attrIdx) => {
-                    return(
-                        <PItemAttr 
-                            key= {id}
-                            attr={attr}
-                            attrIdx={attrIdx}
-                            chosenAttributes={chosenAttributes}
-                            chosenAttribute={chosenAttribute}
+            <ItemAttr>
+            { attributes && attributes.length ?
+                attributes.map((attribute, attrIdx) => (
+
+   <PItemAttr
+                        key={id + "" + attribute.id}
+                        inStock={inStock}
+                        attributes={attributes}
+                        attrIdx={attrIdx}
+                        chosenAttributes={chosenAttributes}
+                chosenAttribute={chosenAttribute}
                         />
-                    );
-                })}
-                </ItemAttr>
+                   
+               )) : null}
+            </ItemAttr>
                 <ItemPrice>
                     <h2>PRICE: </h2>
                     <p>{price.currency.symbol + "" + price.amount}</p>
@@ -124,6 +126,7 @@ export class PItemInfo extends Component {
                 {inStock ? ( <button onClick={addToBasket}>ADD TO CART</button>
                 ) : (<NoStock>OUT OF STOCK</NoStock>
                 )}
+                {/* */}
                 <ItemDesc><JsxParser jsx={description} /></ItemDesc>
             </Info>
         )

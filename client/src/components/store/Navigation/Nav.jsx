@@ -6,7 +6,7 @@ import '../NavItems/Navigation.css';
 import CurrencyOption from '../NavItems/CurrencyOptions';
 import Logo from '../../../assets/icons/logo';
 import { Link } from 'react-router-dom';
-import MiniBasket from '../NavItems/miniBasket/miniBasket';
+//import MiniBasket from '../NavItems/miniBasket/MBasket';
 
 const Container = styled.div`
     display:flex;
@@ -41,17 +41,17 @@ render() {
             <Center>
                 <Link to="/" ><Logo /></Link>
             </Center>
-            <MenuItem>
+           <MenuItem>
                 <CurrencyOption setCurrency={this.props.setCurrency} />
-                <MiniBasket 
+                 {/*<MiniBasket 
                 basket={this.props.basket}
                 currentCurrency={this.props.currentCurrency}
                 plusQnty={this.props.plusQnty}
                 minusQnty={this.props.minusQnty}
                 totalSum={this.props.totalSum}
                 checkOut={this.props.checkOut}
-                /> 
-            </MenuItem>
+                /> */}
+    </MenuItem> 
         </Container>
       )
 }

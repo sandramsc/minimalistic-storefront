@@ -17,7 +17,7 @@ justify-content: space-between;
 
 export class PItemAttr extends Component {
 render(){
-    const { attribute, chosenAttribute, chosenAttributes, attrIdx}=this.props;
+    const { attribute, chosenAttribute, chosenAttributes, attrIdx} = this.props;
     const {id, items, type, name} = attribute;
 
     return(
@@ -25,7 +25,7 @@ render(){
             <h2>{name}: </h2>
             <AttrOptions>
             {items.map((item, itemIdx) => {
-                const {showStatus, status} = item;
+                const {displayValue, value} = item;
                 let className = "attrItem";
                 let style = {};
 
@@ -33,28 +33,29 @@ render(){
                 // check to see if attr is a swatch inorder to style it based on that color
                 if (type === "swatch"){
                     if (style === "#000"){
-                        style = { backgroundColor: status, color: "#fff"};
+                        style = { backgroundColor: value, color: "white"};
                     } else {
-                        style = { backgroundColor: status}
+                        style = { backgroundColor: value}
                     }
                 }
                 // chhecks to see if swtach is chosen inorder to change its style
                 if (itemIdx === chosenAttributes[attrIdx]){
                     if(type === "swatch"){
                         className += " swatchChosenAttr";
-                    }else {
+                    } else {
                         className += " chosenAttr";
                     }
                 }
                 return (
-                    <div key={item.id}
+                    <div 
+                    key={item.id}
                     className={className}
                     onClick={()=> chosenAttribute(itemIdx, attrIdx)}
                     style={style}
                     >
-                    {showStatus}
+                    {displayValue}
                     </div>
-                )
+                );
             })}
             </AttrOptions>
         </Attr>

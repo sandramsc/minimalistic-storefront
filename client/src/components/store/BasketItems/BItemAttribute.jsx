@@ -39,7 +39,6 @@ margin: "10px 0px",
     margin-right: 4px;
     margin-bottom: 4px;
   }
-
 `
 
 export class BItemAttribute extends Component { 
@@ -53,7 +52,7 @@ export class BItemAttribute extends Component {
                 <AttrName>{ name + ":"}</AttrName>
                 <ItemAttr>
                     {attr.item.map((itemAttr, itemIdx) => {
-                        const { status, showStatus } = itemAttr;
+                        const { value, displayValue } = itemAttr;
                         let className = "basketItemAttr";
                         let style = {};
 
@@ -65,20 +64,20 @@ export class BItemAttribute extends Component {
                             }
                         }
 
-                        if (type === "swatch" && status ==="#000"){
+                        if (type === "swatch" && value ==="#000"){
                             style = {
-                                backgroundColor: status,
+                                backgroundColor: value,
                                 color: "#fff",
                             };
                         } else if (type === "swatch"){
                             style = {
-                                backgroundColor: status,
+                                backgroundColor: value,
                             };
                         }
 
                         return (
-                            <div key={id +"" + status} className={className} style={style}>
-                                {showStatus}
+                            <div key={id +"" + value} className={className} style={style}>
+                                {displayValue}
                             </div>
                         )
                     })}

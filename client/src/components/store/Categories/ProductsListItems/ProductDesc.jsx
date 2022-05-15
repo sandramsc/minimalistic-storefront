@@ -20,7 +20,7 @@ export class ProductDecs extends Component {
 			product: {},
 			// chosen attr idx
 			chosenAttributes: [],
-			queried: false,
+			fetched: false,
 		};
 	}
  // fetch product with param url
@@ -30,13 +30,13 @@ export class ProductDecs extends Component {
 	})
 	.then((output) => {
 		const product = output.data.product;
-		const queried = true;
+		const fetched = true;
 		let chosenAttributes = [];
 		// the first item of each respective attribute is chosen
 		if(product.attributes) {
 			chosenAttributes = Array(product.attributes.length).fill(0);
 		}
-		this.setState({ product, chosenAttributes, queried })
+		this.setState({ product, chosenAttributes, fetched })
 	})
 	.catch((error) => console.log(error));
  }
@@ -52,16 +52,18 @@ export class ProductDecs extends Component {
  // add to basket, item with chosen attributes
  addToBasket = () => {
 	 const chosenAttributes = this.state.chosenAttributes;
-	 const item = {...this.state.product, chosenAttributes };
-	 this.props.addToBasket(item)
- }
+	 const product = {...this.state.product, chosenAttributes };
+	 this.props.addToBasket(product);
+ };
+
  render() {
 	 
-	 if(!this.state.queried){
+	 if(!this.state.fetched){
 		 return "";
 	 }
-	 const {prices, description, inStock, id, name, brand, gallery } = this.state.product;
+	 const {prices, description, attributes, inStock, id, name, brand, gallery } = this.state.product;
 	 const { currentCurrency } = this.props;
+
 	 let price = prices.find((due) => {
 		 return due.currency.label === currentCurrency;
 	 });
@@ -74,13 +76,13 @@ export class ProductDecs extends Component {
 			description={description}
 			inStock={inStock}
 			name={name}
-			gallery={gallery}
+			attributes={attributes}
 			chosenAttributes={this.state.chosenAttributes}
 			chosenAttribute={this.chosenAttribute}
 			addToBasket={this.addToBasket }
 			/>
 		 </ItemDesc>
-	 )
+	 );
  }
 
 }

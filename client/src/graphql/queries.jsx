@@ -11,9 +11,10 @@ export const GET_CATEGORIES = gql`
 
 // get all products in a specific category query
 // take the category name as input
+
 export const GET_PRODUCTS = gql`
-  query GetProducts{
-    category {
+  query GetProducts($category: String!) {
+    category(input: { title: $category }) {
       products {
         id
         name

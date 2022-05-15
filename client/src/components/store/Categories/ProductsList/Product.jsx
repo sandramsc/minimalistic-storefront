@@ -5,7 +5,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import BasketIcon from "../../../../assets/icons/basket_icon";
 
-const Container = styled.div`
+const Container = styled.div.attrs(props => ({
+    className: props.className,
+}))`
 position: relative;
 
 a{
@@ -16,6 +18,33 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+.addToBasket {
+    padding: 10px;
+    margin: 10px 0px 10px 0px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    img{
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+    &:hover{box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);}
+  }
+  .outOfStock {
+    padding: 10px;
+    margin: 10px 0px 10px 0px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.5;
+    img{
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+    &:hover{box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);}
   }
 `;
 const Name = styled.div`
@@ -69,13 +98,10 @@ justify-content: center;
   }
 `;
 
+
+
 export class Product extends Component {
-    constructor() {
-        super();
-        this.style = {
-           color: "white",
-        };
-      }
+ 
     // fetch product by id and add to cart with attributes added after
     addToBasket = () => {
         client.query({query: GET_PRODUCT,

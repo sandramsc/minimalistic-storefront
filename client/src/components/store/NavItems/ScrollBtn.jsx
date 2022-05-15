@@ -18,7 +18,7 @@ export class ScrollBtn extends Component {
 
       componentDidMount() {
         client
-          .query({ query: GET_CATEGORIES })
+          .query({ query: GET_CATEGORIES, })
           .then((output) =>
             this.setState((previous) => {
               const categories = output.data.categories;

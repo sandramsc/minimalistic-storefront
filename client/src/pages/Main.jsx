@@ -7,7 +7,16 @@ import Basket from '../components/store/Basket/Basket';
 //import EmptyBasket from '../assets/img/emptyBasket';
 import Products from '../components/store/Categories/ProductsList/Products';
 import ProductDesc from '../components/store/Categories/ProductsListItems/ProductDesc';
+import styled from 'styled-components';
 
+const ItemAdded = styled.div.attrs(props => ({
+  className: props.className,
+}))`
+ 
+&.false {
+  display: none;
+}
+`
 
 export class Main extends Component {
   constructor(props){
@@ -28,8 +37,8 @@ export class Main extends Component {
       if (item.id === itemAddedToBasket.item.id) {
         const basketChoice = itemAddedToBasket.item.chosenAttributes;
         addedToBasket = true;
-        item.chosenAttributes.forEach((attr, attrIdx) => {
-          if (attr !== basketChoice[attrIdx]) {
+        item.chosenAttributes.forEach((attribute, attrIdx) => {
+          if (attribute !== basketChoice[attrIdx]) {
             addedToBasket = false;
           }
         })
@@ -39,7 +48,7 @@ export class Main extends Component {
       }
     });
     if (!addedToBasket) {
-      this.setState.apply((previous)=> {
+      this.setState((previous)=> {
         const basket = [...previous.basket];
         basket.push({ item, qnty: 1 });
         return { ...previous, basket}
@@ -102,7 +111,7 @@ export class Main extends Component {
     });
   };
 
-  // category
+  // category list
   setCategory = (currentCategory) => {
     this.setState((previous) => {
       return { ...previous, currentCategory };
@@ -154,9 +163,9 @@ export class Main extends Component {
 
     return(
       <Router>
-        <div className={this.state.togglePopUp}>
+        <ItemAdded className={this.state.togglePopUp}>
           You Just Added An Item To Your Basket!
-        </div>
+        </ItemAdded>
           <Nav
             basket={this.state.basket}
             plusQnty={this.plusQnty}
