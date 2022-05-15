@@ -38,7 +38,7 @@ render(){
                         style = { backgroundColor: status}
                     }
                 }
-                // chhecks to see if swatch is chosen inorder to change its style
+                // chhecks to see if swtach is chosen inorder to change its style
                 if (itemIdx === chosenAttributes[attrIdx]){
                     if(type === "swatch"){
                         className += " swatchChosenAttr";

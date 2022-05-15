@@ -10,39 +10,37 @@ margin: 5px 0px;
 color: #1d1f22;
 `;
 
-const ItemAttr = styled.div((props) =>
-display: flex;
-flex-wrap: wrap;
-margin: 10px 0px;
-{
-    
-    ".chosenItemAttrSwatch": {
-        box-shadow: 1px 1px 5px 0px black;
-      },
-      ".chosenItemAttr": {
-        background-color: #1d1f22;
-        color: white;
-      },
-      ".basketItemAttr": {
-        min-width: 65px;
-        height: 45px;
-        border: 1px solid #1d1f22;
-        box-sizing: border-box;
-        padding: 2px;
-        font-family: "Urbanist";
-        font-weight: 400;
-        font-size: 16px;
-        color: #1d1f22;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 4px;
-        margin-bottom: 4px;
-      },
+const ItemAttr = styled.div.attrs(props => ({
+    className: props.className,
+}))`
+display: "flex",
+flex-wrap: "wrap",
+margin: "10px 0px", 
+.chosenItemAttrSwatch {
+    box-shadow: 1px 1px 5px 0px black;
+  },
+  .chosenItemAttr {
+    background-color: #1d1f22;
+    color: white;
+  },
+  .basketItemAttr {
+    min-width: 65px;
+    height: 45px;
+    border: 1px solid #1d1f22;
+    box-sizing: border-box;
+    padding: 2px;
+    font-family: "Urbanist";
+    font-weight: 400;
+    font-size: 16px;
+    color: #1d1f22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+    margin-bottom: 4px;
   }
 
-);
-
+`
 
 export class BItemAttribute extends Component { 
 

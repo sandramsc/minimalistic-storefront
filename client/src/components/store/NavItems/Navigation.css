@@ -31,10 +31,7 @@ body {
     color: #5ece7b;
     border-bottom: 2px solid #5ece7b;
   }
-  .scrollBtnSelected a {
-    color: #5ece7b;
-    border-bottom: 2px solid #5ece7b;
-  }
+  
   
   .choose {
     font-family: "Urbanist";
@@ -56,9 +53,9 @@ body {
     background-color: white;
     position: absolute;
     width: 100px;
-    right: 150px;
+    right: 175px;
     top: 60px;
-    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+    box-shadow: 0px 3px 30px rgba(168, 172, 176, 0.19);
   }
   
   .chosenCurrency {
@@ -91,5 +88,6 @@ body {
   }
   .chosen:hover {
     cursor: pointer;
-    background-color: rgba(168, 172, 176, 0.19);;
+    background-color: rgba(168, 172, 176, 0.19);
+    margin:0;
   }

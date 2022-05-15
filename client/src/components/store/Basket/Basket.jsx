@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import '../BasketItems/Basket.css';
 import BasketItem from "../BasketItems/BasketItem";
 import styled from "styled-components";
 

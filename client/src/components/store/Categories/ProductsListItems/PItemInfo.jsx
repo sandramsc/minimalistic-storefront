@@ -108,7 +108,7 @@ export class PItemInfo extends Component {
                 {attributes?.map((attr, attrIdx) => {
                     return(
                         <PItemAttr 
-                            key= {attributes.id}
+                            key= {id}
                             attr={attr}
                             attrIdx={attrIdx}
                             chosenAttributes={chosenAttributes}

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const ImgShowcase= styled.div`
 display: flex;
 flex-direction: column;
-width: 100px;
+width: 120px;
 margin-right: 10px;
 flex-shrink: 0;
 height: 530px;
