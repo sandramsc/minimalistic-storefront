@@ -15,22 +15,22 @@ overflow-x: hidden;
   }
 
 &::-webkit-scrollbar-track {
-    background: rgb(233, 233, 235);
+    background: rgb(223, 223, 225);
     border-radius: 8px;
 }
 
 &::-webkit-scrollbar-thumb {
-    background: rgb(179, 177, 177);
+    background: rgb(169, 167, 167);
     border-radius: 8px;
   }
   
 &::-webkit-scrollbar-thumb:hover {
-    background: rgb(136, 136, 136);
+    background: rgb(126, 126, 126);
     border-radius: 8px;
   }
 
 &::-webkit-scrollbar-thumb:active {
-    background: rgb(100, 100, 100);
+    background: rgb(90, 90, 90);
     border-radius: 8px;
   }
 

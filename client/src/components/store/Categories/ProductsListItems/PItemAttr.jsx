@@ -3,13 +3,13 @@ import styled from 'styled-components';
 
 
 const Attr = styled.div`
-margin: 80px 0px 40px 0px;
+margin: 0px 0px 5px 0px;
 display: flex;
 justify-content: space-between;
 h2{
     font-family: "Urbanist";
     font-weight: 700;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 18px;
     margin: 0px;
     margin-bottom: 10px;
@@ -24,18 +24,18 @@ display: flex;
 flex-wrap: wrap;
 margin-bottom: 20px;
 & .attrItem{
-    min-width: 65px;
-    height: 45px;
+    min-width: 60px;
+    height: 35px;
     border: 1px solid #1d1f22;
     box-sizing: border-box;
     font-family: "Urbanist";
-    font-weight: 400;
-    font-size: 18px;
+    font-weight: 300;
+    font-size: 16px;
     color: #1d1f22;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 12px;
+    margin-right: 15px;
     margin-bottom: 10px;
     padding: 0px 5px;
     &:hover{
@@ -49,8 +49,9 @@ margin-bottom: 20px;
     color: white;
 }
 & .swatchChosenAttr{
-    box-shadow: 5px 5px 5px 0px black;
+    box-shadow: 3px 3px 3px 0px grey;
 }
+
 `;
 
 export class PItemAttr extends Component {
@@ -60,7 +61,7 @@ render(){
  
     return(
         <Attr key={id}>
-            <h2>{name}: </h2>
+            <h2>{name.toUpperCase()}: </h2>
             <AttrOptions>
             {items.map((item, itemIdx) => {
                 const {displayValue, value} = item;
