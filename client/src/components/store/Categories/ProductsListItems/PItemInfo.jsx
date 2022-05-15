@@ -99,25 +99,26 @@ color: #1d1f22;
 `;
 export class PItemInfo extends Component {
     render(){
-        const {name, brand, attributes,chosenAttributes,id, chosenAttribute, description, addToBasket, price, inStock } = this.props;
+        const {name, brand, attributes,chosenAttributes,id, chosenAttribute, 
+            description, addToBasket, price, inStock } = this.props;
         return (
             <Info>
                 <h1>{brand}</h1>
                 <h2>{name}</h2>
             <ItemAttr>
-            { attributes && attributes.length ?
-                attributes.map((attribute, attrIdx) => (
-
-   <PItemAttr
-                        key={id + "" + attribute.id}
-                        inStock={inStock}
-                        attributes={attributes}
-                        attrIdx={attrIdx}
-                        chosenAttributes={chosenAttributes}
-                chosenAttribute={chosenAttribute}
-                        />
-                   
-               )) : null}
+           {attributes.map((attr, attrIdx) => {
+           return(
+            <PItemAttr
+            key={id + "" + attr.id}
+            inStock={inStock}
+            attr={attr}
+            attrIdx={attrIdx}
+            chosenAttributes={chosenAttributes}
+            chosenAttribute={chosenAttribute}
+            />
+           )
+                       
+           })}
             </ItemAttr>
                 <ItemPrice>
                     <h2>PRICE: </h2>

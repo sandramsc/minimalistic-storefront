@@ -6,20 +6,58 @@ const Attr = styled.div`
 margin: 80px 0px 40px 0px;
 display: flex;
 justify-content: space-between;
+h2{
+    font-family: "Urbanist";
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    margin: 0px;
+    margin-bottom: 10px;
+    color: #1d1f22;
+}
 `;
-const AttrOptions = styled.div`
-margin: 80px 0px 40px 0px;
+
+const AttrOptions = styled.div.attrs(props => ({
+    className: props.className,
+}))`
 display: flex;
-justify-content: space-between;
+flex-wrap: wrap;
+margin-bottom: 20px;
+& .attrItem{
+    min-width: 65px;
+    height: 45px;
+    border: 1px solid #1d1f22;
+    box-sizing: border-box;
+    font-family: "Urbanist";
+    font-weight: 400;
+    font-size: 18px;
+    color: #1d1f22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    margin-bottom: 10px;
+    padding: 0px 5px;
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+}
+
+& .chosenAttribute{
+    background-color: #1d1f22;
+    color: white;
+}
+& .swatchChosenAttr{
+    box-shadow: 5px 5px 5px 0px black;
+}
 `;
-
-
 
 export class PItemAttr extends Component {
 render(){
-    const { attribute, chosenAttribute, chosenAttributes, attrIdx} = this.props;
-    const {id, items, type, name} = attribute;
-
+    const {  attr, chosenAttribute, chosenAttributes, attrIdx} = this.props;
+    const {id, items, type, name} = attr;
+ 
     return(
         <Attr key={id}>
             <h2>{name}: </h2>
@@ -32,7 +70,7 @@ render(){
                 // color swatches, a feature that allows users to choose between available colors of the same product
                 // check to see if attr is a swatch inorder to style it based on that color
                 if (type === "swatch"){
-                    if (style === "#000"){
+                    if (value === "#000"){
                         style = { backgroundColor: value, color: "white"};
                     } else {
                         style = { backgroundColor: value}
@@ -43,7 +81,7 @@ render(){
                     if(type === "swatch"){
                         className += " swatchChosenAttr";
                     } else {
-                        className += " chosenAttr";
+                        className += " chosenAttribute";
                     }
                 }
                 return (

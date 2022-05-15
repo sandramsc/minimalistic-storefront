@@ -44,14 +44,14 @@ margin: "10px 0px",
 export class BItemAttribute extends Component { 
 
     render() {
-        const { attrIdx, attr, chosenAttributes } = this.props;
-        const { id, type, name } = attr;
+        const { attrIdx, attribute, chosenAttributes } = this.props;
+        const { id, type, name } = attribute;
 
         return(
             <>
                 <AttrName>{ name + ":"}</AttrName>
                 <ItemAttr>
-                    {attr.item.map((itemAttr, itemIdx) => {
+                    {attribute.item.map((itemAttr, itemIdx) => {
                         const { value, displayValue } = itemAttr;
                         let className = "basketItemAttr";
                         let style = {};
