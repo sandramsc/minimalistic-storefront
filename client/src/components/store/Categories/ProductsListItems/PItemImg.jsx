@@ -11,27 +11,27 @@ height: 530px;
 overflow-y: auto;
 overflow-x: hidden;
 &::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
 
 &::-webkit-scrollbar-track {
-    background: rgb(223, 223, 225);
-    border-radius: 8px;
+    background: rgb(243, 243, 245);
+    border-radius: 6px;
 }
 
 &::-webkit-scrollbar-thumb {
-    background: rgb(169, 167, 167);
-    border-radius: 8px;
+    background: rgb(189, 187, 187);
+    border-radius: 6px;
   }
   
 &::-webkit-scrollbar-thumb:hover {
-    background: rgb(126, 126, 126);
-    border-radius: 8px;
+    background: rgb(146, 146, 146);
+    border-radius: 6px;
   }
 
 &::-webkit-scrollbar-thumb:active {
-    background: rgb(90, 90, 90);
-    border-radius: 8px;
+    background: rgb(110, 110, 110);
+    border-radius: 6px;
   }
 
 img{

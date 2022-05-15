@@ -90,12 +90,50 @@ width: 100%;
     opacity: 0.7;
     filter: brightness(0.8);
 `;
+
+
 const ItemDesc= styled.div`
 font-family: "Urbanist";
 font-weight: 400;
 font-size: 16px;
 line-height: 26px;
 color: #1d1f22;
+
+display: flex;
+flex-direction: column;
+width: 120px;
+margin-right: 10px;
+flex-shrink: 0;
+height: 530px;
+overflow-y: auto;
+overflow-x: hidden;
+&::-webkit-scrollbar {
+    width: 6px;
+  }
+
+&::-webkit-scrollbar-track {
+    background: rgb(243, 243, 245);
+    border-radius: 6px;
+}
+
+&::-webkit-scrollbar-thumb {
+    background: rgb(189, 187, 187);
+    border-radius: 6px;
+  }
+  
+&::-webkit-scrollbar-thumb:hover {
+    background: rgb(146, 146, 146);
+    border-radius: 6px;
+  }
+
+&::-webkit-scrollbar-thumb:active {
+    background: rgb(110, 110, 110);
+    border-radius: 6px;
+  }
+
+
+}
+
 `;
 export class PItemInfo extends Component {
     render(){

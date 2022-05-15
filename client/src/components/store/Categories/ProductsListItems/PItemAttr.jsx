@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Attr = styled.div`
 margin: 0px 0px 5px 0px;
 display: flex;
-justify-content: space-between;
+justify-content: flex-start;
 h2{
     font-family: "Urbanist";
     font-weight: 700;
@@ -14,7 +14,10 @@ h2{
     margin: 0px;
     margin-bottom: 10px;
     color: #1d1f22;
+    text-transform: uppercase;
+
 }
+
 `;
 
 const AttrOptions = styled.div.attrs(props => ({
@@ -23,13 +26,19 @@ const AttrOptions = styled.div.attrs(props => ({
 display: flex;
 flex-wrap: wrap;
 margin-bottom: 20px;
+div {
+    margin: 30px 0px 15px 0px;
+
+
+}
 & .attrItem{
+    text-transform: uppercase;
     min-width: 60px;
     height: 35px;
     border: 1px solid #1d1f22;
     box-sizing: border-box;
     font-family: "Urbanist";
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
     color: #1d1f22;
     display: flex;
@@ -61,7 +70,7 @@ render(){
  
     return(
         <Attr key={id}>
-            <h2>{name.toUpperCase()}: </h2>
+            <h2>{name}: </h2>
             <AttrOptions>
             {items.map((item, itemIdx) => {
                 const {displayValue, value} = item;
