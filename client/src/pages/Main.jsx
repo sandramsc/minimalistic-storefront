@@ -8,6 +8,7 @@ import Basket from '../components/store/Basket/Basket';
 import Products from '../components/store/Categories/ProductsList/Products';
 import ProductDesc from '../components/store/Categories/ProductsListItems/ProductDesc';
 import styled from 'styled-components';
+import '../App.css';
 
 const ItemAdded = styled.div.attrs(props => ({
   className: props.className,
