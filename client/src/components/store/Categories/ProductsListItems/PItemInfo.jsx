@@ -5,9 +5,10 @@ import JsxParser from "react-jsx-parser";
 
 const Info= styled.div`
 width: 30%;
-margin-left: 40px;
+margin-left: 20px;
 display: flex;
 flex-direction: column;
+
 h1{
     font-family: "Urbanist";
     font-weight: 600;
@@ -101,12 +102,13 @@ color: #1d1f22;
 
 display: flex;
 flex-direction: column;
-width: 120px;
+width: 350px;
 margin-right: 10px;
 flex-shrink: 0;
-height: 530px;
+height: 170px;
 overflow-y: auto;
 overflow-x: hidden;
+
 &::-webkit-scrollbar {
     width: 6px;
   }
@@ -117,22 +119,19 @@ overflow-x: hidden;
 }
 
 &::-webkit-scrollbar-thumb {
-    background: rgb(189, 187, 187);
+    background: rgb(199, 199, 199);
     border-radius: 6px;
   }
   
 &::-webkit-scrollbar-thumb:hover {
-    background: rgb(146, 146, 146);
+    background: rgb(166, 166, 166);
     border-radius: 6px;
   }
 
 &::-webkit-scrollbar-thumb:active {
-    background: rgb(110, 110, 110);
+    background: rgb(140, 140, 140);
     border-radius: 6px;
   }
-
-
-}
 
 `;
 export class PItemInfo extends Component {

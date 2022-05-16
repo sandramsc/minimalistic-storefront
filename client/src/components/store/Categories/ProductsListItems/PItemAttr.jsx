@@ -38,7 +38,7 @@ div {
     border: 1px solid #1d1f22;
     box-sizing: border-box;
     font-family: "Urbanist";
-    font-weight: 400;
+    font-weight: 400 !important;
     font-size: 16px;
     color: #1d1f22;
     display: flex;
