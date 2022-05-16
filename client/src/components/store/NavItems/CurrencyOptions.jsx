@@ -21,7 +21,7 @@ export class CurrencyOptions extends Component {
 
 //listens for clicks outside the target element
 componentDidMount(){
-    document.addEventListener("click", this.handleClickOutside.bind(this));
+    document.addEventListener("click", this.handleClick.bind(this));
     client
         .query({ query: GET_CURRENCIES })
         .then((output)=>
@@ -35,10 +35,10 @@ componentDidMount(){
         .catch((error) => console.log(error));
 }
     componentWillUnmount() {
-        document.removeEventListener("click", this.handleClickOutside.bind(this));
+        document.removeEventListener("click", this.handleClick.bind(this));
     }
     //closes if clicks outside detected
-    handleClickOutside(event){
+    handleClick(event){
         if (this.ref.current && !this.ref.current.contains(event.target)){
             if(this.state.popCurrencyList){
                 //closes in set state
