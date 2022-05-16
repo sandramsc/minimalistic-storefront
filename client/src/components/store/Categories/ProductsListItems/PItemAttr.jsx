@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Attr = styled.div`
 margin: 0px 0px 5px 0px;
-display: flex;
+display: inline-block;
 justify-content: flex-start;
 h2{
     font-family: "Urbanist";
@@ -26,11 +26,7 @@ const AttrOptions = styled.div.attrs(props => ({
 display: flex;
 flex-wrap: wrap;
 margin-bottom: 20px;
-div {
-    margin: 30px 0px 15px 0px;
 
-
-}
 & .attrItem{
     text-transform: uppercase;
     min-width: 60px;
@@ -38,13 +34,13 @@ div {
     border: 1px solid #1d1f22;
     box-sizing: border-box;
     font-family: "Urbanist";
-    font-weight: 400 !important;
+    font-weight: 400;
     font-size: 16px;
     color: #1d1f22;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
+    margin-right: 8px;
     margin-bottom: 10px;
     padding: 0px 5px;
     &:hover{
@@ -58,7 +54,7 @@ div {
     color: white;
 }
 & .swatchChosenAttr{
-    box-shadow: 3px 3px 3px 0px grey;
+    box-shadow: 5px 7px 4px -3px rgba(94,206,123,0.82);
 }
 
 `;
@@ -99,8 +95,7 @@ render(){
                     key={item.id}
                     className={className}
                     onClick={()=> chosenAttribute(itemIdx, attrIdx)}
-                    style={style}
-                    >
+                    style={style}>
                     {displayValue}
                     </div>
                 );

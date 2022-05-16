@@ -5,7 +5,7 @@ import JsxParser from "react-jsx-parser";
 
 const Info= styled.div`
 width: 30%;
-margin-left: 20px;
+margin-left: 40px;
 display: flex;
 flex-direction: column;
 

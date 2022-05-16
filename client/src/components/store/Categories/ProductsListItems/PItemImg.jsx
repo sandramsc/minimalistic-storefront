@@ -5,7 +5,7 @@ const ImgShowcase= styled.div`
 display: flex;
 flex-direction: column;
 width: 120px;
-margin-right: 10px;
+margin-right: 30px;
 flex-shrink: 0;
 height: 530px;
 overflow-y: auto;
@@ -49,7 +49,7 @@ img{
 `;
 const CenterImg= styled.div`
 width: 50%;
-max-height: 80vh;
+max-height: 67vh;
 box-sizing: border-box;
 display: flex;
 justify-content: center;
