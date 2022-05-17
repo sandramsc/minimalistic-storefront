@@ -21,7 +21,7 @@ h1{
 h2 {
     font-family: "Urbanist";
     font-weight: 400;
-    font-size: 18px;
+    font-size: 24px;
     line-height: 27px;
     margin: 0px;
     margin-bottom: 32px;
@@ -53,6 +53,7 @@ button {
 const ItemAttr= styled.div`
 display: flex;
 flex-direction: column;
+
 `;
 const ItemPrice= styled.div`
 
@@ -68,7 +69,7 @@ h2{
 p{
     font-family: "Urbanist";
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 46px;
     margin: 0px;
     margin-bottom: 20px;

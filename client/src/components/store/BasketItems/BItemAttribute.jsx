@@ -8,6 +8,7 @@ font-size: 20px;
 line-height: 20px;
 margin: 5px 0px;
 color: #1d1f22;
+text-transform:uppercase
 `;
 
 const ItemAttr = styled.div.attrs(props => ({
@@ -16,14 +17,14 @@ const ItemAttr = styled.div.attrs(props => ({
 display: "flex",
 flex-wrap: "wrap",
 margin: "10px 0px", 
-.chosenItemAttrSwatch {
+&.chosenItemAttrSwatch {
     box-shadow: 1px 1px 5px 0px black;
   },
-  .chosenItemAttr {
+ & .chosenItemAttr {
     background-color: #1d1f22;
     color: white;
   },
-  .basketItemAttr {
+  &.basketItemAttr {
     min-width: 65px;
     height: 45px;
     border: 1px solid #1d1f22;
@@ -44,14 +45,14 @@ margin: "10px 0px",
 export class BItemAttribute extends Component { 
 
     render() {
-        const { attrIdx, attr, chosenAttributes } = this.props;
-        const { id, type, name } = attr;
+        const { attrIdx, attribute, chosenAttributes } = this.props;
+        const { id, type, name } = attribute;
 
         return(
             <>
                 <AttrName>{ name + ":"}</AttrName>
                 <ItemAttr>
-                    {attr.item.map((itemAttr, itemIdx) => {
+                    {attribute.items.map((itemAttr, itemIdx) => {
                         const { value, displayValue } = itemAttr;
                         let className = "basketItemAttr";
                         let style = {};

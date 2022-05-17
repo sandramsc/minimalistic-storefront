@@ -1,26 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import BasketIcon from '../../../../assets/icons/cart_icon';
+import { BIcon } from '../../../../assets/icons/BIcon';
 
-const Container = styled.div.attrs(props => ({
-  className: props.className,
-}))`
- 
-&.false {
-  display: none;
-}
-`
 
-const Empty = styled.div`
-font-family: "Raleway";
-font-weight: 700;
-font-size: 20px;
-line-height: 26px;
-color: #1d1f22;
-text-align: center;
-margin-bottom: 20px;
-`
 const Icon = styled.div`
 position: relative;
 `
@@ -32,15 +14,14 @@ justify-content: center;
 align-items: center;
 &:hover{
     cursor: pointer;
-    background-color: rgb(255, 235, 240);
 }
 `
 const Length = styled.div`
 position: absolute;
-top: -8px;
-right: -8px;
+top: -7px;
+right: -7px;
 z-index: 1;
-font-family: "Raleway";
+font-family: "Urbanist";
 width: 16px;
 height: 16px;
 line-height: 14px;
@@ -52,15 +33,15 @@ border-radius: 50%;
 text-align: center;
 `
 
-export class MBcount extends Component {
+export class MBIcon extends Component {
   render(){
       //mini basket number of items display 
-    const {length, setPopMBaket} = this.props;
+    const {length, setViewMB} = this.props;
    
     return(
-     <Button onClick={setPopMBaket}>
+     <Button onClick={setViewMB}>
          <Icon>
-            <BasketIcon />
+            <BIcon />
             {length === 0 ? "" : <Length>{length}</Length>}
          </Icon>
      </Button>
@@ -68,4 +49,4 @@ export class MBcount extends Component {
   }
 }
 
-export default MBcount;
+export default MBIcon;

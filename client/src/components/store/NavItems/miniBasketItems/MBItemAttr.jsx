@@ -6,15 +6,16 @@ const MBAttr = styled.div.attrs(props => ({
 }))`
 display: flex;
 flex-wrap: wrap;
-margin: 10px 0px;
+margin: 5px 0px;
+text-transform: uppercase;
  
-&.mbAttrItem {
-    min-width: 24px;
+& .mbAttrItem {
+  min-width: 24px;
   height: 24px;
   border: 1px solid #1d1f22;
   box-sizing: border-box;
   padding: 2px;
-  font-family: "Source Sans Pro";
+  font-family: "Urbanist";
   font-weight: 400;
   font-size: 12px;
   color: #1d1f22;
@@ -23,17 +24,21 @@ margin: 10px 0px;
   justify-content: center;
   margin-right: 4px;
   margin-bottom: 4px;
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.05);
 }
-&.mbAttrChosenItem{
+}
+& .mbAttrChosenItem{
     background-color: #1d1f22;
   color: white;
 }
-&.swatchmbChosenAttrItem{
-    box-shadow: 1px 1px 5px 0px black;
+& .swatchmbChosenAttrItem{
+    box-shadow: 1px 1px 5px 0px grey;
 }
 `
 const Name = styled.div`
-font-family: "Roboto Condensed";
+font-family: "Urbanist";
 font-weight: 700;
 font-size: 16px;
 line-height: 16px;
@@ -46,8 +51,8 @@ color: #1d1f22;
 
 export class MBItem extends Component {
   render() {
-    const {  attr, chosenAttribute, chosenAttributes, attrIdx} = this.props;
-    const {id, items, type, name} = attr;
+    const {  attr, chosenAttributes, attrIdx} = this.props;
+    const { items, type, name} = attr;
 
     return(
       <>
@@ -59,9 +64,9 @@ export class MBItem extends Component {
           let style = {};
           if (chosenAttributes[attrIdx] === itemIdx){
             if (type === "swatch"){
-               className += "swatchmbChosenAttrItem";
+               className += " swatchmbChosenAttrItem";
             }else {
-               className += "mbAttrChosenItem";
+               className += " mbAttrChosenItem";
             }
           }
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class CartIcon extends Component {
+export class BIcon extends Component {
   render() {
     return (
       <svg
@@ -27,4 +27,4 @@ export class CartIcon extends Component {
   }
 }
 
-export default CartIcon;
+export default BIcon;

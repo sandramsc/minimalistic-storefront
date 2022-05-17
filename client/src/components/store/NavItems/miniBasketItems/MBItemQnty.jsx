@@ -12,26 +12,26 @@ justify-content: center;
 align-items: center;
 border: 1px solid #1d1f22;
 &:hover{
+  background: #cdf0d2;
   cursor: pointer;
-  background-color: rgb(255, 250, 250);
 }
 &:active{
-  background-color: rgb(255, 235, 240);
+  background: #9adfa6;
 }
 `
 const Container = styled.div`
 width: 24px;
-height: 140px;
-margin-right: 11px;
+height: 120px;
+margin-right: 16px;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
 p{
   
-  font-family: "Raleway";
+  font-family: "Urbanist";
   font-weight: 500;
   font-size: 16px;
-  line-height: 26px;
+  line-height: 24px;
   color: #1d1f22;
   margin: 0px;
   text-align: center;
@@ -41,7 +41,7 @@ p{
 
 export class MBItemQnty extends Component {
   render() {
-    const { idx, qnty, plusQnty, minusQnty, basketItems } = this.props;
+    const { idx, qnty, plusQnty, minusQnty } = this.props;
         return(
             <Container>
                   <Button onClick={() => minusQnty(idx) } >

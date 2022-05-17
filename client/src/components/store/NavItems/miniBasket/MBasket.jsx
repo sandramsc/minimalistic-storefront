@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import MBIcon from '../../../../assets/icons/cart_icon';
+import MBIcon from '../miniBasketItems/MBIcon';
 import MBItem from '../miniBasketItems/MBItem';
 import Header from '../miniBasketItems/Header';
 import Footer from '../miniBasketItems/Footer';
@@ -9,10 +9,10 @@ const Container = styled.div.attrs(props => ({
   className: props.className,
 }))`
  
-&.hidden {
+& .hidden {
     display: none;
 }
-&.mbDisplay {
+& .mbDisplay {
     display: block;
     position: absolute;
     z-index: 1;
@@ -22,7 +22,7 @@ const Container = styled.div.attrs(props => ({
     bottom: 0px;
     background-color: rgba(57, 55, 72, 0.22);
 }
-&.mbItems {
+& .mbItems {
     display: flex;
     flex-direction: column;
     z-index: 10;
@@ -37,9 +37,6 @@ const Container = styled.div.attrs(props => ({
     padding: 16px;
 }
 `
-const Nav = styled.div`
- 
-`
 
 
 
@@ -47,61 +44,51 @@ export class MBItemQnty extends Component {
     constructor(props){
         super(props);
         this.state = {
-            popMBasket: false,
+            viewMB: false,
         }
         // component ref
         this.ref = React.createRef();
     }
     // event listener for outside click on document
     componentDidMount() {
-        document.addEventListener('click', this.handleClick.bind(this));
+        document.addEventListener("click", this.handleClick.bind(this));
     }
-    // removes ability to scroll if user wants to open or close mini basket
-    componentDidUpdate(){
-        if(this.state.popMBasket){
-            document.body.style.position = "fixed";
-            document.body.style.overflowY = "scroll";
-            document.body.style.left = "0";
-            document.body.style.right = "0";
-        } else {
-            document.body.style.position = "static";
-            document.body.style.overflowY = "auto";
-        }
-    }
+
     // remove event listener from document
     componentWillUnmount() {
         document.removeEventListener("click", this.handleClick.bind(this));
     }
 
-    // handle mini basket
-    setPopMBasket = () => {
-        const popMBasket = !this.state.popMBasket;
-        this.setState((previous)=> {
-            return {...previous, popMBasket}
-        })
-    }
+    // handle mini basket (open&close)
+    setViewMB = () => {
+        const viewMB = !this.state.viewMB;
+        this.setState((previous) => {
+            return {...previous, viewMB}
+        });
+    };
+
     // closes mini basket if user clicks outside
     handleClick(event){
         if (this.ref.current && !this.ref.current.contains(event.target)) {
-            if (this.state.popMBasket){
-                this.setPopMBasket();
+            if (this.state.viewMB){
+                // closes mini basket if curreny list is open
+                this.setViewMB();
             }
         }
     }
 
-  render() {
+render() {
 const {currentCurrency, basket, plusQnty, minusQnty, checkout, sumTotal} = this.props;
 return(
     <Container>
-    <div className={this.state.popMBasket ? "mbDisplay" : "hidden"}></div>
-    <Nav ref={this.ref}>
+    <div className={this.state.viewMB ? "mbDisplay" : "hidden"}></div>
+    <div ref={this.ref}>
     <MBIcon 
     length={basket.length}
-    setPopMBasket={this.setPopMBasket} />
-    <div className={this.state.popMBasket ? "mbItems" : "hidden"}>
-        <Header length={basket.length}/>
-        {
-            //basket items
+    setViewMB={this.setViewMB} />
+    <div className={this.state.viewMB ? "mbItems" : "hidden"}>
+        <Header length={basket.length} />
+        { //basket items
             basket.map((item, idx)=>{
                 return(
                     <MBItem  
@@ -122,7 +109,7 @@ return(
         checkout={checkout}
         />
     </div>
-    </Nav>
+    </div>
     </Container>
 );
   }

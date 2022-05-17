@@ -17,12 +17,25 @@ img{
 }
 `
 const MBAttr = styled.div`
- 
+min-width: 24px;
+height: 24px;
+border: 1px solid #1d1f22;
+box-sizing: border-box;
+padding: 2px;
+font-family: "Urbanist";
+font-weight: 400;
+font-size: 12px;
+color: #1d1f22;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right: 4px;
+margin-bottom: 4px;
 `
 const Info = styled.div`
 width: 175px;
 h3{
-  font-family: "Raleway";
+  font-family: "Urbanist";
   font-weight: 300;
   font-size: 16px;
   line-height: 26px;
@@ -30,7 +43,7 @@ h3{
   margin: 0px;
 }
 p{
-  font-family: "Raleway";
+  font-family: "Urbanist";
   font-weight: 500;
   font-size: 16px;
   line-height: 26px;
@@ -77,9 +90,9 @@ export class MBItem extends Component {
               minusQnty={minusQnty}
               qnty={qnty} />
           <MBImg>
-                <div>
+                
                 <img ref={this.mbImg} src={gallery[0]} alt={name + " mb img"}/>
-                </div>
+               
             </MBImg>
       </Container>
 

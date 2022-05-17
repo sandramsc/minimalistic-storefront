@@ -42,7 +42,7 @@ render() {
                 <Link to="/" ><Logo /></Link>
             </Center>
            <MenuItem>
-                <CurrencyOption setCurrency={this.props.setCurrency} />
+                <CurrencyOption setCurrency={this.props.setCurrency} /> 
                  <MiniBasket 
                 basket={this.props.basket}
                 currentCurrency={this.props.currentCurrency}

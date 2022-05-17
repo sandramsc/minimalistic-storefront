@@ -3,14 +3,6 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import continueShoppingImg from '../../../../assets/img/shopping.jpg'
 
-const Container = styled.div.attrs(props => ({
-  className: props.className,
-}))`
- 
-&.false {
-  display: none;
-}
-`
 const Main = styled.div`
 display: flex;
 h1{
@@ -21,7 +13,7 @@ h1{
   color: #1d1f22;
 }
  h2{
-    font-weight: 500;
+    font-weight: 600;
     font-family: "Urbanist";
   font-size: 16px;
   line-height: 26px;
@@ -51,7 +43,7 @@ export class Header extends Component {
     const {length, homepage} = this.props;
    
     return(
-      <Container>
+      <>
       <Main>
       <h1>My Bag.&nbsp;</h1>
           <h2>{length + " items"}</h2>
@@ -69,7 +61,7 @@ export class Header extends Component {
           </Continue> */
       )
     }
-      </Container>
+      </>
     );
   }
 }
