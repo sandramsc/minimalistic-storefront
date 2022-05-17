@@ -54,7 +54,7 @@ export class MBItemQnty extends Component {
     }
     // event listener for outside click on document
     componentDidMount() {
-        document.addEventListener('click', this.handleClick, false);
+        document.addEventListener('click', this.handleClick.bind(this));
     }
     // removes ability to scroll if user wants to open or close mini basket
     componentDidUpdate(){
@@ -70,7 +70,7 @@ export class MBItemQnty extends Component {
     }
     // remove event listener from document
     componentWillUnmount() {
-        document.removeEventListener('click', this.handleClick, false);
+        document.removeEventListener("click", this.handleClick.bind(this));
     }
 
     // handle mini basket
@@ -88,25 +88,27 @@ export class MBItemQnty extends Component {
             }
         }
     }
+
   render() {
 const {currentCurrency, basket, plusQnty, minusQnty, checkout, sumTotal} = this.props;
 return(
     <Container>
     <div className={this.state.popMBasket ? "mbDisplay" : "hidden"}></div>
     <Nav ref={this.ref}>
-    <MBIcon length={basket.length}
+    <MBIcon 
+    length={basket.length}
     setPopMBasket={this.setPopMBasket} />
     <div className={this.state.popMBasket ? "mbItems" : "hidden"}>
         <Header length={basket.length}/>
         {
             //basket items
-            basket.map((product, idx)=>{
+            basket.map((item, idx)=>{
                 return(
                     <MBItem  
                     key={"bItem: " + idx}
                     plusQnty={plusQnty}
                     minusQnty={minusQnty}
-                    product={product}
+                    item={item}
                     idx={idx}
                     currentCurrency={currentCurrency}
                     />

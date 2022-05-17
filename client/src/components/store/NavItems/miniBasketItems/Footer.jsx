@@ -15,7 +15,7 @@ const MBSum = styled.div.attrs(props => ({
 }))`
 display: flex;
 justify-content: space-between;
-font-family: "Roboto";
+font-family: "Urbanist";
 font-weight: 500;
 font-size: 16px;
 line-height: 18px;
@@ -36,7 +36,7 @@ display: flex;
     width: 165px;
   height: 40px;
   padding: 12px 32px;
-  font-family: "Raleway";
+  font-family: "Urbanist";
   font-weight: 600;
   font-size: 14px;
   line-height: 16px;
@@ -54,7 +54,7 @@ display: flex;
     width: 165px;
   height: 40px;
   padding: 12px 32px;
-  font-family: "Raleway";
+  font-family: "Urbanist";
   font-weight: 600;
   font-size: 14px;
   line-height: 16px;
@@ -76,7 +76,7 @@ const But = styled.div`
 `
 export class Footer extends Component {
   render(){
-    const {setViewMBasket, length, checkout, sumTotal} = this.props;
+    const {setPopMBasket, length, checkout, sumTotal} = this.props;
     if (length === 0) return "";
     return(
       <Container>
@@ -85,7 +85,7 @@ export class Footer extends Component {
         <div className="amount">{sumTotal()}</div>
       </MBSum>
       <Button>
-        <Link to ="/basket" onClick={setViewMBasket}>
+        <Link to ="/basket" onClick={setPopMBasket}>
           <button className="viewBag">VIEW BAG</button>
         </Link>
         <Link to ="/" onClick={checkout}>

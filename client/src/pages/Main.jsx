@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Nav from '../components/store/Navigation/Nav';
 import '../components/store/Categories//ProductsListItems/Categories.css'
-import Basket from '../components/store/Basket/Basket';
+import Basket from '../components/store/Basket';
 //import EmptyBasket from '../assets/img/emptyBasket';
 import Products from '../components/store/Categories/ProductsList/Products';
 import ProductDesc from '../components/store/Categories/ProductsListItems/ProductDesc';
@@ -32,26 +32,26 @@ export class Main extends Component {
     }
   }
   // add item to cart with selected atrributes
-  addToBasket = (item) => {
+  addToBasket = (product) => {
     let addedToBasket = false;
-    this.state.basket.forEach((itemAddedToBasket, itemIdx) => {
-      if (item.id === itemAddedToBasket.item.id) {
-        const basketChoice = itemAddedToBasket.item.chosenAttributes;
+    this.state.basket.forEach((itemAddedToBasket, iIdx) => {
+      if (product.id === itemAddedToBasket.product.id) {
+        const basketChoice = itemAddedToBasket.product.chosenAttributes;
         addedToBasket = true;
-        item.chosenAttributes.forEach((attribute, attrIdx) => {
-          if (attribute !== basketChoice[attrIdx]) {
+        product.chosenAttributes.forEach((attr, aIdx) => {
+          if (attr !== basketChoice[aIdx]) {
             addedToBasket = false;
           }
         })
         if(addedToBasket) {
-          this.plusQnty(itemIdx)
+          this.plusQnty(iIdx)
         }
       }
     });
     if (!addedToBasket) {
       this.setState((previous)=> {
         const basket = [...previous.basket];
-        basket.push({ item, qnty: 1 });
+        basket.push({product, qnty: 1 });
         return { ...previous, basket}
       });
     }
@@ -62,9 +62,9 @@ export class Main extends Component {
   plusQnty = (idx) => {
     this.setState((previous) => {
       const basket = [...previous.basket];
-      const item = previous.basket[idx].product;
+      const product = previous.basket[idx].product;
       const qnty = previous.basket[idx].qnty + 1;
-      basket[idx] = {item, qnty};
+      basket[idx] = {product, qnty};
       return { ...previous, basket}
     });
   };
@@ -74,9 +74,9 @@ export class Main extends Component {
  if (this.state.basket[idx].qnty > 1) {
   this.setState((previous) => {
     const basket = [...previous.basket];
-    const item = previous.basket[idx].product;
+    const product = previous.basket[idx].product;
     const qnty = previous.basket[idx].qnty - 1;
-    basket[idx] = {item, qnty};
+    basket[idx] = {product, qnty};
     return { ...previous, basket}
   });
  } else {
@@ -85,7 +85,7 @@ export class Main extends Component {
        return idx !== itemIdx;
      });
      return { ...previous, basket}
-   })
+   });
   }
 };
 
@@ -102,7 +102,7 @@ export class Main extends Component {
         return { ...previous, togglePopUpDesign }
       })
       
-    }, 2500)
+    }, 3000)
   }
 
   // currency label
@@ -135,12 +135,12 @@ export class Main extends Component {
     this.state.basket.forEach((item) => {
       let price = item.product.prices.filter((due)=> {
         return due.currency.label === this.state.currentCurrency;
-      })
+      });
       sum = sum + item.qnty * price[0].amount;
       symbol = price[0].currency.symbol;
-    })
+    });
     return symbol + "" + sum.toFixed(2);
-  } 
+  };
 
   // tax
   taxSum = () => {

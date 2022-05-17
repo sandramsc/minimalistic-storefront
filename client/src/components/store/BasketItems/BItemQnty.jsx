@@ -38,10 +38,9 @@ border: 1px solid #1d1f22;
 
 export class ItemQnty extends Component {
     render() {
-        const { idx, qnty, plusQnty, minusQnty, basketItems } = this.props;
+        const { idx, qnty, plusQnty, minusQnty} = this.props;
         return(
             <Container>
-            {basketItems.length === 0 && <div>Basket is empty</div>}
                   <Button onClick={() => minusQnty(idx) } >
                   <MinusIcon />
                   </Button>

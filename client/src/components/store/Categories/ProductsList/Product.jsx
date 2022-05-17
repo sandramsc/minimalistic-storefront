@@ -65,7 +65,7 @@ line-height: 28px;
 color: #1d1f22;
 `;
 const NoStock = styled.div`
-color: #000000;
+color: #000;
 font-family: "Urbanist";
 font-weight: 400;
 font-size: 24px;
@@ -97,8 +97,6 @@ justify-content: center;
     cursor: pointer;
   }
 `;
-
-
 
 export class Product extends Component {
  

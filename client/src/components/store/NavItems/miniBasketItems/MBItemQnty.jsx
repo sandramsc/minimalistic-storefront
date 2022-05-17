@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
-import MinusIcon from '../../../assets/icons/minus_icon';
-import PlusIcon from '../../../assets/icons/plus_icon'; 
+import MinusIcon from '../../../../assets/icons/minus_icon';
+import PlusIcon from '../../../../assets/icons/plus_icon'; 
 
 
 const Button = styled.div`
