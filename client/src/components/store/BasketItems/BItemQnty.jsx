@@ -16,7 +16,7 @@ justify-content: space-between;
     font-family: "Urbanist";
 font-weight: 600;
 font-size: 18px;
-color: #1d1f22;
+color: #26282a;
 margin-right: 16px;
 text-align: center;
 align-items: center;
@@ -29,7 +29,7 @@ height: 25px;
 display: flex;
 justify-content: center;
 align-items: center;
-border: 1px solid #1d1f22;
+border: 1px solid #26282a;
 &:hover{
   background: #cdf0d2;
   cursor: pointer;

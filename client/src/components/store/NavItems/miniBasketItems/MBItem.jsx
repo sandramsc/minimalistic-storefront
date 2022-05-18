@@ -26,7 +26,7 @@ h3{
   font-weight: 300;
   font-size: 16px;
   line-height: 26px;
-  color: #1d1f22;
+  color: #26282a;
   margin: 0px;
 }
 p{
@@ -34,7 +34,7 @@ p{
   font-weight: 600;
   font-size: 16px;
   line-height: 26px;
-  color: #1d1f22;
+  color: #26282a;
   margin: 0px;
 }
 `

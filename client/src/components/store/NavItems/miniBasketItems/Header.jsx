@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import EmptyBasket from '../../../../assets/img/empty_cart.png';
 import styled from 'styled-components';
-import continueShoppingImg from '../../../../assets/img/shopping.jpg'
 
 const Main = styled.div`
 display: flex;
@@ -9,15 +8,15 @@ h1{
   font-family: "Urbanist";
   font-size: 16px;
   line-height: 26px;
-  color: #1d1f22;
+  color: #26282a;
   font-weight: 700;
 }
  h2{
   font-family: "Urbanist";
   font-size: 16px;
   line-height: 26px;
-  color: #1d1f22;
-  font-weight: 600;
+  color: #26282a;
+  font-weight: 500;
  }
 `
 const Empty = styled.div`
@@ -25,7 +24,7 @@ font-family: "Urbanist";
 font-weight: 700;
 font-size: 20px;
 line-height: 26px;
-color: #1d1f22;
+color: #26282a;
 text-align: center;
 margin-bottom: 20px;
 `
@@ -49,7 +48,11 @@ export class Header extends Component {
           <h2>{length + " items"}</h2>
       </Main>
       {length === 0? (
-          <Empty>YOUR BASKET IS EMPTY</Empty>
+          <Empty>YOUR CART IS EMPTY
+          <div>
+          <img src={EmptyBasket} alt=""/>
+          </div>
+          </Empty>
       ) : (""
           /*<Continue>
               <CImg>

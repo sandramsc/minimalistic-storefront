@@ -7,88 +7,96 @@ font-weight: 700;
 font-size: 16px;
 line-height: 20px;
 margin: 5px 0px;
-color: #1d1f22;
+color: #26282a;
 text-transform:uppercase
 `;
 
-const ItemAttr = styled.div.attrs(props => ({
+const AttrOptions = styled.div.attrs(props => ({
     className: props.className,
 }))`
 display: flex;
 flex-wrap: wrap;
-margin: 10px 0px;
-& .chosenItemAttrSwatch {
-    box-shadow: 1px 1px 5px 0px yellow;
-  },
- & .chosenItemAttr {
-    background-color: #1d1f22;
-    color: white;
-  },
-  & .basketItemAttr {
+margin-bottom: 20px;
+
+& .basketItemAttr{
     text-transform: uppercase;
     min-width: 60px;
     height: 35px;
-    border: 1px solid #1d1f22;
+    border: 1px solid #26282a;
     box-sizing: border-box;
     font-family: "Urbanist";
     font-weight: 400;
     font-size: 16px;
-    color: #1d1f22;
+    color: #26282a;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 4px;
+    margin-right: 8px;
+    margin-bottom: 10px;
     padding: 0px 5px;
     &:hover{
         cursor: pointer;
         transform: scale(1.05);
     }
-  }
-`
+}
+
+& .chosenItemAttr{
+    background-color: #26282a;
+    color: white;
+}
+& .chosenItemAttrSwatch{
+    box-shadow: 5px 7px 4px -3px rgba(94,206,123,0.82);
+}
+
+`;
 
 export class BItemAttribute extends Component { 
 
     render() {
-        const { attrIdx, attribute, chosenAttributes } = this.props;
-        const { id, type, name } = attribute;
+        const { attrIdx, attr, chosenAttributes } = this.props;
+        const { id, type, name } = attr;
 
         return(
-            <>
-                <AttrName>{ name + ":"}</AttrName>
-                <ItemAttr>
-                    {attribute.items.map((itemAttr, itemIdx) => {
+            <div>
+                <AttrName>{name}:</AttrName>
+                <AttrOptions>
+                    {attr.items.map((itemAttr, itemIdx) => {
                         const { value, displayValue } = itemAttr;
-                        let className = "basketItemAttr";
+                        let className = " basketItemAttr";
                         let style = {};
 
                         if (chosenAttributes[attrIdx] === itemIdx){
                             if (type === "swatch"){
-                                className += "chosenItemAttrSwatch";
+                                className += " chosenItemAttrSwatch";
                             } else {
-                                className += "chosenItemAttr";
+                                className += " chosenItemAttr";
                             }
                         }
 
                         if (type === "swatch" && value ==="#000"){
                             style = {
                                 backgroundColor: value,
-                                color: "#fff",
+                                color: "white",
                             };
                         } else if (type === "swatch"){
                             style = {
                                 backgroundColor: value,
                             };
                         }
+                  
 
                         return (
-                            <div key={id +"" + value} className={className} style={style}>
-                                {displayValue}
+                            <div 
+                            key={id + "" + value}
+                            className={className}
+                            style={style}>
+                            {displayValue}
                             </div>
-                        )
+                        );
                     })}
-                </ItemAttr>
-            </>
-        )
+                </AttrOptions>
+            </div>
+        );
     }
 }
 

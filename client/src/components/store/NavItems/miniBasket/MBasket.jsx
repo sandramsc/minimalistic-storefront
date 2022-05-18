@@ -21,6 +21,8 @@ const Container = styled.div.attrs(props => ({
     left: 0px;
     right: 0px;
     bottom: 0px;
+    max-height: 100vh;
+    height: 100%;
     background-color: rgba(57, 55, 72, 0.22);
 }
 & .mbItems {

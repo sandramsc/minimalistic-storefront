@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import BasketItem from "../BasketItems/BasketItem";
-import styled from "styled-components";
+import React, { Component } from 'react';
+import BasketItem from '../BasketItems/BasketItem';
+import styled from 'styled-components';
 
 const Container = styled.div`
 display: flex;
@@ -12,13 +12,13 @@ font-family: "Urbanist";
 font-weight: 700;
 font-size: 28px;
 margin-bottom: 48px;
-color: #1d1f22;
+color: #26282a;
 `;
 
 export class Basket extends Component {
     render(){
     const { basket, currentCurrency, plusQnty, minusQnty } = this.props;
-
+    
       return(
           <Container>
               <CartNav>CART</CartNav>
@@ -31,9 +31,9 @@ export class Basket extends Component {
                         <BasketItem 
                         key={item.product.id + "" + idx}
                         idx={idx}
+                        item={item}
                         minusQnty={minusQnty}
                         plusQnty={plusQnty}
-                        item={item}
                         price={price}
                         />
                     )

@@ -8,16 +8,15 @@ display: inline-block;
 justify-content: flex-start;
 h2{
     font-family: "Urbanist";
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 700 !important;
+    font-size: 20px !important;
     line-height: 18px;
     margin: 0px;
     margin-bottom: 10px;
-    color: #1d1f22;
+    color: #26282a;
     text-transform: uppercase;
 
 }
-
 `;
 
 const AttrOptions = styled.div.attrs(props => ({
@@ -31,12 +30,12 @@ margin-bottom: 20px;
     text-transform: uppercase;
     min-width: 60px;
     height: 35px;
-    border: 1px solid #1d1f22;
+    border: 1px solid #26282a;
     box-sizing: border-box;
     font-family: "Urbanist";
     font-weight: 400;
     font-size: 16px;
-    color: #1d1f22;
+    color: #26282a;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,7 +49,7 @@ margin-bottom: 20px;
 }
 
 & .chosenAttribute{
-    background-color: #1d1f22;
+    background-color: #26282a;
     color: white;
 }
 & .swatchChosenAttr{
@@ -82,7 +81,7 @@ render(){
                         style = { backgroundColor: value}
                     }
                 }
-                // chhecks to see if swtach is chosen inorder to change its style
+                // checks to see if swtach is chosen inorder to change its style
                 if (itemIdx === chosenAttributes[attrIdx]){
                     if(type === "swatch"){
                         className += " swatchChosenAttr";

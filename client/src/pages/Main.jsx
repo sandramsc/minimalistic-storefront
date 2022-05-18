@@ -4,20 +4,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Nav from '../components/store/Navigation/Nav';
 import '../components/store/Categories//ProductsListItems/Categories.css'
 import Basket from '../components/store/Basket';
-//import EmptyBasket from '../assets/img/emptyBasket';
 import Products from '../components/store/Categories/ProductsList/Products';
 import ProductDesc from '../components/store/Categories/ProductsListItems/ProductDesc';
-import styled from 'styled-components';
+//import styled from 'styled-components';
 import '../App.css';
 
-const ItemAdded = styled.div.attrs(props => ({
-  className: props.className,
-}))`
- 
-&.false {
-  display: none;
-}
-`
 
 export class Main extends Component {
   constructor(props){
@@ -27,7 +18,6 @@ export class Main extends Component {
       currentCurrency: "",
       currentCategory: "",
       basket: [],
-      togglePopUp: "false",
       taxSum :"",
     }
   }
@@ -55,7 +45,6 @@ export class Main extends Component {
         return { ...previous, basket}
       });
     }
-    this.togglePopUp();
   };
 
   // Basket item quantity increase
@@ -88,22 +77,6 @@ export class Main extends Component {
    });
   }
 };
-
-
-  // PopUp
-  togglePopUp = () => {
-    let togglePopUpDesign = "popDesign";
-    this.setState((previous)=> {
-      return { ...previous, togglePopUpDesign }
-    })
-    setTimeout(() => {
-      togglePopUpDesign = "false";
-      this.setState((previous)=> {
-        return { ...previous, togglePopUpDesign }
-      })
-      
-    }, 3000)
-  }
 
   // currency label
   setCurrency = (currentCurrency) => {
@@ -164,9 +137,6 @@ export class Main extends Component {
 
     return(
       <Router>
-        <ItemAdded className={this.state.togglePopUp}>
-          You Just Added An Item To Your Basket!
-        </ItemAdded>
           <Nav
             basket={this.state.basket}
             plusQnty={this.plusQnty}

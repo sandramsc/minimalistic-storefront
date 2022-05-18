@@ -28,7 +28,7 @@ line-height: 15px;
 font-weight: 700;
 font-size: 14px;
 color: white;
-background-color: #1d1f22;
+background-color: #26282a;
 border-radius: 50%;
 text-align: center;
 `

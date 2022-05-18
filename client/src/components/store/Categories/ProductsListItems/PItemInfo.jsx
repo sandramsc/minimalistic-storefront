@@ -16,7 +16,7 @@ h1{
     line-height: 27px;
     margin: 0px;
     margin-bottom: 16px;
-    color: #1d1f22;
+    color: #26282a;
 }
 h2 {
     font-family: "Urbanist";
@@ -25,7 +25,7 @@ h2 {
     line-height: 27px;
     margin: 0px;
     margin-bottom: 32px;
-    color: #1d1f22;
+    color: #26282a;
 }
 button {
     width: 100%;
@@ -46,14 +46,13 @@ button {
     }
     &:active{
         background: #3fa35a;
-        color: #1d1f22;
+        color: #26282a;
     }
 }
 `;
 const ItemAttr= styled.div`
 display: flex;
 flex-direction: column;
-
 `;
 const ItemPrice= styled.div`
 
@@ -64,16 +63,16 @@ h2{
     line-height: 18px;
     margin: 0px;
     margin-bottom: 10px;
-    color: #1d1f22;
+    color: #26282a;
 }
-p{
+p {
     font-family: "Urbanist";
     font-weight: 700;
     font-size: 20px;
-    line-height: 46px;
+    line-height: 40px;
     margin: 0px;
     margin-bottom: 20px;
-    color: #1d1f22;
+    color: #26282a;
 }
 `;
 const NoStock= styled.div`
@@ -99,7 +98,7 @@ font-family: "Urbanist";
 font-weight: 400;
 font-size: 16px;
 line-height: 26px;
-color: #1d1f22;
+color: #26282a;
 
 display: flex;
 flex-direction: column;

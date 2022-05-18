@@ -10,7 +10,7 @@ height: 20px;
 display: flex;
 justify-content: center;
 align-items: center;
-border: 1px solid #1d1f22;
+border: 1px solid #26282a;
 &:hover{
   background: #cdf0d2;
   cursor: pointer;
@@ -32,7 +32,7 @@ p{
   font-weight: 500;
   font-size: 16px;
   line-height: 26px;
-  color: #1d1f22;
+  color: #26282a;
   margin: 0px;
   text-align: center;
 }

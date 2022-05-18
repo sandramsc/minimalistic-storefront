@@ -33,7 +33,7 @@ display: flex;
     font-size: 14px;
     line-height: 14px;
     background-color: white;
-    border: 1px solid #1d1f22;
+    border: 1px solid #26282a;
   &:hover{
     background: #cdf0d2;
     border:1px solid #3fa35a;
@@ -61,7 +61,7 @@ display: flex;
   }
   &:active{
     background: #3fa35a;
-  color: #1d1f22;
+  color: #26282a;
   }
   }
 `

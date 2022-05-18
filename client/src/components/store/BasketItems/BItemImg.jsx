@@ -18,7 +18,7 @@ const Left = styled.div`
 position: absolute;
 top: 145px;
 left: 75px;
-background-color: #1d1f22;
+background-color: #26282a;
 padding: 1px;
 display: flex;
 align-items: center;
@@ -33,7 +33,7 @@ const Right = styled.div`
 position: absolute;
 top: 145px;
 right: 17px;
-background-color: #1d1f22;
+background-color: #26282a;
 padding: 1px;
 display: flex;
 align-items: center;

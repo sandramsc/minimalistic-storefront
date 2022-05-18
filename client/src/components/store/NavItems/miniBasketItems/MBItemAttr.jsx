@@ -12,13 +12,13 @@ text-transform: uppercase;
 & .mbAttrItem {
   min-width: 23px;
   height: 20px;
-  border: 1px solid #1d1f22;
+  border: 1px solid #26282a;
   box-sizing: border-box;
   padding: 1px;
   font-family: "Urbanist";
   font-weight: 500;
   font-size: 12px;
-  color: #1d1f22;
+  color: #26282a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,7 +31,7 @@ text-transform: uppercase;
 }
 }
 & .mbAttrChosenItem{
-  background-color: #1d1f22;
+  background-color: #26282a;
   color: white;
 }
 & .swatchmbChosenAttrItem{
@@ -44,7 +44,7 @@ font-weight: 700;
 font-size: 16px;
 line-height: 16px;
 margin: 5px 0px;
-color: #1d1f22;
+color: #26282a;
 `
 
 
@@ -54,6 +54,7 @@ export class MBItem extends Component {
   render() {
     const {  attr, chosenAttributes, attrIdx} = this.props;
     const { items, type, name} = attr;
+ 
 
     return(
       <>

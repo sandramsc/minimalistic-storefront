@@ -12,7 +12,7 @@ font-family: "Urbanist";
 font-weight: 400;
 font-size: 42px;
 margin: 50px 0;
-color: #1d1f22;
+color: #26282a;
 span {
     color: #5ece7b;
 }

@@ -52,7 +52,7 @@ font-family: "Urbanist";
 font-weight: 300;
 font-size: 18px;
 line-height: 28px;
-color: #1d1f22;
+color: #26282a;
 margin-top: 24px;
 `;
 
@@ -62,7 +62,7 @@ font-family: "Urbanist";
 font-weight: 500;
 font-size: 18px;
 line-height: 28px;
-color: #1d1f22;
+color: #26282a;
 `;
 const NoStock = styled.div`
 color: #000;

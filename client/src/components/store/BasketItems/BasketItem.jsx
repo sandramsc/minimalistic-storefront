@@ -16,7 +16,7 @@ const Info = styled.div`
 font-family: "Urbanist";
 font-size: 20px;
 line-height: 28px;
-color: #1d1f22;
+color: #26282a;
 h3{
     margin: 0px 0px 12px 0px;
   font-weight: 600;
@@ -30,7 +30,7 @@ p {
     font-family: "Urbanist";
     font-weight: 700;
     font-size: 16px;
-    color: #1d1f22;
+    color: #26282a;
     margin: 0px 0px 10px 0px;
     margin: 0px;
 }
@@ -46,10 +46,11 @@ const MiniBasket= styled.h3`
 export class BasketItem extends Component {
 
     render() {
-        const { idx, item, price, plusQnty, minusQnty  } = this.props;
+        const { idx, item,  price, plusQnty, minusQnty  } = this.props;
         const { product, qnty } = item;
         const { id, name, attributes, gallery, brand, chosenAttributes } = product;
-        
+     
+
         return(
             <Container key={item.product.id}>
                 <Info>
@@ -61,7 +62,7 @@ export class BasketItem extends Component {
                             return(
                                 <BItemAttribute 
                                     key= {id + "attr" + attrIdx}
-                                    attribute={attr}
+                                    attr={attr}
                                     attrIdx={attrIdx}
                                     chosenAttributes={chosenAttributes}
                                 />
