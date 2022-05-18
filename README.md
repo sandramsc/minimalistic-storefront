@@ -34,7 +34,7 @@ a minimalistic storefront
 | ------------ | ------------------------------------------------------------------------ |
 |[GraphQL](https://github.com/scandiweb/junior-react-endpoint) | a query language for APIs and a runtime for fulfilling those queries  |
 | React.js     | javaScript library                                                       |
-|Styled Components | a library for React & React Native to write and manage CSS ( It’s a “CSS-in-JS” solution ) |
+|Styled Components | a library for React & React Native to write and manage CSS |
 
 
 ## Features
