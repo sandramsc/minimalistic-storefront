@@ -2,11 +2,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Nav from '../components/store/Navigation/Nav';
-import '../components/store/Categories//ProductsListItems/Categories.css'
 import Basket from '../components/store/Basket';
 import Products from '../components/store/Categories/ProductsList/Products';
 import ProductDesc from '../components/store/Categories/ProductsListItems/ProductDesc';
-//import styled from 'styled-components';
 import '../App.css';
 
 
@@ -18,7 +16,6 @@ export class Main extends Component {
       currentCurrency: "",
       currentCategory: "",
       basket: [],
-      taxSum :"",
     }
   }
   // add item to cart with selected atrributes
@@ -92,14 +89,23 @@ export class Main extends Component {
     });
   }
 
-  // checkout basket clears basket
-  checkOut = () => {
+  // checkout basket clears mini basket
+  checkout = () => {
     alert("Your order has been placed!")
     this.state((previous)=> {
       const basket = [];
       return { ...previous, basket}
     })
   }
+
+    // order basket clears main basket
+    order = () => {
+      alert("Thanks for shopping at Storefront!")
+      this.state((previous)=> {
+        const basket = [];
+        return { ...previous, basket}
+      })
+    }
 
   // amount total based on set qnty & currency
   sumTotal = () => {
@@ -126,10 +132,10 @@ export class Main extends Component {
       })
       sum = sum + item.qnty * price[0].amount;
       symbol = price[0].currency.symbol;
-      tax = sum  * 0.14;
+      tax = (sum + item.qnty * price[0].amount ) * 0.14
   })
-  return symbol + "" + sum + tax.toFixed(2);
-  }
+  return symbol + "" + tax.toFixed(2);
+  };
 
 
   render() {
@@ -141,12 +147,14 @@ export class Main extends Component {
             basket={this.state.basket}
             plusQnty={this.plusQnty}
             minusQnty={this.minusQnty}
-            checkOut={this.checkOut}
+            checkout={this.checkout}
             setCurrency={this.setCurrency}
             currentCurrency={this.state.currentCurrency}
             setCategory={this.setCategory}
             currentCategory={this.currentCategory}
             sumTotal={this.sumTotal}
+            taxSum={this.taxSum}
+            order={this.order}
           />
           
           {
@@ -160,6 +168,9 @@ export class Main extends Component {
                   currentCurrency={this.state.currentCurrency}
                   plusQnty={this.plusQnty}
                   minusQnty={this.minusQnty}
+                  sumTotal={this.sumTotal}
+                  taxSum={this.taxSum}
+                  order={this.order}
                   />}
                 />
                 <Route

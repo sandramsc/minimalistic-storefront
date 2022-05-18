@@ -2,11 +2,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ScrollBtn from '../NavItems/ScrollBtn';
-import '../NavItems/Navigation.css';
 import CurrencyOption from '../NavItems/CurrencyOptions';
 import Logo from '../../../assets/icons/logo';
 import { Link } from 'react-router-dom';
 import MiniBasket from '../NavItems/miniBasket/MBasket';
+
 
 const Container = styled.div`
     display:flex;
@@ -39,7 +39,7 @@ render() {
                 setCategory={this.props.setCategory}
             />
             <Center>
-                <Link to="/" ><Logo /></Link>
+                <Link to="/"><Logo /></Link>
             </Center>
            <MenuItem>
                 <CurrencyOption setCurrency={this.props.setCurrency} /> 

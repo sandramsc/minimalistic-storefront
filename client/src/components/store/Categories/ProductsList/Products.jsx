@@ -2,22 +2,26 @@ import React, { Component } from 'react';
 import { GET_PRODUCTS } from '../../../../graphql/queries';
 import client from '../../../../graphql/client';
 import styled from 'styled-components';
-//import BasketIcon from './../../assets/icons/cart_icon';
-import '../ProductsListItems/Categories.css';
 import Product from './Product';
 
+const Container = styled.div`
+body {
+    margin: 0px 60px 60px 60px;
+  padding: 0px 70px 0px 80px;
+  }
+`;
 
 const CategoryNav = styled.div`
+
+
 font-family: "Urbanist";
 font-weight: 400;
-font-size: 42px;
-margin: 50px 0;
+font-size: 36px;
+margin: 40px 0;
 color: #26282a;
 span {
-    color: #5ece7b;
-}
-
-`;
+    color: #26282a;
+}`;
 const ProductList = styled.div`
 display: grid;
   justify-content: space-between;
@@ -68,7 +72,7 @@ export class Products extends Component {
 
         render() {
             return(
-                <>
+                <Container>
                     <CategoryNav>
                         <span>{this.props.currentCategory.toUpperCase()}</span>
                     </CategoryNav>
@@ -84,7 +88,7 @@ export class Products extends Component {
                             );
                         })}
                     </ProductList>
-                </>
+                </Container>
             );
         }
 

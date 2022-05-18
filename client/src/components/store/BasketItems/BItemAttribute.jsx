@@ -4,11 +4,11 @@ import styled from 'styled-components';
 const AttrName = styled.div`
 font-family: "Urbanist";
 font-weight: 700;
-font-size: 16px;
+font-size: 14px;
 line-height: 20px;
 margin: 5px 0px;
 color: #26282a;
-text-transform:uppercase
+text-transform:uppercase;
 `;
 
 const AttrOptions = styled.div.attrs(props => ({
@@ -16,27 +16,27 @@ const AttrOptions = styled.div.attrs(props => ({
 }))`
 display: flex;
 flex-wrap: wrap;
-margin-bottom: 20px;
+margin-bottom: 16px;
 
 & .basketItemAttr{
     text-transform: uppercase;
-    min-width: 60px;
-    height: 35px;
+    min-width: 45px;
+    height: 25px;
     border: 1px solid #26282a;
     box-sizing: border-box;
     font-family: "Urbanist";
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     color: #26282a;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     padding: 0px 5px;
     &:hover{
         cursor: pointer;
-        transform: scale(1.05);
+        transform: scale(1.06);
     }
 }
 
@@ -75,18 +75,18 @@ export class BItemAttribute extends Component {
 
                         if (type === "swatch" && value ==="#000"){
                             style = {
-                                backgroundColor: value,
+                                backgroundColor: `${value}`,
                                 color: "white",
                             };
                         } else if (type === "swatch"){
                             style = {
-                                backgroundColor: value,
+                                backgroundColor: `${value}`,
                             };
                         }
                   
 
                         return (
-                            <div 
+                            <div
                             key={id + "" + value}
                             className={className}
                             style={style}>

@@ -4,7 +4,36 @@ import { GET_CATEGORIES  } from '../../../graphql/queries';
 import client from '../../../graphql/client';
 import styled from 'styled-components';
 
-const ScrollBtns = styled.div`
+
+const ScrollBtns = styled.div.attrs(props => ({
+  className: props.className,
+}))`
+width: 30%;
+display: flex;
+justify-content: flex-start; 
+
+& .scrollBtnChosen {
+  color: #5ece7b;
+  border-bottom: 3px solid #5ece7b;
+}
+
+
+& .scrollBtn{
+  font-family: "Urbanist";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #26282a;
+  border: 0px;
+  background-color: transparent;
+  width: 100px;
+  height: 80px;
+  margin-right: 5px;
+  &:hover{
+    color: #5ece7b;
+    cursor: pointer;
+  }
+}
 
 `;
 
@@ -37,10 +66,10 @@ export class ScrollBtn extends Component {
         <ScrollBtns>
             {categories.map((category) => {
                 const {name} = category;
-                let className = "scrollBtn";
+                let className = " scrollBtn";
 
                 if (name === currentCategory) {
-                    className += "scrollBtnChosen";
+                    className += " scrollBtnChosen";
                 }
                 return(
                     <Link to="/" key={name}>

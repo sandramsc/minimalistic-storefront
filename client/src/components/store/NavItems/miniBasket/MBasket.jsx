@@ -9,7 +9,6 @@ const Container = styled.div.attrs(props => ({
   className: props.className,
 }))`
 
- 
 & .hidden {
     display: none;
 }
@@ -103,8 +102,7 @@ return(
                     currentCurrency={currentCurrency}
                     />
                 );
-            })
-        }
+            })}
         <Footer 
         length={basket.length}
         setPopMBasket={this.setPopMBasket}

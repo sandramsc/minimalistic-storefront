@@ -42,6 +42,7 @@ margin-bottom: 20px;
     margin-right: 8px;
     margin-bottom: 10px;
     padding: 0px 5px;
+
     &:hover{
         cursor: pointer;
         transform: scale(1.05);
@@ -76,12 +77,12 @@ render(){
                 // check to see if attr is a swatch inorder to style it based on that color
                 if (type === "swatch"){
                     if (value === "#000"){
-                        style = { backgroundColor: value, color: "white"};
+                        style = { backgroundColor: `${value}`, color: "white"};
                     } else {
-                        style = { backgroundColor: value}
+                        style = { backgroundColor: `${value}`}
                     }
                 }
-                // checks to see if swtach is chosen inorder to change its style
+                // checks to see if swatach is chosen inorder to change its style
                 if (itemIdx === chosenAttributes[attrIdx]){
                     if(type === "swatch"){
                         className += " swatchChosenAttr";
@@ -90,12 +91,12 @@ render(){
                     }
                 }
                 return (
-                    <div 
+                    <div
                     key={item.id}
                     className={className}
                     onClick={()=> chosenAttribute(itemIdx, attrIdx)}
                     style={style}>
-                    {displayValue}
+                   {displayValue}
                     </div>
                 );
             })}

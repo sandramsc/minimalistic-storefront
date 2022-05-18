@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import BasketItem from '../BasketItems/BasketItem';
+import BSummery from '../BasketItems/BSummery';
+import Quantity from '../NavItems/miniBasketItems/Quantity';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -15,9 +17,11 @@ margin-bottom: 48px;
 color: #26282a;
 `;
 
+
 export class Basket extends Component {
     render(){
-    const { basket, currentCurrency, plusQnty, minusQnty } = this.props;
+    const { basket, currentCurrency, plusQnty, minusQnty, order, sumTotal, taxSum } = this.props;
+   
     
       return(
           <Container>
@@ -36,8 +40,16 @@ export class Basket extends Component {
                         plusQnty={plusQnty}
                         price={price}
                         />
+
                     )
                 })}
+                <Quantity length={basket.length}/>
+                <BSummery
+                taxSum={taxSum}
+                sumTotal={sumTotal}
+                order={order}
+                length={basket.length}
+                />
           </Container>
       );
     }

@@ -44,13 +44,15 @@ export class MBItemQnty extends Component {
     const { idx, qnty, plusQnty, minusQnty } = this.props;
         return(
             <Container>
-                  <Button onClick={() => minusQnty(idx) } >
-                  <MinusIcon />
-                  </Button>
-                  <p>{qnty}</p>
+                  
                   <Button onClick={() => plusQnty(idx) }>
                   <PlusIcon />
                   </Button>
+                  <p>{qnty}</p>
+                  <Button onClick={() => minusQnty(idx) } >
+                  <MinusIcon />
+                  </Button>
+                  
             </Container>
         );
   }

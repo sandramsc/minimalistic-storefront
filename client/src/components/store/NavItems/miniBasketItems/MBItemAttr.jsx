@@ -73,11 +73,12 @@ export class MBItem extends Component {
           }
 
           if (type === "swatch" && value === "#000"){
-            style = { backgroundColor: value, color: "white", };
-          } else if (type === "swatch"){ style = { backgroundColor: value} }
+            style = { backgroundColor: `${value}`, color: "white", };
+          } else if (type === "swatch"){ style = { backgroundColor: `${value}`} }
 
           return (
             <div
+            htmlFor={item.value}
             key={"attr: " + name + "item: " +id}
             className={className}
             style={style}>
