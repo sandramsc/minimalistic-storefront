@@ -8,11 +8,12 @@ import Footer from '../miniBasketItems/Footer';
 const Container = styled.div.attrs(props => ({
   className: props.className,
 }))`
+
  
 & .hidden {
     display: none;
 }
-& .mbDisplay {
+& .mbBackground {
     display: block;
     position: absolute;
     z-index: 1;
@@ -28,7 +29,7 @@ const Container = styled.div.attrs(props => ({
     z-index: 10;
     background-color: white;
     position: absolute;
-    width: 350px;
+    width: 300px;
     max-height: 450px;
     overflow-y: auto;
     top: 80px;
@@ -81,7 +82,7 @@ render() {
 const {currentCurrency, basket, plusQnty, minusQnty, checkout, sumTotal} = this.props;
 return(
     <Container>
-    <div className={this.state.viewMB ? "mbDisplay" : "hidden"}></div>
+    <div className={this.state.viewMB ? "mbBackground" : "hidden"}></div>
     <div ref={this.ref}>
     <MBIcon 
     length={basket.length}

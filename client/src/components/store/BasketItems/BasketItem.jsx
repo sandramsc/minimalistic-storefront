@@ -6,7 +6,7 @@ import BItemImg from './BItemImg';
 
 
 const Container = styled.div`
-padding: 20px 0px;
+padding: 18px 0px;
 border-top: 1px solid #e5e5e5;
 display: flex;
 justify-content: space-between;
@@ -14,24 +14,24 @@ justify-content: space-between;
 
 const Info = styled.div`
 font-family: "Urbanist";
-font-size: 30px;
-line-height: 30px;
+font-size: 20px;
+line-height: 28px;
 color: #1d1f22;
 h3{
-    margin: 0px 0px 16px 0px;
+    margin: 0px 0px 12px 0px;
   font-weight: 600;
 }
 
 h4 {
-    margin: 0px 0px 16px 0px;
+    margin: 0px 0px 10px 0px;
     font-weight: 400;
 }
 p {
     font-family: "Urbanist";
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     color: #1d1f22;
-    margin: 0px 0px 16px 0px;
+    margin: 0px 0px 10px 0px;
     margin: 0px;
 }
 `;

@@ -5,8 +5,8 @@ import PlusIcon from '../../../../assets/icons/plus_icon';
 
 
 const Button = styled.div`
-width: 24px;
-height: 24px;
+width: 20px;
+height: 20px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -20,18 +20,18 @@ border: 1px solid #1d1f22;
 }
 `
 const Container = styled.div`
-width: 24px;
-height: 120px;
-margin-right: 16px;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
+  width: 20px;
+  height: 120px;
+  margin-right: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 p{
   
   font-family: "Urbanist";
   font-weight: 500;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 26px;
   color: #1d1f22;
   margin: 0px;
   text-align: center;

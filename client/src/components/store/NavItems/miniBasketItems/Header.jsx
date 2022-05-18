@@ -6,18 +6,18 @@ import continueShoppingImg from '../../../../assets/img/shopping.jpg'
 const Main = styled.div`
 display: flex;
 h1{
-    font-weight: 700;
-    font-family: "Urbanist";
+  font-family: "Urbanist";
   font-size: 16px;
   line-height: 26px;
   color: #1d1f22;
+  font-weight: 700;
 }
  h2{
-    font-weight: 600;
-    font-family: "Urbanist";
+  font-family: "Urbanist";
   font-size: 16px;
   line-height: 26px;
   color: #1d1f22;
+  font-weight: 600;
  }
 `
 const Empty = styled.div`

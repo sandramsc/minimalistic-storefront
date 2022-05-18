@@ -5,13 +5,13 @@ import styled from "styled-components";
 const Container = styled.div`
 display: flex;
 flex-direction: column;
-margin: 80px 0px;
+margin: 60px 0px;
 `;
 const CartNav = styled.div`
 font-family: "Urbanist";
 font-weight: 700;
-font-size: 32px;
-margin-bottom: 60px;
+font-size: 28px;
+margin-bottom: 48px;
 color: #1d1f22;
 `;
 

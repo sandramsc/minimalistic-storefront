@@ -8,23 +8,23 @@ position: relative;
 `
 const Button = styled.div`
 height: 40px;
-width: 40px;
-display: flex;
-justify-content: center;
-align-items: center;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 &:hover{
     cursor: pointer;
 }
 `
 const Length = styled.div`
 position: absolute;
-top: -7px;
-right: -7px;
+top: -8px;
+right: -8px;
 z-index: 1;
 font-family: "Urbanist";
 width: 16px;
 height: 16px;
-line-height: 14px;
+line-height: 15px;
 font-weight: 700;
 font-size: 14px;
 color: white;

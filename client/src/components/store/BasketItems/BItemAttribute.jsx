@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const AttrName = styled.div`
 font-family: "Urbanist";
 font-weight: 700;
-font-size: 20px;
+font-size: 16px;
 line-height: 20px;
 margin: 5px 0px;
 color: #1d1f22;
@@ -14,22 +14,22 @@ text-transform:uppercase
 const ItemAttr = styled.div.attrs(props => ({
     className: props.className,
 }))`
-display: "flex",
-flex-wrap: "wrap",
-margin: "10px 0px", 
-&.chosenItemAttrSwatch {
-    box-shadow: 1px 1px 5px 0px black;
+display: flex;
+flex-wrap: wrap;
+margin: 10px 0px;
+& .chosenItemAttrSwatch {
+    box-shadow: 1px 1px 5px 0px yellow;
   },
  & .chosenItemAttr {
     background-color: #1d1f22;
     color: white;
   },
-  &.basketItemAttr {
-    min-width: 65px;
-    height: 45px;
+  & .basketItemAttr {
+    text-transform: uppercase;
+    min-width: 60px;
+    height: 35px;
     border: 1px solid #1d1f22;
     box-sizing: border-box;
-    padding: 2px;
     font-family: "Urbanist";
     font-weight: 400;
     font-size: 16px;
@@ -37,8 +37,12 @@ margin: "10px 0px",
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 4px;
     margin-bottom: 4px;
+    padding: 0px 5px;
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.05);
+    }
   }
 `
 

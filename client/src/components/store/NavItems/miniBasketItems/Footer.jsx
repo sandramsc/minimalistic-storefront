@@ -10,10 +10,9 @@ display: flex;
   font-family: "Urbanist";
   font-weight: 500;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 20px;
   margin-bottom: 20px;
 p{
-  margin: 0px;
   font-weight: 700
 }
 
@@ -22,19 +21,22 @@ const Button = styled.div.attrs(props => ({
   className: props.className,
 }))`
 display: flex;
-  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  justify-content:center;
   & .viewBag {
-  width: 165px;
-  height: 40px;
-  padding: 12px 32px;
-  font-family: "Urbanist";
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
-  background-color: white;
-  border: 1px solid #1d1f22;
+    width: 138px;
+    height: 40px;
+    padding: 12px 22px;
+    font-family: "Urbanist";
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    background-color: white;
+    border: 1px solid #1d1f22;
   &:hover{
     background: #cdf0d2;
+    border:1px solid #3fa35a;
     cursor: pointer;
   }
   &:active{
@@ -42,19 +44,20 @@ display: flex;
   }
   }
     & .checkout{
-    width: 165px;
-  height: 40px;
-  padding: 12px 32px;
-  font-family: "Urbanist";
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 16px;
+      width: 138px;
+      height: 40px;
+      padding: 12px 22px;
+      font-family: "Urbanist";
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 14px;
   background-color: #5ece7b;
   border: 0px;
   color: white;
   &:hover{
     background: #3fa35a;
   cursor: pointer;
+  border:1px solid #cdf0d2;
   }
   &:active{
     background: #3fa35a;
