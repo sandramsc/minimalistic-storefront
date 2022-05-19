@@ -1,50 +1,48 @@
+/* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import LeftArrow from '../../../assets/icons/left_arrow';
 import RightArrow from '../../../assets/icons/right_arrow';
 
 const BasketItemImgSlider = styled.div`
-width: 130px;
-position: relative;
-
-img {
-	width: 120px;
-  height: 170px;
-  object-fit: cover;
-}
+	width: 130px;
+	position: relative;
+		img{
+			width: 120px;
+			height: 170px;
+			object-fit: cover;
+		}
 `;
-
 const Left = styled.div`
-position: absolute;
-top: 145px;
-left: 75px;
-background-color: #26282a;
-padding: 1px;
-display: flex;
-align-items: center;
-justify-content: center;
-width: 14px;
-height: 14px;
-&:hover {
-    cursor: pointer;
-  }
+	position: absolute;
+	top: 145px;
+	left: 75px;
+	background-color: #26282a;
+	padding: 1px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 14px;
+	height: 14px;
+	&:hover {
+		cursor: pointer;
+	}
 `;
 const Right = styled.div`
-position: absolute;
-top: 145px;
-right: 17px;
-background-color: #26282a;
-padding: 1px;
-display: flex;
-align-items: center;
-justify-content: center;
-width: 14px;
-height: 14px;
-&:hover {
-    cursor: pointer;
-  }
+	position: absolute;
+	top: 145px;
+	right: 17px;
+	background-color: #26282a;
+	padding: 1px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 14px;
+	height: 14px;
+	&:hover {
+		cursor: pointer;
+	}
 `;
-
 
 export class ItemImg extends Component {
     constructor (props) {
@@ -83,23 +81,22 @@ export class ItemImg extends Component {
 		}
 	}
 	
-	
 	render () {
         const { id, gallery } = this.props;
 
         return(
             <BasketItemImgSlider>
                 <Left direction="left" onClick={ this.previousImg } >
-                <LeftArrow/>
+                	<LeftArrow/>
                 </Left>
                 <img src={gallery[this.state.lastImg]} alt={id + " image"} />
                 <Right direction="right" onClick={ this.nextImg } >
-                <RightArrow/>
+                	<RightArrow/>
                 </Right>
             </BasketItemImgSlider>
         )
 		
-	}
+	};
 }
 export default ItemImg;
 

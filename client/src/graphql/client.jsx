@@ -1,3 +1,4 @@
+/* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import { ApolloClient, InMemoryCache, from, HttpLink } from '@apollo/client';
 import {onError} from '@apollo/client/link/error'
 

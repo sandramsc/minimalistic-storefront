@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-// get all categories query
+// get categories
 export const GET_CATEGORIES = gql`
   query {
     categories {
@@ -9,9 +9,8 @@ export const GET_CATEGORIES = gql`
   }
 `;
 
-// get all products in a specific category query
-// take the category name as input
-
+// get products in a specific category
+// takes the category name as input
 export const GET_PRODUCTS = gql`
   query GetProducts($category: String!) {
     category(input: { title: $category }) {
@@ -32,8 +31,8 @@ export const GET_PRODUCTS = gql`
   }
 `;
 
-// get a specific product query
-// the product id is the input
+// get a specific product
+// takes the product id is input
 export const GET_PRODUCT = gql`
   query GetProduct($id: String!) {
     product(id: $id) {
@@ -64,7 +63,7 @@ export const GET_PRODUCT = gql`
   }
 `;
 
-// get all currencies query
+// get currencies
 export const GET_CURRENCIES = gql`
   query {
     currencies {

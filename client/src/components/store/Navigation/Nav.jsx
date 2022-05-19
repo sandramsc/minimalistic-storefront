@@ -7,54 +7,51 @@ import Logo from '../../../assets/icons/logo';
 import { Link } from 'react-router-dom';
 import MiniBasket from '../NavItems/miniBasket/MBasket';
 
-
 const Container = styled.div`
     display:flex;
     justify-content: space-between;
     align-items: center;
     margin-left: -28px;
-`
+`;
 const Center = styled.div`
-margin: 20px 0px;
-width: 30%;
-display: flex;
-justify-content: center;
+    margin: 20px 0px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
 `;
-
 const MenuItem = styled.div`
-margin: 20px 0px;
-display: flex;
-align-items: center;
-justify-content: flex-end;
-width: 30%;
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30%;
 `;
-
 
 export class Nav extends Component {
-render() {
-    return (
-        <Container>
-            <ScrollBtn
-                currentCategory={this.props.currentCategory}
-                setCategory={this.props.setCategory}
-            />
-            <Center>
-                <Link to="/"><Logo /></Link>
-            </Center>
-           <MenuItem>
-                <CurrencyOption setCurrency={this.props.setCurrency} /> 
-                 <MiniBasket 
-                basket={this.props.basket}
-                currentCurrency={this.props.currentCurrency}
-                plusQnty={this.props.plusQnty}
-                minusQnty={this.props.minusQnty}
-                sumTotal={this.props.sumTotal}
-                checkOut={this.props.checkOut}
-                /> 
-    </MenuItem> 
-        </Container>
-      );
-}
+    render() {
+        return (
+            <Container>
+                <ScrollBtn
+                    currentCategory={this.props.currentCategory}
+                    setCategory={this.props.setCategory}
+                />
+                <Center>
+                    <Link to="/"><Logo /></Link>
+                </Center>
+            <MenuItem>
+                    <CurrencyOption setCurrency={this.props.setCurrency} /> 
+                    <MiniBasket 
+                    basket={this.props.basket}
+                    currentCurrency={this.props.currentCurrency}
+                    plusQnty={this.props.plusQnty}
+                    minusQnty={this.props.minusQnty}
+                    sumTotal={this.props.sumTotal}
+                    checkOut={this.props.checkOut}
+                    /> 
+        </MenuItem> 
+            </Container>
+        );
+    }
 
 }
 

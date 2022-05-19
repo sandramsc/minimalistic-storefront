@@ -1,3 +1,4 @@
+/* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import WithRouter from '../../../withRouter';
@@ -7,11 +8,10 @@ import PItemImg from './PItemImg';
 import PItemInfo from './PItemInfo';
 
 const ItemDesc = styled.div`
-margin: 80px 0px 40px 0px;
-display: flex;
-justify-content: space-between;
+	margin: 80px 0px 40px 0px;
+	display: flex;
+	justify-content: space-between;
 `;
-
 
 export class ProductDecs extends Component {
     constructor (props) {
@@ -64,8 +64,7 @@ export class ProductDecs extends Component {
 	 const {prices, description, attributes, inStock, id, name, brand, gallery } = this.state.product;
 	 const { currentCurrency } = this.props;
 
-	 let price = prices.find((due) => {
-		 return due.currency.label === currentCurrency;
+	 let price = prices.find((due) => { return due.currency.label === currentCurrency;
 	 });
 	 return (
 		 <ItemDesc>
@@ -83,7 +82,7 @@ export class ProductDecs extends Component {
 			/>
 		 </ItemDesc>
 	 );
- }
+ 	}
 
 }
 

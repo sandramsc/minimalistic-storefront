@@ -1,3 +1,4 @@
+/* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React, { Component } from 'react';
 import { GET_PRODUCTS } from '../../../../graphql/queries';
 import client from '../../../../graphql/client';
@@ -5,30 +6,27 @@ import styled from 'styled-components';
 import Product from './Product';
 
 const Container = styled.div`
-body {
-    margin: 0px 60px 60px 60px;
-  padding: 0px 70px 0px 80px;
-  }
+    body {
+        margin: 0px 60px 60px 60px;
+    padding: 0px 70px 0px 80px;
+    }
 `;
-
 const CategoryNav = styled.div`
-
-
-font-family: "Urbanist";
-font-weight: 400;
-font-size: 36px;
-margin: 40px 0;
-color: #26282a;
-span {
+    font-family: "Urbanist";
+    font-weight: 400;
+    font-size: 36px;
+    margin: 40px 0;
     color: #26282a;
-}`;
-const ProductList = styled.div`
-display: grid;
-  justify-content: space-between;
-  grid-template-columns: repeat(auto-fill, 320px);
-  margin-bottom: 80px;
+    span {
+        color: #26282a;
+    }
 `;
-
+const ProductList = styled.div`
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fill, 320px);
+    margin-bottom: 80px;
+`;
 
 export class Products extends Component {
     constructor(props) {

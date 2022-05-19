@@ -1,101 +1,100 @@
-import React, { Component } from "react";
+/* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
+import React, { Component } from 'react';
 import { GET_PRODUCT } from '../../../../graphql/queries';
-import client from "../../../../graphql/client";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import BasketIcon from "../../../../assets/icons/basket_icon";
+import client from '../../../../graphql/client';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import BasketIcon from '../../../../assets/icons/basket_icon';
 
 const Container = styled.div.attrs(props => ({
     className: props.className,
 }))`
-position: relative;
+  position: relative;
 
-a{
-    color: inherit;
-    text-decoration: inherit;
-}
-&:hover {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-.addToBasket {
-    padding: 10px;
-    margin: 10px 0px 10px 0px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    img{
-        width: 300px;
-        height: 300px;
-        object-fit: cover;
+    a{
+        color: inherit;
+        text-decoration: inherit;
     }
-    &:hover{box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);}
-  }
-  .outOfStock {
-    padding: 10px;
-    margin: 10px 0px 10px 0px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    opacity: 0.5;
-    img{
+    &:hover {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    & .addToBasket {
+        padding: 10px;
+        margin: 10px 0px 10px 0px;
         width: 300px;
-        height: 300px;
-        object-fit: cover;
-    }
-    &:hover{box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);}
-  }
+        display: flex;
+        flex-direction: column;
+        img{
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+        &:hover{box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);}
+      }
+      & .outOfStock {
+        padding: 10px;
+        margin: 10px 0px 10px 0px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        opacity: 0.5;
+        img{
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+        &:hover{box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);}
+      }
 `;
 const Name = styled.div`
-font-family: "Urbanist";
-font-weight: 300;
-font-size: 18px;
-line-height: 28px;
-color: #26282a;
-margin-top: 24px;
+  font-family: "Urbanist";
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 28px;
+  color: #26282a;
+  margin-top: 24px;
 `;
-
-
 const Price = styled.div`
-font-family: "Urbanist";
-font-weight: 500;
-font-size: 18px;
-line-height: 28px;
-color: #26282a;
+  font-family: "Urbanist";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  color: #26282a;
 `;
 const NoStock = styled.div`
-color: #000;
-font-family: "Urbanist";
-font-weight: 400;
-font-size: 24px;
-line-height: 38.4px;
-position: absolute;
-margin-left: auto;
-margin-right: auto;
-left: 0;
-right: 0;
-text-align: center;
-top: 150px;
+  color: #000;
+  font-family: "Urbanist";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 38.4px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 150px;
 `;
 const AddToBasket = styled.div`
-display: none;
-position: absolute;
-bottom: 70px;
-right: 25px;
-border-radius: 50%;
-background-color: rgba(94, 206, 123, 1);
-width: 52px;
-height: 52px;
-z-index: 1;
-display: flex;
-align-items: center;
-justify-content: center;
-&:hover {
-    transform: scale(1.1);
-    filter: brightness(0.9);
-    cursor: pointer;
-  }
+  display: none;
+  position: absolute;
+  bottom: 70px;
+  right: 25px;
+  border-radius: 50%;
+  background-color: rgba(94, 206, 123, 1);
+  width: 52px;
+  height: 52px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+      transform: scale(1.1);
+      filter: brightness(0.9);
+      cursor: pointer;
+    }
 `;
 
 export class Product extends Component {
@@ -121,7 +120,7 @@ export class Product extends Component {
         const { prices, name, inStock, id, gallery } = this.props.product;
         const price = prices.find((due) => {
             return due.currency.label === this.props.currentCurrency;
-          });
+        });
 
             return (
                 <Container>
@@ -138,11 +137,11 @@ export class Product extends Component {
                     </Link>
                     {inStock ? 
                     (<AddToBasket onClick ={this.addToBasket}>
-                    <BasketIcon />
+                      <BasketIcon />
                     </AddToBasket>
                     ) : ("")}
                 </Container>
-              );
+            );
     
     }
 }

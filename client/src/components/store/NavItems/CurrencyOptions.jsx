@@ -1,3 +1,4 @@
+/* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React, { Component } from 'react';
 import { GET_CURRENCIES  } from '../../../graphql/queries';
 import client from '../../../graphql/client';
@@ -15,55 +16,53 @@ const Container = styled.div.attrs(props => ({
     color: #26282a;
     margin-right: 5px;
 
-& .chooseList{
-    display: flex;
-    flex-direction: column;
-    z-index: 10;
-    background-color: white;
-    position: absolute;
-    width: 100px;
-    right: 136px;
-    top: 60px;
-    box-shadow: 0px 2px 20px rgba(168, 172, 176, 0.19);
-    align-items: center;
-    justify-content: center;
-}
-  & .chooseClosed{
-    display: none;
-}
+        & .chooseList{
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            background-color: white;
+            position: absolute;
+            width: 100px;
+            right: 136px;
+            top: 60px;
+            box-shadow: 0px 2px 20px rgba(168, 172, 176, 0.19);
+            align-items: center;
+            justify-content: center;
+        }
+        & .chooseClosed{
+            display: none;
+        }
 
-& .chosen{
-    margin: 2px 5px;
-    padding: 0px 2px;
+        & .chosen{
+            margin: 2px 5px;
+            padding: 0px 2px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            &:hover{
+                cursor: pointer;
+            background-color: rgba(168, 172, 176, 0.19);
+            max-width: 95%;
+            width: 70vw;
+            }
+        }
+`;
+const ChosenCurr = styled.div`
+    width: 100px;
+    height: 30px;
+    padding: 0px 3px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     &:hover{
         cursor: pointer;
-    background-color: rgba(168, 172, 176, 0.19);
-    max-width: 95%;
-    width: 70vw;
     }
-}
-`;
-
-
-const ChosenCurr = styled.div`
-width: 100px;
-height: 30px;
-padding: 0px 3px;
-box-sizing: border-box;
-display: flex;
-justify-content: center;
-align-items: center;
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
-&:hover{
-    cursor: pointer;
-}
 `;
 
 export class CurrencyOptions extends Component {
@@ -106,6 +105,7 @@ componentDidMount(){
             }
         }
     }
+
     //user changed currency
     setChosenCurrency = (currentCurrencySymbol) => {
         this.setState((previous)=> {
@@ -144,14 +144,14 @@ componentDidMount(){
                                 this.props.setCurrency(currency.label)
                             }}
                         >
-                        {currency.symbol + " " + currency.label}
+                            {currency.symbol + " " + currency.label}
                         </div>
-                    )
+                    );
                 })}
             </div>
         </Container>
-    )
-    }
+    );
+}
 }
 
 export default CurrencyOptions;

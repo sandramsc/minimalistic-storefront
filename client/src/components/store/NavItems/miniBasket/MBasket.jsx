@@ -1,3 +1,4 @@
+/* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import MBIcon from '../miniBasketItems/MBIcon';
@@ -9,38 +10,36 @@ const Container = styled.div.attrs(props => ({
   className: props.className,
 }))`
 
-& .hidden {
-    display: none;
-}
-& .mbBackground {
-    display: block;
-    position: absolute;
-    z-index: 1;
-    top: 80px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    max-height: 100vh;
-    height: 100%;
-    background-color: rgba(57, 55, 72, 0.22);
-}
-& .mbItems {
-    display: flex;
-    flex-direction: column;
-    z-index: 10;
-    background-color: white;
-    position: absolute;
-    width: 300px;
-    max-height: 450px;
-    overflow-y: auto;
-    top: 80px;
-    right: 100px;
-    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
-    padding: 16px;
-}
-`
-
-
+    & .hidden {
+        display: none;
+    }
+    & .mbBackground {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 80px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        max-height: 100vh;
+        height: 100%;
+        background-color: rgba(57, 55, 72, 0.22);
+    }
+    & .mbItems {
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+        background-color: white;
+        position: absolute;
+        width: 300px;
+        max-height: 450px;
+        overflow-y: auto;
+        top: 80px;
+        right: 100px;
+        box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+        padding: 16px;
+    }
+`;
 
 export class MBItemQnty extends Component {
     constructor(props){
@@ -80,39 +79,38 @@ export class MBItemQnty extends Component {
     }
 
 render() {
-const {currentCurrency, basket, plusQnty, minusQnty, checkout, sumTotal} = this.props;
-return(
-    <Container>
-    <div className={this.state.viewMB ? "mbBackground" : "hidden"}></div>
-    <div ref={this.ref}>
-    <MBIcon 
-    length={basket.length}
-    setViewMB={this.setViewMB} />
-    <div className={this.state.viewMB ? "mbItems" : "hidden"}>
-        <Header length={basket.length} />
-        { //basket items
-            basket.map((item, idx)=>{
-                return(
-                    <MBItem  
-                    key={"bItem: " + idx}
-                    plusQnty={plusQnty}
-                    minusQnty={minusQnty}
-                    item={item}
-                    idx={idx}
-                    currentCurrency={currentCurrency}
-                    />
-                );
-            })}
-        <Footer 
+const {currentCurrency, basket, plusQnty, minusQnty, sumTotal} = this.props;
+    return(
+        <Container>
+        <div className={this.state.viewMB ? "mbBackground" : "hidden"}></div>
+        <div ref={this.ref}>
+        <MBIcon 
         length={basket.length}
-        setPopMBasket={this.setPopMBasket}
-        sumTotal={sumTotal}
-        checkout={checkout}
-        />
-    </div>
-    </div>
-    </Container>
-);
+        setViewMB={this.setViewMB} />
+        <div className={this.state.viewMB ? "mbItems" : "hidden"}>
+            <Header length={basket.length} />
+            { //basket items
+                basket.map((item, idx)=>{
+                    return(
+                        <MBItem  
+                        key={"bItem: " + idx}
+                        plusQnty={plusQnty}
+                        minusQnty={minusQnty}
+                        item={item}
+                        idx={idx}
+                        currentCurrency={currentCurrency}
+                        />
+                    );
+                })}
+            <Footer 
+            length={basket.length}
+            setPopMBasket={this.setPopMBasket}
+            sumTotal={sumTotal}
+            />
+        </div>
+        </div>
+        </Container>
+    );
   }
 }
 

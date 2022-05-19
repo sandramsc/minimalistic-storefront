@@ -6,7 +6,7 @@ import Basket from '../components/store/Basket';
 import Products from '../components/store/Categories/ProductsList/Products';
 import ProductDesc from '../components/store/Categories/ProductsListItems/ProductDesc';
 import '../App.css';
-
+import Payment from '../components/store/NavItems/miniBasketItems/Payment';
 
 export class Main extends Component {
   constructor(props){
@@ -89,15 +89,6 @@ export class Main extends Component {
     });
   }
 
-  // checkout basket clears mini basket
-  checkout = () => {
-    alert("Your order has been placed!")
-    this.state((previous)=> {
-      const basket = [];
-      return { ...previous, basket}
-    })
-  }
-
     // order basket clears main basket
     order = () => {
       alert("Thanks for shopping at Storefront!")
@@ -137,9 +128,6 @@ export class Main extends Component {
   return symbol + "" + tax.toFixed(2);
   };
 
-
-
-
   render() {
     const {  currentCurrency, currentCategory } = this.state;
 
@@ -149,7 +137,6 @@ export class Main extends Component {
             basket={this.state.basket}
             plusQnty={this.plusQnty}
             minusQnty={this.minusQnty}
-            checkout={this.checkout}
             setCurrency={this.setCurrency}
             currentCurrency={this.state.currentCurrency}
             setCategory={this.setCategory}
@@ -176,13 +163,18 @@ export class Main extends Component {
                   />}
                 />
                 <Route
-                  exact path="/" element={
+                  exact path="/" 
+                  element={
                     <Products
                     currentCurrency={this.state.currentCurrency}
                     currentCategory={this.state.currentCategory}
                     addToBasket= {this.addToBasket}
                     />}
                 >
+                </Route>
+                <Route
+                  path="/payment" 
+                  element={<Payment />}>
                 </Route>
                 <Route 
                   path="/product/:productID"
@@ -199,4 +191,5 @@ export class Main extends Component {
     );
   }
 }
+
 export default Main;

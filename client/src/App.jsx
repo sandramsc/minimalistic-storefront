@@ -1,3 +1,4 @@
+/* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React, { Component } from 'react';
 import Main from './pages/Main';
 import Loader from './components/store/NavItems/Loader';
