@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import BasketItem from '../BasketItems/BasketItem';
 import BSummery from '../BasketItems/BSummery';
-//import Quantity from '../NavItems/miniBasketItems/Quantity';
 import styled from 'styled-components';
 
 const Container = styled.div`

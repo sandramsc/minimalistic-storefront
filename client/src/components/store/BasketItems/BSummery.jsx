@@ -13,11 +13,24 @@ z-index: 10;
 
 const BTax = styled.div`
 display: flex;
+gap: 10px;
+font-size:18px;
+margin-bottom:3px;
 `;
 
 
 const BSum= styled.div`
 display: flex;
+gap: 10px;
+font-size:18px;
+margin-bottom:10px;
+`;
+
+const BQnty = styled.div`
+display: flex;
+gap: 10px;
+font-size:18px;
+margin-bottom:3px;
 `;
 
 
@@ -25,10 +38,9 @@ const Button = styled.div.attrs(props => ({
     className: props.className,
   }))`
   display: flex;
-
   
-      & order{
-        width: 138px;
+      & .order{
+        width: 205px;
         height: 40px;
         padding: 12px 22px;
         font-family: "Urbanist";
@@ -48,12 +60,8 @@ const Button = styled.div.attrs(props => ({
     color: #26282a;
     }
     }
-  `
-  const BQnty = styled.div`
-  display: flex;
+  `;
 
-
-`
 
 
 
@@ -66,17 +74,17 @@ export class BSummery extends Component {
       <Container>
         <BTax>
         <p>Tax 21%: </p>
-        <p>{taxSum()}</p>
+        <p><strong>{taxSum()}</strong></p>
         </BTax>
 
         <BQnty>
         <p>Quantity: </p>
-        <p> {" " + length + " items"}</p>
+        <p><strong>{" " + length + " items"}</strong></p>
         </BQnty>
            
         <BSum>
         <p>Total: </p>
-        <p>{sumTotal()}</p>
+        <p><strong>{sumTotal()}</strong></p>
         </BSum>
 
       <Button>
