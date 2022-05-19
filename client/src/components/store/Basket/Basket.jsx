@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BasketItem from '../BasketItems/BasketItem';
 import BSummery from '../BasketItems/BSummery';
-import Quantity from '../NavItems/miniBasketItems/Quantity';
+//import Quantity from '../NavItems/miniBasketItems/Quantity';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -43,13 +43,13 @@ export class Basket extends Component {
 
                     )
                 })}
-                <Quantity length={basket.length}/>
                 <BSummery
                 taxSum={taxSum}
                 sumTotal={sumTotal}
                 order={order}
                 length={basket.length}
                 />
+                
           </Container>
       );
     }

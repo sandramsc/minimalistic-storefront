@@ -2,49 +2,32 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom'
 
+const Container = styled.div`
+padding: 18px 0px;
+border-top: 1px solid #e5e5e5;
+display: flex;
+justify-content: space-between;
+flex-direction: column;
+z-index: 10;
+`;
 
 const BTax = styled.div`
-
+display: flex;
 `;
 
 
 const BSum= styled.div`
-
+display: flex;
 `;
 
-
-
-const BQnty= styled.h3`
-
-`;
 
 const Button = styled.div.attrs(props => ({
     className: props.className,
   }))`
   display: flex;
-    gap: 16px;
-    align-items: center;
-    justify-content:center;
-    & .viewBag {
-      width: 138px;
-      height: 40px;
-      padding: 12px 22px;
-      font-family: "Urbanist";
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 14px;
-      background-color: white;
-      border: 1px solid #26282a;
-    &:hover{
-      background: #cdf0d2;
-      border:1px solid #3fa35a;
-      cursor: pointer;
-    }
-    &:active{
-      background: #9adfa6;
-    }
-    }
-      & .checkout{
+
+  
+      & order{
         width: 138px;
         height: 40px;
         padding: 12px 22px;
@@ -66,6 +49,11 @@ const Button = styled.div.attrs(props => ({
     }
     }
   `
+  const BQnty = styled.div`
+  display: flex;
+
+
+`
 
 
 
@@ -74,16 +62,18 @@ export class BSummery extends Component {
     render() {
         const {length, order, sumTotal, taxSum} = this.props;
         if (length === 0) return "";
-
     return(
-      <>
+      <Container>
         <BTax>
         <p>Tax 21%: </p>
         <p>{taxSum()}</p>
         </BTax>
 
-      
-
+        <BQnty>
+        <p>Quantity: </p>
+        <p> {" " + length + " items"}</p>
+        </BQnty>
+           
         <BSum>
         <p>Total: </p>
         <p>{sumTotal()}</p>
@@ -94,11 +84,9 @@ export class BSummery extends Component {
           <button className="order">ORDER</button>
         </Link>
       </Button>
-      </>
-    );
-  
-           
-    }
+      </Container>
+    );      
+}
 }
 
 export default BSummery;

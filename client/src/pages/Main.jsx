@@ -132,10 +132,12 @@ export class Main extends Component {
       })
       sum = sum + item.qnty * price[0].amount;
       symbol = price[0].currency.symbol;
-      tax = (sum + item.qnty * price[0].amount ) * 0.14
+      tax = (sum + item.qnty * price[0].amount ) * 0.21;
   })
   return symbol + "" + tax.toFixed(2);
   };
+
+
 
 
   render() {
