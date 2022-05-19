@@ -19,21 +19,23 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 const PaymentContainer = styled.div`
-font-family: "Urbanist";
+  font-family: "Urbanist";
   flex-flow: row;
   margin-bottom: 2.5rem;
   display: flex;
   align-items: center;
+  gap: 46px;
 `;
 const PaymentMode = styled.div`
-  width: 58px;
-  height: 58px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 32px;
+  margin-left: -12px;
 `;
-const Title = styled.h2`
-  margin-bottom: 3rem;
+const Title = styled.h1`
+  margin-bottom: 5rem;
   color: white;
   justify-contet: center;
   align-items: center;
@@ -46,9 +48,10 @@ const Button = styled.div.attrs(props => ({
   color: white;
   justify-contet: center;
   align-items: center;
-  
+  margin-left: 8px;
   & .home{
-            width: 205px;
+            width: 238px;
+            border-radius: 10px;
             height: 40px;
             padding: 12px 22px;
             font-size: 16px;

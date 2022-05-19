@@ -2,8 +2,8 @@ import * as React from "react";
 
 const mastercardIcon = (props) => (
   <svg
-    width="62px"
-    height="62px"
+    width="110px"
+    height="110px"
     viewBox="0 -140 780 780"
     enableBackground="new 0 0 780 500"
     xmlSpace="preserve"
