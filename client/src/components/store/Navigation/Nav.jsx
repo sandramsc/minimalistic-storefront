@@ -38,17 +38,17 @@ export class Nav extends Component {
                 <Center>
                     <Link to="/"><Logo /></Link>
                 </Center>
-            <MenuItem>
+                <MenuItem>
                     <CurrencyOption setCurrency={this.props.setCurrency} /> 
                     <MiniBasket 
-                    basket={this.props.basket}
-                    currentCurrency={this.props.currentCurrency}
-                    plusQnty={this.props.plusQnty}
-                    minusQnty={this.props.minusQnty}
-                    sumTotal={this.props.sumTotal}
-                    checkOut={this.props.checkOut}
-                    /> 
-        </MenuItem> 
+                        basket={this.props.basket}
+                        currentCurrency={this.props.currentCurrency}
+                        plusQnty={this.props.plusQnty}
+                        minusQnty={this.props.minusQnty}
+                        sumTotal={this.props.sumTotal}
+                        checkOut={this.props.checkOut}
+                        /> 
+                </MenuItem> 
             </Container>
         );
     }

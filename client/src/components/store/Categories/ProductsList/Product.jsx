@@ -19,6 +19,26 @@ const Container = styled.div.attrs(props => ({
         display: flex;
         align-items: center;
         justify-content: center;
+
+        & .bIcon {
+          display: none;
+          position: absolute;
+          bottom: 70px;
+          right: 25px;
+          border-radius: 50%;
+          background-color: rgba(94, 206, 123, 1);
+          width: 52px;
+          height: 52px;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &:hover {
+              transform: scale(1.1);
+              filter: brightness(0.9);
+              cursor: pointer;
+            }
+        }
       }
     & .addToBasket {
         padding: 10px;
@@ -77,25 +97,6 @@ const NoStock = styled.div`
   text-align: center;
   top: 150px;
 `;
-const AddToBasket = styled.div`
-  display: none;
-  position: absolute;
-  bottom: 70px;
-  right: 25px;
-  border-radius: 50%;
-  background-color: rgba(94, 206, 123, 1);
-  width: 52px;
-  height: 52px;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &:hover {
-      transform: scale(1.1);
-      filter: brightness(0.9);
-      cursor: pointer;
-    }
-`;
 
 export class Product extends Component {
  
@@ -131,14 +132,15 @@ export class Product extends Component {
                         alt=""
                       />
                     <Name>{name}</Name>
+                    
                     <Price>{price.currency.symbol + "" + price.amount}</Price>
                     {inStock ? "" : <NoStock>OUT OF STOCK</NoStock>}
                     </div>
                     </Link>
                     {inStock ? 
-                    (<AddToBasket onClick ={this.addToBasket}>
+                    (<div className="bIcon" onClick ={this.addToBasket}>
                       <BasketIcon />
-                    </AddToBasket>
+                    </div>
                     ) : ("")}
                 </Container>
             );

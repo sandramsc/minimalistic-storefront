@@ -150,17 +150,17 @@ export class Main extends Component {
             currentCategory !== "" && currentCurrency !=="" ? (
               <Routes>
                 <Route 
-                path="/basket"
-                element={
-                  <Basket 
-                  basket={this.state.basket}
-                  currentCurrency={this.state.currentCurrency}
-                  plusQnty={this.plusQnty}
-                  minusQnty={this.minusQnty}
-                  sumTotal={this.sumTotal}
-                  taxSum={this.taxSum}
-                  order={this.order}
-                  />}
+                  path="/basket"
+                  element={
+                    <Basket 
+                    basket={this.state.basket}
+                    currentCurrency={this.state.currentCurrency}
+                    plusQnty={this.plusQnty}
+                    minusQnty={this.minusQnty}
+                    sumTotal={this.sumTotal}
+                    taxSum={this.taxSum}
+                    order={this.order}
+                    />}
                 />
                 <Route
                   exact path="/" 

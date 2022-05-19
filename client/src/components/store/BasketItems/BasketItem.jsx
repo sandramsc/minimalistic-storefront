@@ -1,7 +1,7 @@
 /* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import BItemAttribute from './BItemAttribute';
+import BItemAttr from './BItemAttr';
 import BItemQnty from './BItemQnty';
 import BItemImg from './BItemImg';
 
@@ -53,7 +53,7 @@ export class BasketItem extends Component {
                     <div>
                         {attributes.map((attr, attrIdx) => {
                             return(
-                                <BItemAttribute 
+                                <BItemAttr
                                     key= {id + "attr" + attrIdx}
                                     attr={attr}
                                     attrIdx={attrIdx}

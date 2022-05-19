@@ -10,12 +10,7 @@ const ScrollBtns = styled.div.attrs(props => ({
 }))`
   width: 30%;
   display: flex;
-  justify-content: flex-start; 
-
-    & .scrollBtnChosen {
-      color: #5ece7b;
-      border-bottom: 3px solid #5ece7b;
-    }
+  justify-content: flex-start;
 
     & .scrollBtn{
       font-family: "Urbanist";
@@ -33,6 +28,10 @@ const ScrollBtns = styled.div.attrs(props => ({
         cursor: pointer;
       }
     }
+    & .scrollBtnChosen{
+      color: #5ece7b;
+      border-bottom: 3px solid #5ece7b;
+    }  
 `;
 
 export class ScrollBtn extends Component {
