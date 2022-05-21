@@ -11,28 +11,26 @@ const ScrollBtns = styled.div.attrs(props => ({
   width: 30%;
   display: flex;
   justify-content: flex-start;
-  
 
     & .scrollBtn{
       font-family: "Urbanist";
-      
       font-weight: 400;
       font-size: 16px;
       line-height: 20px;
       color: #26282a;
       border: 0px;
       background-color: transparent;
-      width: 80px;
+      max-width: 100%;
       height: 80px;
-      margin-right: 5px;
+      margin-right: 38px;
       &:hover{
         color: #5ece7b;
         cursor: pointer;
       }
     }
     & .scrollBtnActive{
-      
       color: #5ece7b;
+      width: 65%;
       border-bottom: 3px solid #5ece7b;
     }  
 `;

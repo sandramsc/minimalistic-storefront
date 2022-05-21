@@ -65,7 +65,7 @@ const ItemPrice= styled.div`
         margin-bottom: 10px;
         color: #26282a;
     }
-    p {
+    p{
         font-family: "Urbanist";
         font-weight: 700;
         font-size: 20px;
