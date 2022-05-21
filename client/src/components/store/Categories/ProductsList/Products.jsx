@@ -26,6 +26,7 @@ const ProductList = styled.div`
     justify-content: space-between;
     grid-template-columns: repeat(auto-fill, 320px);
     margin-bottom: 80px;
+   
 `;
 
 export class Products extends Component {
@@ -40,7 +41,7 @@ export class Products extends Component {
     componentDidMount() {
         client.query({ query: GET_PRODUCTS,
                 variables: {
-                    category: this.props.currentCategory,
+                    category: this.props.shownCategory,
                 },
             })
             .then((output)=> this.setState(()=> {
@@ -53,10 +54,10 @@ export class Products extends Component {
 
     // update products type by category if user changed category
     componentDidUpdate(prevCat) {
-        if (this.props.currentCategory !== prevCat.currentCategory) {
+        if (this.props.shownCategory !== prevCat.shownCategory) {
             client.query({ query: GET_PRODUCTS,
                     variables: {
-                        category: this.props.currentCategory,
+                        category: this.props.shownCategory,
                     },
                 })
                 .then((output) => this.setState(() => {
@@ -72,7 +73,7 @@ export class Products extends Component {
             return(
                 <Container>
                     <CategoryNav>
-                        <span>{this.props.currentCategory.toUpperCase()}</span>
+                        <span>{this.props.shownCategory.toUpperCase()}</span>
                     </CategoryNav>
                     <ProductList>
                         {this.state.products.map((product) => {
@@ -81,7 +82,7 @@ export class Products extends Component {
                                 key={product.id + ""}
                                 product={product}
                                 addToBasket={this.props.addToBasket}
-                                currentCurrency={this.props.currentCurrency}
+                                shownCurrency={this.props.shownCurrency}
                                 />
                             );
                         })}

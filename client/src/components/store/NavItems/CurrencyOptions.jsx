@@ -71,7 +71,7 @@ export class CurrencyOptions extends Component {
         this.state = {
             //fecth currency list
             currencies: [],
-            currentCurrencySymbol: "",
+            shownCurrencySymbol: "",
             popCurrencyList: false,
         };
         // assigning ref to instance property for referencing
@@ -86,9 +86,9 @@ componentDidMount(){
         .then((output)=>
             this.setState((previous)=> {
                 const currencies = output.data.currencies;
-                const currentCurrencySymbol = currencies[0].symbol;
+                const shownCurrencySymbol = currencies[0].symbol;
                 this.props.setCurrency(currencies[0].label);
-                return{ ...previous, currencies, currentCurrencySymbol }
+                return{ ...previous, currencies, shownCurrencySymbol }
             })
         )
         .catch((error) => console.log(error));
@@ -107,9 +107,9 @@ componentDidMount(){
     }
 
     //user changed currency
-    setChosenCurrency = (currentCurrencySymbol) => {
+    setChosenCurrency = (shownCurrencySymbol) => {
         this.setState((previous)=> {
-            return{ ...previous, currentCurrencySymbol}
+            return{ ...previous, shownCurrencySymbol}
         })
     } 
 
@@ -122,11 +122,11 @@ componentDidMount(){
     }
 
     render(){
-    const { popCurrencyList, currencies, currentCurrencySymbol} = this.state;
+    const { popCurrencyList, currencies, shownCurrencySymbol} = this.state;
     return(
         <Container ref={this.ref}>
             <ChosenCurr className="chosenCurrency" onClick={this.setPopCurrencyList}>
-                <p>{currentCurrencySymbol}</p>
+                <p>{shownCurrencySymbol}</p>
                 {popCurrencyList ? <UpArrow /> : <DownArrow />}
             </ChosenCurr>
             <div className={popCurrencyList ? "chooseList": "chooseClosed"}>

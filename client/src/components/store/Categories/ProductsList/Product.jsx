@@ -19,6 +19,7 @@ const Container = styled.div.attrs(props => ({
         display: flex;
         align-items: center;
         justify-content: center;
+        transform: scale(1.1);
 
         & .bIcon {
           display: none;
@@ -35,7 +36,7 @@ const Container = styled.div.attrs(props => ({
           justify-content: center;
           &:hover {
               transform: scale(1.1);
-              filter: brightness(0.9);
+              filter: brightness(1.3);
               cursor: pointer;
             }
         }
@@ -120,7 +121,7 @@ export class Product extends Component {
     render(){
         const { prices, name, inStock, id, gallery } = this.props.product;
         const price = prices.find((due) => {
-            return due.currency.label === this.props.currentCurrency;
+            return due.currency.label === this.props.shownCurrency;
         });
 
             return (

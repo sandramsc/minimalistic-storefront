@@ -42,11 +42,11 @@ export class MBItem extends Component {
     this.mbImg=React.createRef();
 }
   render() {
-    const {  currentCurrency, idx, item, plusQnty, minusQnty} = this.props;
+    const {  shownCurrency, idx, item, plusQnty, minusQnty} = this.props;
     const {product, qnty} = item;
     const { brand, name, attributes, chosenAttributes, gallery, prices} = product;
 
-    let price = prices.find((due)=> { return due.currency.label === currentCurrency})
+    let price = prices.find((due)=> { return due.currency.label === shownCurrency})
     
     return(
       <Container>

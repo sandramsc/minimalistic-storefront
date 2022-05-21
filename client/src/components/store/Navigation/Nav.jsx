@@ -32,7 +32,7 @@ export class Nav extends Component {
         return (
             <Container>
                 <ScrollBtn
-                    currentCategory={this.props.currentCategory}
+                    shownCategory={this.props.shownCategory}
                     setCategory={this.props.setCategory}
                 />
                 <Center>
@@ -42,7 +42,7 @@ export class Nav extends Component {
                     <CurrencyOption setCurrency={this.props.setCurrency} /> 
                     <MiniBasket 
                         basket={this.props.basket}
-                        currentCurrency={this.props.currentCurrency}
+                        shownCurrency={this.props.shownCurrency}
                         plusQnty={this.props.plusQnty}
                         minusQnty={this.props.minusQnty}
                         sumTotal={this.props.sumTotal}

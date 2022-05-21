@@ -11,16 +11,18 @@ const ScrollBtns = styled.div.attrs(props => ({
   width: 30%;
   display: flex;
   justify-content: flex-start;
+  
 
     & .scrollBtn{
       font-family: "Urbanist";
+      
       font-weight: 400;
       font-size: 16px;
       line-height: 20px;
       color: #26282a;
       border: 0px;
       background-color: transparent;
-      width: 100px;
+      width: 80px;
       height: 80px;
       margin-right: 5px;
       &:hover{
@@ -28,7 +30,8 @@ const ScrollBtns = styled.div.attrs(props => ({
         cursor: pointer;
       }
     }
-    & .scrollBtnChosen{
+    & .scrollBtnActive{
+      
       color: #5ece7b;
       border-bottom: 3px solid #5ece7b;
     }  
@@ -57,7 +60,7 @@ export class ScrollBtn extends Component {
 
   render() {
     const { categories } = this.state;
-    const { currentCategory, setCategory } = this.props;
+    const { shownCategory, setCategory } = this.props;
 
     return(
         <ScrollBtns>
@@ -65,8 +68,8 @@ export class ScrollBtn extends Component {
                 const {name} = category;
                 let className = " scrollBtn";
 
-                if (name === currentCategory) {
-                    className += " scrollBtnChosen";
+                if (name === shownCategory) {
+                    className += " scrollBtnActive";
                 }
                 return(
                     <Link to="/" key={name}>

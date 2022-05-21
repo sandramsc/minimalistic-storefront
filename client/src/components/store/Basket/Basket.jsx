@@ -20,14 +20,14 @@ const CartNav = styled.div`
 
 export class Basket extends Component {
     render(){
-    const { basket, currentCurrency, plusQnty, minusQnty, order, sumTotal, taxSum } = this.props;
+    const { basket, shownCurrency, plusQnty, minusQnty, order, sumTotal, taxSum } = this.props;
    
       return(
         <Container>
               <CartNav>CART</CartNav>
                 {basket.map((item, idx) => {
                     let price = item.product.prices.find((due) => {
-                        return due.currency.label === currentCurrency;
+                        return due.currency.label === shownCurrency;
                     });
 
                     return(

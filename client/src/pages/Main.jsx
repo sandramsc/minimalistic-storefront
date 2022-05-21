@@ -13,8 +13,8 @@ export class Main extends Component {
     super(props);
     //enbales currency change in respective component
     this.state = {
-      currentCurrency: "",
-      currentCategory: "",
+      shownCurrency: "",
+      shownCategory: "",
       basket: [],
     }
   }
@@ -76,16 +76,16 @@ export class Main extends Component {
 };
 
   // currency label
-  setCurrency = (currentCurrency) => {
+  setCurrency = (shownCurrency) => {
     this.setState((previous) => {
-      return { ...previous, currentCurrency};
+      return { ...previous, shownCurrency};
     });
   };
 
   // category list
-  setCategory = (currentCategory) => {
+  setCategory = (shownCategory) => {
     this.setState((previous) => {
-      return { ...previous, currentCategory };
+      return { ...previous, shownCategory };
     });
   }
 
@@ -104,7 +104,7 @@ export class Main extends Component {
     let symbol = "";
     this.state.basket.forEach((item) => {
       let price = item.product.prices.filter((due)=> {
-        return due.currency.label === this.state.currentCurrency;
+        return due.currency.label === this.state.shownCurrency;
       });
       sum = sum + item.qnty * price[0].amount;
       symbol = price[0].currency.symbol;
@@ -119,7 +119,7 @@ export class Main extends Component {
     let symbol = "";
     this.state.basket.forEach((item) => {
       let price = item.product.prices.filter((due)=> {
-        return due.currency.label === this.state.currentCurrency;
+        return due.currency.label === this.state.shownCurrency;
       })
       sum = sum + item.qnty * price[0].amount;
       symbol = price[0].currency.symbol;
@@ -129,7 +129,7 @@ export class Main extends Component {
   };
 
   render() {
-    const {  currentCurrency, currentCategory } = this.state;
+    const {  shownCurrency, shownCategory } = this.state;
 
     return(
       <Router>
@@ -137,24 +137,24 @@ export class Main extends Component {
             basket={this.state.basket}
             plusQnty={this.plusQnty}
             minusQnty={this.minusQnty}
+            shownCurrency={this.state.shownCurrency}
             setCurrency={this.setCurrency}
-            currentCurrency={this.state.currentCurrency}
+            shownCategory={this.state.shownCategory}
             setCategory={this.setCategory}
-            currentCategory={this.currentCategory}
             sumTotal={this.sumTotal}
             taxSum={this.taxSum}
             order={this.order}
           />
           
           {
-            currentCategory !== "" && currentCurrency !=="" ? (
+            shownCategory !== "" && shownCurrency !=="" ? (
               <Routes>
                 <Route 
                   path="/basket"
                   element={
                     <Basket 
                     basket={this.state.basket}
-                    currentCurrency={this.state.currentCurrency}
+                    shownCurrency={this.state.shownCurrency}
                     plusQnty={this.plusQnty}
                     minusQnty={this.minusQnty}
                     sumTotal={this.sumTotal}
@@ -166,8 +166,8 @@ export class Main extends Component {
                   exact path="/" 
                   element={
                     <Products
-                    currentCurrency={this.state.currentCurrency}
-                    currentCategory={this.state.currentCategory}
+                    shownCurrency={this.state.shownCurrency}
+                    shownCategory={this.state.shownCategory}
                     addToBasket= {this.addToBasket}
                     />}
                 >
@@ -180,7 +180,7 @@ export class Main extends Component {
                   path="/product/:productID"
                   element={
                     <ProductDesc 
-                    currentCurrency={this.state.currentCurrency}
+                    shownCurrency={this.state.shownCurrency}
                     addToBasket = {this.addToBasket}
                     />}
                 />

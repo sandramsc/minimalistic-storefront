@@ -79,7 +79,7 @@ export class MBItemQnty extends Component {
     }
 
 render() {
-const {currentCurrency, basket, plusQnty, minusQnty, sumTotal} = this.props;
+const {shownCurrency, basket, plusQnty, minusQnty, sumTotal} = this.props;
     return(
         <Container>
         <div className={this.state.viewMB ? "mbBackground" : "hidden"}></div>
@@ -98,7 +98,7 @@ const {currentCurrency, basket, plusQnty, minusQnty, sumTotal} = this.props;
                         minusQnty={minusQnty}
                         item={item}
                         idx={idx}
-                        currentCurrency={currentCurrency}
+                        shownCurrency={shownCurrency}
                         />
                     );
                 })}

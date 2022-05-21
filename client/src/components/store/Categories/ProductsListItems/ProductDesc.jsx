@@ -62,9 +62,9 @@ export class ProductDecs extends Component {
 		 return "";
 	 }
 	 const {prices, description, attributes, inStock, id, name, brand, gallery } = this.state.product;
-	 const { currentCurrency } = this.props;
+	 const { shownCurrency } = this.props;
 
-	 let price = prices.find((due) => { return due.currency.label === currentCurrency;
+	 let price = prices.find((due) => { return due.currency.label === shownCurrency;
 	 });
 	 return (
 		 <ItemDesc>
