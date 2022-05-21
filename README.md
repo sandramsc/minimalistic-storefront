@@ -15,6 +15,7 @@ a minimalistic storefront
 - [Project Demo](#demo)
 - [Screenshots](#screenshots)
 - [Technology Stack](#technology-stack)
+- [Figma Wireframe](#figma-wireframe)
 - [Features](#features)
 - [How to use the app](#how-to-use-the-app)
 - [Author](#author)
