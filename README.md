@@ -14,8 +14,8 @@ a minimalistic storefront
 - [Table of Contents](#table-of-contents)
 - [Project Demo](#demo)
 - [Screenshots](#screenshots)
-- [Technology Stack](#technology-stack)
 - [Figma Wireframe](#figma-wireframe)
+- [Technology Stack](#technology-stack)
 - [Features](#features)
 - [How to use the app](#how-to-use-the-app)
 - [Author](#author)
@@ -37,15 +37,15 @@ a minimalistic storefront
 | React.js                                                      | javaScript library                                                   |
 | Styled Components                                             | a library for React & React Native to write and manage CSS           |
 
-## Figma Wireframe
-
-[entry react developer test](https://www.figma.com/file/MSyCAqVy1UgNap0pvqH6H3/Junior-Frontend-Test-Designs-Public)
-
 ## Features
 
 - PLP - product listing page, a.k.a. category page
 - PDP - product description page, a.k.a. product page
 - Cart page + Cart overlay (minicart)
+
+## Figma Wireframe
+
+[entry react developer test](https://www.figma.com/file/MSyCAqVy1UgNap0pvqH6H3/Junior-Frontend-Test-Designs-Public)
 
 ## How to use the app
 
