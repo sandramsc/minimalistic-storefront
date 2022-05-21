@@ -26,8 +26,8 @@ const AttrOptions = styled.div.attrs(props => ({
 
         & .attrItem{
             text-transform: uppercase;
-            min-width: 60px;
-            height: 35px;
+            min-width: 50px;
+            height: 30px;
             border: 1px solid #26282a;
             box-sizing: border-box;
             font-family: "Urbanist";
@@ -37,8 +37,8 @@ const AttrOptions = styled.div.attrs(props => ({
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 8px;
-            margin-bottom: 10px;
+            margin-right: 6px;
+            margin-bottom: 8px;
             padding: 0px 5px;
 
             &:hover{
@@ -47,18 +47,18 @@ const AttrOptions = styled.div.attrs(props => ({
             }
         }
 
-        & .chosenAttribute{
+        & .choosAttribute{
             background-color: #26282a;
             color: white;
         }
-        & .swatchChosenAttr{
+        & .swatchActiveAttr{
             box-shadow: 5px 7px 4px -3px rgba(94,206,123,0.82);
         }
 `;
 
 export class PItemAttr extends Component {
 render(){
-    const {  attr, chosenAttribute, chosenAttributes, attrIdx} = this.props;
+    const {  attr, chooseAttribute, chosenAttributes, attrIdx} = this.props;
     const {id, items, type, name} = attr;
  
     return(
@@ -74,24 +74,24 @@ render(){
                 // check to see if attr is a swatch inorder to style it based on that color
                 if (type === "swatch"){
                     if (value === "#000"){
-                        style = { backgroundColor: `${value}`, color: "white"};
+                        style = { backgroundColor: value, color: "white"};
                     } else {
-                        style = { backgroundColor: `${value}`}
+                        style = { backgroundColor: value}
                     }
                 }
                 // checks to see if swatach is chosen inorder to change its style
                 if (itemIdx === chosenAttributes[attrIdx]){
                     if(type === "swatch"){
-                        className += " swatchChosenAttr";
+                        className += " swatchActiveAttr";
                     } else {
-                        className += " chosenAttribute";
+                        className += " choosAttribute";
                     }
                 }
                 return (
                     <div
                     key={item.id}
                     className={className}
-                    onClick={()=> chosenAttribute(itemIdx, attrIdx)}
+                    onClick={()=> chooseAttribute(itemIdx, attrIdx)}
                     style={style}>
                     {displayValue}
                     </div>

@@ -77,7 +77,7 @@ export class ProductDecs extends Component {
 			name={name}
 			attributes={attributes}
 			chosenAttributes={this.state.chosenAttributes}
-			chosenAttribute={this.chosenAttribute}
+			chooseAttribute={this.chooseAttribute}
 			addToBasket={this.addToBasket }
 			/>
 		 </ItemDesc>

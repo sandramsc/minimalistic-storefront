@@ -30,14 +30,18 @@ a minimalistic storefront
 
 ## Technology Stack
 
-| Technology   | Description                                                              |
-| ------------ | ------------------------------------------------------------------------ |
-|[GraphQL](https://github.com/scandiweb/junior-react-endpoint) | a query language for APIs and a runtime for fulfilling those queries  |
-| React.js     | javaScript library                                                       |
-|Styled Components | a library for React & React Native to write and manage CSS |
+| Technology                                                    | Description                                                          |
+| ------------------------------------------------------------- | -------------------------------------------------------------------- |
+| [GraphQL](https://github.com/scandiweb/junior-react-endpoint) | a query language for APIs and a runtime for fulfilling those queries |
+| React.js                                                      | javaScript library                                                   |
+| Styled Components                                             | a library for React & React Native to write and manage CSS           |
 
+## Figma Wireframe
+
+[entry react developer test](https://www.figma.com/file/MSyCAqVy1UgNap0pvqH6H3/Junior-Frontend-Test-Designs-Public)
 
 ## Features
+
 - PLP - product listing page, a.k.a. category page
 - PDP - product description page, a.k.a. product page
 - Cart page + Cart overlay (minicart)
@@ -56,22 +60,23 @@ $ git clone https://github.com/sandramsc/minimalistic-storefront.git
 cd client
 ```
 
-- Install dependencies: `npm i` OR  `yarn`
+- Install dependencies: `npm i` OR `yarn`
 
 - To start the webapp, run: `npm start` OR `yarn start`
 
 ```
 cd backend
 ```
-- Install dependencies: `npm i` OR  `yarn`
+
+- Install dependencies: `npm i` OR `yarn`
 
 - To start the server, run: `npm start` OR `yarn start`
 
 ## Author
-| Name   |               Link                                                |
-| ------------ | ------------------------------------------------------------------------ |
-| Sandra Ashipala      | https://github.com/sandramsc                                 |
 
+| Name            | Link                         |
+| --------------- | ---------------------------- |
+| Sandra Ashipala | https://github.com/sandramsc |
 
 ## License
 

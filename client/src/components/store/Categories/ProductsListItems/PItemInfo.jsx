@@ -149,7 +149,7 @@ export class PItemInfo extends Component {
                 attr={attr}
                 attrIdx={attrIdx}
                 chosenAttributes={chosenAttributes}
-                chosenAttribute={chosenAttribute}
+                chooseAttribute={chosenAttribute}
                 />
            )            
            })}
