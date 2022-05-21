@@ -5,7 +5,7 @@ import ScrollBtn from '../NavItems/ScrollBtn';
 import CurrencyOption from '../NavItems/CurrencyOptions';
 import Logo from '../../../assets/icons/logo';
 import { Link } from 'react-router-dom';
-import MiniBasket from '../NavItems/miniBasket/MBasket';
+import MBasket from '../NavItems/miniBasket/MBasket';
 
 const Container = styled.div`
     display:flex;
@@ -40,7 +40,7 @@ export class Nav extends Component {
                 </Center>
                 <MenuItem>
                     <CurrencyOption setCurrency={this.props.setCurrency} /> 
-                    <MiniBasket 
+                    <MBasket 
                         basket={this.props.basket}
                         shownCurrency={this.props.shownCurrency}
                         plusQnty={this.props.plusQnty}

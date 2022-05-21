@@ -41,7 +41,7 @@ export class ProductDecs extends Component {
 	.catch((error) => console.log(error));
  }
  // choose an attribute from the array
- chosenAttribute = (attrIdx, itemIdx) => {
+ choosenAttribute = (attrIdx, itemIdx) => {
 	 let chosenAttributes = [...this.state.chosenAttributes];
 	 chosenAttributes[attrIdx] = itemIdx;
 	 this.setState((previous) => {

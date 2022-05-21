@@ -17,7 +17,6 @@ const CartNav = styled.div`
     color: #26282a;
 `;
 
-
 export class Basket extends Component {
     render(){
     const { basket, shownCurrency, plusQnty, minusQnty, order, sumTotal, taxSum } = this.props;

@@ -19,32 +19,27 @@ const Container = styled.div.attrs(props => ({
         & .chooseList{
             display: flex;
             flex-direction: column;
-            z-index: 10;
+            z-index: 1;
             background-color: white;
             position: absolute;
             width: 100px;
             right: 136px;
             top: 60px;
-            box-shadow: 0px 2px 20px rgba(168, 172, 176, 0.19);
+            box-shadow: 0px 4px 35px 0px #a8acb030;
             align-items: center;
             justify-content: center;
         }
-        & .chooseClosed{
+        & .closed{
             display: none;
         }
 
-        & .chosen{
-            margin: 2px 5px;
-            padding: 0px 2px;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
+        & .dropdown{
+            padding: 7px 0px;
+            text-align: center;
+            width:100%;
             &:hover{
+                background-color: rgba(57, 55, 72, 0.22);
                 cursor: pointer;
-            background-color: rgba(168, 172, 176, 0.19);
-            max-width: 95%;
-            width: 70vw;
             }
         }
 `;
@@ -56,10 +51,6 @@ const ChosenCurr = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
     &:hover{
         cursor: pointer;
     }
@@ -129,11 +120,11 @@ componentDidMount(){
                 <p>{shownCurrencySymbol}</p>
                 {popCurrencyList ? <UpArrow /> : <DownArrow />}
             </ChosenCurr>
-            <div className={popCurrencyList ? "chooseList": "chooseClosed"}>
+            <div className={popCurrencyList ? "chooseList": "closed"}>
                 {currencies.map((currency) => {
                     return(
                         <div 
-                            className="chosen"
+                            className="dropdown"
                             key={currency.label}
                             onClick={() => {
                                 //close currency list
