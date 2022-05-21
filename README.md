@@ -45,7 +45,7 @@ a minimalistic storefront
 
 ## Figma Wireframe
 
-[entry react developer test](https://www.figma.com/file/MSyCAqVy1UgNap0pvqH6H3/Junior-Frontend-Test-Designs-Public)
+[storefront wireframes](https://www.figma.com/file/MSyCAqVy1UgNap0pvqH6H3/Junior-Frontend-Test-Designs-Public)
 
 ## How to use the app
 
