@@ -11,7 +11,7 @@ const Container = styled.div`
 `;
 const CartNav = styled.div`
     font-family: "Urbanist";
-    font-weight: 700;
+    font-weight: 600;
     font-size: 28px;
     margin-bottom: 48px;
     color: #26282a;

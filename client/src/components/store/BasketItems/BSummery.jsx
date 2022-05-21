@@ -81,7 +81,8 @@ export class BSummery extends Component {
 
         <Button>
           <Link to ="/" onClick={order}>
-            <button className="order">ORDER</button>
+            <button className="order" onClick={() => {alert
+              ('Thank you for shopping at Storefront!')}}>ORDER</button>
           </Link>
         </Button>
         </Container>
