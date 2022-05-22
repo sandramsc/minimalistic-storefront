@@ -47,7 +47,7 @@ const AttrOptions = styled.div.attrs(props => ({
             }
         }
 
-        & .choosAttribute{
+        & .chosenAttribute{
             background-color: #26282a;
             color: white;
         }
@@ -58,8 +58,8 @@ const AttrOptions = styled.div.attrs(props => ({
 
 export class PItemAttr extends Component {
 render(){
-    const {  attr, chooseAttribute, chosenAttributes, attrIdx} = this.props;
-    const {id, items, type, name} = attr;
+    const { attribute, chooseAttribute, chosenAttributes, attrIdx} = this.props;
+    const {id, items, type, name} = attribute;
  
     return(
         <Attr key={id}>
@@ -67,6 +67,7 @@ render(){
             <AttrOptions>
             {items.map((item, itemIdx) => {
                 const {displayValue, value} = item;
+
                 let className = "attrItem";
                 let style = {};
 
@@ -84,15 +85,16 @@ render(){
                     if(type === "swatch"){
                         className += " swatchActiveAttr";
                     } else {
-                        className += " choosAttribute";
+                        className += " chosenAttribute";
                     }
                 }
                 return (
                     <div
                     key={item.id}
                     className={className}
-                    onClick={()=> chooseAttribute(itemIdx, attrIdx)}
+                    onClick={() => chooseAttribute(attrIdx, itemIdx)}
                     style={style}>
+                        
                     {displayValue}
                     </div>
                 );

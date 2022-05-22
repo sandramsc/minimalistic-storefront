@@ -20,9 +20,10 @@ export class ProductDecs extends Component {
 			product: {},
 			// chosen attr idx
 			chosenAttributes: [],
-			fetched: false,
+			queried: false,
 		};
 	}
+
  // fetch product with param url
  componentDidMount() {
 	client.query({ query: GET_PRODUCT, 
@@ -30,18 +31,20 @@ export class ProductDecs extends Component {
 	})
 	.then((output) => {
 		const product = output.data.product;
-		const fetched = true;
+		const queried = true;
+
 		let chosenAttributes = [];
 		// the first item of each respective attribute is chosen
 		if(product.attributes) {
 			chosenAttributes = Array(product.attributes.length).fill(0);
 		}
-		this.setState({ product, chosenAttributes, fetched })
+		this.setState({ product, chosenAttributes, queried })
 	})
 	.catch((error) => console.log(error));
  }
+ 
  // choose an attribute from the array
- choosenAttribute = (attrIdx, itemIdx) => {
+ chooseAttribute = (attrIdx, itemIdx) => {
 	 let chosenAttributes = [...this.state.chosenAttributes];
 	 chosenAttributes[attrIdx] = itemIdx;
 	 this.setState((previous) => {
@@ -58,9 +61,10 @@ export class ProductDecs extends Component {
 
  render() {
 	 
-	 if(!this.state.fetched){
+	 if(!this.state.queried){
 		 return "";
 	 }
+	 
 	 const {prices, description, attributes, inStock, id, name, brand, gallery } = this.state.product;
 	 const { shownCurrency } = this.props;
 

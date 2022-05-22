@@ -93,7 +93,7 @@ const {shownCurrency, basket, plusQnty, minusQnty, sumTotal} = this.props;
                 basket.map((item, idx)=>{
                     return(
                         <MBItem  
-                        key={"bItem: " + idx}
+                        key={idx}
                         plusQnty={plusQnty}
                         minusQnty={minusQnty}
                         item={item}
@@ -105,8 +105,7 @@ const {shownCurrency, basket, plusQnty, minusQnty, sumTotal} = this.props;
             <Footer 
             length={basket.length}
             setPopMBasket={this.setPopMBasket}
-            sumTotal={sumTotal}
-            />
+            sumTotal={sumTotal} />
         </div>
         </div>
         </Container>

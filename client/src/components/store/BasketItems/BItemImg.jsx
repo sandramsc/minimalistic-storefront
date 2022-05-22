@@ -48,6 +48,7 @@ export class ItemImg extends Component {
     constructor (props) {
 		super(props);
 		this.state = {
+			// sets first img as default img
 			lastImg: 0,
 		};
 	}

@@ -42,7 +42,7 @@ export class MBItem extends Component {
     this.mbImg=React.createRef();
 }
   render() {
-    const {  shownCurrency, idx, item, plusQnty, minusQnty} = this.props;
+    const { shownCurrency, idx, item, plusQnty, minusQnty} = this.props;
     const {product, qnty} = item;
     const { brand, name, attributes, chosenAttributes, gallery, prices} = product;
 
@@ -55,14 +55,14 @@ export class MBItem extends Component {
         <h3>{name}</h3>
         <p>{price.currency.symbol + " " + price.amount}</p>
         <div>
-        {attributes.map((attr, attrIdx)=> {
+        {attributes.map((attribute, attrIdx)=> {
             return(
               <MBItemAttr 
-              attr={attr}
+              attribute={attribute}
               attrIdx={attrIdx}
               chosenAttributes={chosenAttributes}
-              key={attr.id} />
-            )
+              key={attribute.id} />
+            );
         })}
         </div>
         </Info>
@@ -72,7 +72,7 @@ export class MBItem extends Component {
               minusQnty={minusQnty}
               qnty={qnty} />
         <MBImg>
-          <img ref={this.mbImg} src={gallery[0]} alt={name + " mb img"}/>
+          <img ref={this.mbImg} src={gallery[0]} alt="" />
         </MBImg>
       </Container>
     );

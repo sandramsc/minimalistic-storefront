@@ -134,22 +134,22 @@ const ItemDesc= styled.div`
 export class PItemInfo extends Component {
 
     render(){
-        const {name, brand, attributes,chosenAttributes,id, chosenAttribute, 
+        const {name, brand, attributes,chosenAttributes,id, chooseAttribute, 
             description, addToBasket, price, inStock } = this.props;
         return (
             <Info>
                 <h1>{brand}</h1>
                 <h2>{name}</h2>
             <ItemAttr>
-           {attributes.map((attr, attrIdx) => {
+           {attributes.map((attribute, attrIdx) => {
            return(
                 <PItemAttr
-                key={id + "" + attr.id}
+                key={id + attribute.id}
                 inStock={inStock}
-                attr={attr}
+                attribute={attribute}
                 attrIdx={attrIdx}
                 chosenAttributes={chosenAttributes}
-                chooseAttribute={chosenAttribute}
+                chooseAttribute={chooseAttribute}
                 />
            )            
            })}

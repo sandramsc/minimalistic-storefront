@@ -31,14 +31,14 @@ export class Basket extends Component {
 
                     return(
                         <BasketItem 
-                        key={item.product.id + "" + idx}
+                        key={item.product.id + idx}
                         idx={idx}
                         item={item}
                         minusQnty={minusQnty}
                         plusQnty={plusQnty}
                         price={price}
                         />
-                    )
+                    );
                 })}
                     <BSummery
                     taxSum={taxSum}

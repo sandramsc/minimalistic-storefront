@@ -45,22 +45,21 @@ margin-bottom: 16px;
     color: white;
 }
 & .chosenItemAttrSwatch{
-    box-shadow: 5px 7px 4px -3px rgba(94,206,123,0.82);
+    box-shadow: 5px 7px 4px -3px pink;
 }
-
 `;
 
 export class BItemAttr extends Component { 
 
     render() {
-        const { attrIdx, attr, chosenAttributes } = this.props;
-        const { id, type, name } = attr;
+        const { attrIdx, attribute, chosenAttributes } = this.props;
+        const { id, type, name } = attribute;
 
         return(
             <div>
                 <AttrName>{name}:</AttrName>
                 <AttrOptions>
-                    {attr.items.map((itemAttr, itemIdx) => {
+                    {attribute.items.map((itemAttr, itemIdx) => {
                         const { value, displayValue } = itemAttr;
                         let className = " basketItemAttr";
                         let style = {};
@@ -87,9 +86,11 @@ export class BItemAttr extends Component {
 
                         return (
                             <div
-                            key={id + "" + value}
+                            htmlFor = {value}
+                            key={id + value}
                             className={className}
                             style={style}>
+
                             {displayValue}
                             </div>
                         );

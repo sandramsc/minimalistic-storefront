@@ -16,8 +16,9 @@ export class Main extends Component {
       shownCurrency: "",
       shownCategory: "",
       basket: [],
-    }
+    };
   }
+
   // add item to cart with selected atrributes
   addToBasket = (product) => {
     let addedToBasket = false;
@@ -25,11 +26,12 @@ export class Main extends Component {
       if (product.id === itemAddedToBasket.product.id) {
         const basketChoice = itemAddedToBasket.product.chosenAttributes;
         addedToBasket = true;
-        product.chosenAttributes.forEach((attr, aIdx) => {
-          if (attr !== basketChoice[aIdx]) {
+        // increase qnty if item already in cart
+        product.chosenAttributes.forEach((attribute, aIdx) => {
+          if (attribute !== basketChoice[aIdx]) {
             addedToBasket = false;
           }
-        })
+        });
         if(addedToBasket) {
           this.plusQnty(iIdx)
         }
@@ -91,7 +93,6 @@ export class Main extends Component {
 
     // order basket clears main basket
     order = () => {
-      alert("Thanks for shopping at Storefront!")
       this.state((previous)=> {
         const basket = [];
         return { ...previous, basket}

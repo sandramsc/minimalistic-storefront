@@ -51,11 +51,11 @@ export class BasketItem extends Component {
                     <h4>{name}</h4>
                     <p>{price.currency.symbol + "" + price.amount}</p>
                     <div>
-                        {attributes.map((attr, attrIdx) => {
+                        {attributes.map((attribute, attrIdx) => {
                             return(
                                 <BItemAttr
-                                    key= {id + "attr" + attrIdx}
-                                    attr={attr}
+                                    key= {id + attrIdx}
+                                    attribute={attribute}
                                     attrIdx={attrIdx}
                                     chosenAttributes={chosenAttributes}
                                 />

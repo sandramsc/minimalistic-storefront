@@ -28,7 +28,6 @@ const MBAttr = styled.div.attrs(props => ({
         &:hover{
           cursor: pointer;
           transform: scale(1.06);
-          border:1px solid #3fa35a;
       }
     }
     & .mbAttrChosenItem{
@@ -48,10 +47,10 @@ const Name = styled.div`
   color: #26282a;
 `;
 
-export class MBItem extends Component {
+export class MBItemAttr extends Component {
   render() {
-    const {  attr, chosenAttributes, attrIdx} = this.props;
-    const { items, type, name} = attr;
+    const { attribute, chosenAttributes, attrIdx} = this.props;
+    const { items, type, name} = attribute;
  
     return(
       <>
@@ -59,6 +58,7 @@ export class MBItem extends Component {
       <MBAttr>
         {items.map((item, itemIdx) => {
           const {id, value, displayValue} = item;
+
           let className = "mbAttrItem";
           let style = {};
           if (chosenAttributes[attrIdx] === itemIdx){
@@ -70,18 +70,21 @@ export class MBItem extends Component {
           }
 
           if (type === "swatch" && value === "#000"){
-            style = { backgroundColor: `${value}`, color: "white", };
-          } else if (type === "swatch"){ style = { backgroundColor: `${value}`} }
+            style = { backgroundColor: value, color: "white", };
+          } else if (type === "swatch")
+            { style = { backgroundColor: value, };
+          }
 
           return (
             <div
             htmlFor={item.value}
-            key={"attr: " + name + "item: " +id}
+            key={name + id}
             className={className}
             style={style}>
+              
               {displayValue}
             </div>
-          )
+          );
         })}
       </MBAttr>
       </>
@@ -89,4 +92,4 @@ export class MBItem extends Component {
   }
 }
 
-export default MBItem;
+export default MBItemAttr;
