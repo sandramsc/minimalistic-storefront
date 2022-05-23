@@ -10,7 +10,7 @@ export const GET_CATEGORIES = gql`
 `;
 
 // get products in a specific category
-// takes the category name as input
+// category name as input
 export const GET_PRODUCTS = gql`
   query GetProducts($category: String!) {
     category(input: { title: $category }) {
@@ -32,7 +32,7 @@ export const GET_PRODUCTS = gql`
 `;
 
 // get a specific product
-// takes the product id is input
+// product id is input
 export const GET_PRODUCT = gql`
   query GetProduct($id: String!) {
     product(id: $id) {

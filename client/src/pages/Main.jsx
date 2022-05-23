@@ -16,6 +16,7 @@ export class Main extends Component {
       shownCurrency: "",
       shownCategory: "",
       basket: [],
+      quantity: 0,
     };
   }
 
@@ -99,6 +100,8 @@ export class Main extends Component {
       })
     }
 
+
+
   // amount total based on set qnty & currency
   sumTotal = () => {
     let sum = 0;
@@ -112,6 +115,20 @@ export class Main extends Component {
     });
     return symbol + "" + sum.toFixed(2);
   };
+
+    // quantity sum
+    sumQnty = () => {
+      let totalItems = 0;
+      let sum = 0;
+      this.state.basket.forEach((item) => {
+        let price = item.product.prices.filter((due)=> {
+          return due.currency.label === this.state.shownCurrency;
+        })
+        sum = sum + item.qnty * price[0].amount;
+        totalItems += item.qnty;
+    })
+    return  "" + totalItems.toFixed(0);
+    };
 
   // tax
   taxSum = () => {
@@ -162,6 +179,7 @@ export class Main extends Component {
                     minusQnty={this.minusQnty}
                     sumTotal={this.sumTotal}
                     taxSum={this.taxSum}
+                    sumQnty={this.sumQnty}
                     order={this.order}
                     />}
                 />
