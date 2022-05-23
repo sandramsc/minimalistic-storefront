@@ -7,6 +7,7 @@ import Products from '../components/store/Categories/ProductsList/Products';
 import ProductDesc from '../components/store/Categories/ProductsListItems/ProductDesc';
 import '../App.css';
 import Payment from '../components/store/NavItems/miniBasketItems/Payment';
+import FourOFour from './FourOFour';
 
 export class Main extends Component {
   constructor(props){
@@ -16,7 +17,6 @@ export class Main extends Component {
       shownCurrency: "",
       shownCategory: "",
       basket: [],
-      quantity: 0,
     };
   }
 
@@ -39,41 +39,41 @@ export class Main extends Component {
       }
     });
     if (!addedToBasket) {
-      this.setState((previous)=> {
-        const basket = [...previous.basket];
+      this.setState((exist)=> {
+        const basket = [...exist.basket];
         basket.push({product, qnty: 1 });
-        return { ...previous, basket}
+        return { ...exist, basket}
       });
     }
   };
 
   // Basket item quantity increase
   plusQnty = (idx) => {
-    this.setState((previous) => {
-      const basket = [...previous.basket];
-      const product = previous.basket[idx].product;
-      const qnty = previous.basket[idx].qnty + 1;
+    this.setState((exist) => {
+      const basket = [...exist.basket];
+      const product = exist.basket[idx].product;
+      const qnty = exist.basket[idx].qnty + 1;
       basket[idx] = {product, qnty};
-      return { ...previous, basket}
+      return { ...exist, basket}
     });
   };
 
-   // Basket item quantity increase
-   minusQnty = (idx) => {
- if (this.state.basket[idx].qnty > 1) {
-  this.setState((previous) => {
-    const basket = [...previous.basket];
-    const product = previous.basket[idx].product;
-    const qnty = previous.basket[idx].qnty - 1;
-    basket[idx] = {product, qnty};
-    return { ...previous, basket}
-  });
+  // Basket item quantity increase
+  minusQnty = (idx) => {
+    if (this.state.basket[idx].qnty > 1) {
+    this.setState((exist) => {
+      const basket = [...exist.basket];
+      const product = exist.basket[idx].product;
+      const qnty = exist.basket[idx].qnty - 1;
+      basket[idx] = {product, qnty};
+      return { ...exist, basket}
+    });
  } else {
-   this.setState((previous) => {
-     const basket = previous.basket.filter((item, itemIdx) => {
+   this.setState((exist) => {
+     const basket = exist.basket.filter((item, itemIdx) => {
        return idx !== itemIdx;
      });
-     return { ...previous, basket}
+     return { ...exist, basket}
    });
   }
 };
@@ -197,6 +197,9 @@ export class Main extends Component {
                   path="/payment" 
                   element={<Payment />}>
                 </Route>
+                <Route
+                  path="*"
+                  element={<FourOFour />}/>
                 <Route 
                   path="/product/:productID"
                   element={

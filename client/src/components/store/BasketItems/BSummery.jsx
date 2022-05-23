@@ -35,24 +35,24 @@ const Button = styled.div.attrs(props => ({
     display: flex;
   
     & .order{
-              width: 205px;
-              height: 40px;
-              padding: 12px 22px;
-              font-family: "Urbanist";
-              font-weight: 600;
-              font-size: 14px;
-              line-height: 14px;
-              background-color: #5ece7b;
-              border: 0px;
-              color: white;
+            width: 205px;
+            height: 40px;
+            padding: 12px 22px;
+            font-family: "Urbanist";
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 14px;
+            background-color: #5ece7b;
+            border: 0px;
+            color: white;
       &:hover{
-              background: #3fa35a;
-              cursor: pointer;
-              border:1px solid #cdf0d2;
+            background: #3fa35a;
+            cursor: pointer;
+            border:1px solid #cdf0d2;
           }
       &:active{
-              background: #3fa35a;
-              color: #26282a;
+            background: #3fa35a;
+            color: #26282a;
           }
     }
 `;

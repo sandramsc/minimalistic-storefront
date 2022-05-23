@@ -1,9 +1,8 @@
 /* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import PayPal from '../../../../assets/icons/mode2_icon';
-import CreditCard from '../../../../assets/icons/mode1_icon'; 
 import {Link} from 'react-router-dom';
+import NotFound from '../assets/img/404.png'
 
 const Container = styled.div`
   padding: 150px 0px 200px 250px;
@@ -50,11 +49,11 @@ const Button = styled.div.attrs(props => ({
   align-items: center;
   margin-left: 8px;
   & .home{
-          width: 238px;
-          border-radius: 10px;
-          height: 40px;
-          padding: 12px 22px;
-          font-size: 16px;
+            width: 238px;
+            border-radius: 10px;
+            height: 40px;
+            padding: 12px 22px;
+            font-size: 16px;
             font-family: "Urbanist";
             font-weight: 600;
             line-height: 14px;
@@ -72,29 +71,23 @@ const Button = styled.div.attrs(props => ({
         }
   }
 `;
-class Payment extends Component {
+class FourOFour extends Component {
     render() {
     
         return (
             <Container>
             <Wrapper>
-              <Title>Payment Options</Title>
+            <Title>The page you are looking for does not exist...yet</Title>
+            
               <PaymentContainer>
                 <PaymentMode>
-                <Link to ="/fourofour">
-                <PayPal />
-                </Link>
-                </PaymentMode>
-                <PaymentMode>
-                <Link to ="/fourofour">
-                <CreditCard />
-                </Link>
+                <img src={NotFound} alt="" />
                 </PaymentMode>
               </PaymentContainer>
 
               <Button>
                 <Link to ="/">
-                  <button className="home">CONTINUE SHOPPING</button>
+                  <button className="home">GO BACK HOME</button>
                 </Link>
               </Button>
             </Wrapper>
@@ -103,7 +96,7 @@ class Payment extends Component {
     }
 }
   
-export default Payment;
+export default FourOFour;
 
 
   

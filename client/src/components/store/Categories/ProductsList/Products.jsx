@@ -8,7 +8,7 @@ import Product from './Product';
 const Container = styled.div`
     body {
         margin: 0px 60px 60px 60px;
-    padding: 0px 70px 0px 80px;
+        padding: 0px 70px 0px 80px;
     }
 `;
 const CategoryNav = styled.div`

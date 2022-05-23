@@ -26,26 +26,6 @@ const Button = styled.div.attrs(props => ({
     justify-content:center;
 
       & .viewBag {
-        width: 138px;
-        height: 40px;
-        padding: 12px 22px;
-        font-family: "Urbanist";
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 14px;
-        background-color: white;
-        border: 1px solid #26282a;
-      &:hover{
-        background-color: #5ece7b;
-        border: 0px;
-        color: white;
-        cursor: pointer;
-      }
-      &:active{
-        background: #9adfa6;
-      }
-      }
-        & .checkout{
           width: 138px;
           height: 40px;
           padding: 12px 22px;
@@ -53,19 +33,39 @@ const Button = styled.div.attrs(props => ({
           font-weight: 600;
           font-size: 14px;
           line-height: 14px;
+          background-color: white;
+          border: 1px solid #26282a;
+        &:hover{
           background-color: #5ece7b;
           border: 0px;
           color: white;
-      &:hover{
-        background-color: #5ece7b;
-        cursor: pointer;
-        color: black;
+          cursor: pointer;
+        }
+        &:active{
+          background: #9adfa6;
+        }
       }
-      &:active{
-        background: #9adfa6;
-        border: 0px;
- 
-      }
+        & .checkout{
+            width: 138px;
+            height: 40px;
+            padding: 12px 22px;
+            font-family: "Urbanist";
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 14px;
+            background-color: #5ece7b;
+            border: 0px;
+            color: white;
+        &:hover{
+          background-color: #5ece7b;
+          cursor: pointer;
+          color: black;
+        }
+        &:active{
+          background: #9adfa6;
+          border: 0px;
+  
+        }
     }
 `;
 

@@ -22,23 +22,23 @@ const Container = styled.div.attrs(props => ({
         transform: scale(1.1);
 
         & .bIcon {
-          display: none;
-          position: absolute;
-          bottom: 70px;
-          right: 25px;
-          border-radius: 50%;
-          background-color: rgba(94, 206, 123, 1);
-          width: 52px;
-          height: 52px;
-          z-index: 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          &:hover {
-              transform: scale(1.1);
-              filter: brightness(1.3);
-              cursor: pointer;
-            }
+            display: none;
+            position: absolute;
+            bottom: 70px;
+            right: 25px;
+            border-radius: 50%;
+            background-color: rgba(94, 206, 123, 1);
+            width: 52px;
+            height: 52px;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover {
+                transform: scale(1.1);
+                filter: brightness(1.3);
+                cursor: pointer;
+              }
         }
       }
     & .addToBasket {
@@ -55,19 +55,19 @@ const Container = styled.div.attrs(props => ({
         &:hover{box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);}
       }
       & .outOfStock {
-        padding: 10px;
-        margin: 10px 0px 10px 0px;
-        width: 300px;
-        display: flex;
-        flex-direction: column;
-        opacity: 0.5;
-        img{
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
+          padding: 10px;
+          margin: 10px 0px 10px 0px;
+          width: 300px;
+          display: flex;
+          flex-direction: column;
+          opacity: 0.5;
+          img{
+              width: 300px;
+              height: 300px;
+              object-fit: cover;
+          }
+          &:hover{box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);}
         }
-        &:hover{box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);}
-      }
 `;
 const Name = styled.div`
   font-family: "Urbanist";

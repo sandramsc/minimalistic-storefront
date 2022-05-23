@@ -13,14 +13,14 @@ const Container = styled.div`
   justify-content: space-between;
 
   p {
-      font-family: "Urbanist";
-      font-weight: 600;
-      font-size: 18px;
-      color: #26282a;
-      margin-right: 16px;
-      text-align: center;
-      align-items: center;
-      justify-content: center;
+    font-family: "Urbanist";
+    font-weight: 600;
+    font-size: 18px;
+    color: #26282a;
+    margin-right: 16px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
     }
 `;
 const Button = styled.div`

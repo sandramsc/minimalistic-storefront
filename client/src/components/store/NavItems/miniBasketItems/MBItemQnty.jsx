@@ -27,7 +27,6 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   p{
-    
     font-family: "Urbanist";
     font-weight: 500;
     font-size: 16px;
