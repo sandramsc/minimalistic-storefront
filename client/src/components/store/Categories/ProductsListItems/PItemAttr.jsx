@@ -1,6 +1,9 @@
 /* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import {
+    MainPageQuery_category_products_attributes as MainPageQueryCategoryProductsAttributes,
+  } from '../../../../graphql/test';
 
 const Attr = styled.div`
     margin: 0px 0px 5px 0px;
@@ -50,13 +53,14 @@ const AttrOptions = styled.div.attrs(props => ({
         & .chosenAttribute{
             background-color: #26282a;
             color: white;
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
         }
         & .swatchActiveAttr{
-            box-shadow: 5px 7px 4px -3px rgba(94,206,123,0.82);
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
         }
 `;
 
-export class PItemAttr extends Component {
+export class PItemAttr extends Component<AttributeProps> {
 render(){
     const { attribute, chooseAttribute, chosenAttributes, attrIdx} = this.props;
     const {id, items, type, name} = attribute;
@@ -66,18 +70,18 @@ render(){
             <h2>{name}: </h2>
             <AttrOptions>
             {items.map((item, itemIdx) => {
-                const {displayValue, value} = item;
+                const {displayValue, value, id} = item;
 
                 let className = "attrItem";
                 let style = {};
 
                 // color swatches, a feature that allows users to choose between available colors of the same product
                 // check to see if attr is a swatch inorder to style it based on that color
-                if (type === "swatch"){
+                if (type === "swatch" ){
                     if (value === "#000"){
-                        style = { backgroundColor: value, color: "white"};
+                        style = { backgroundColor: `${item.value}`, color: "white"};
                     } else {
-                        style = { backgroundColor: value}
+                        style = { backgroundColor: `${item.value}`,}
                     }
                 }
                 // checks to see if swatach is chosen inorder to change its style
@@ -90,12 +94,15 @@ render(){
                 }
                 return (
                     <div
+                    htmlFor={item.value}
                     key={item.id}
                     className={className}
                     onClick={() => chooseAttribute(attrIdx, itemIdx)}
-                    style={style}>
+                    style={{
+                        backgroundColor: `${item.value}`,
+                      }}>
                         
-                    {displayValue}
+                    {id}
                     </div>
                 );
             })}

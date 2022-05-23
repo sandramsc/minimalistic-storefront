@@ -42,7 +42,7 @@ export class BasketItem extends Component {
     render() {
         const { idx, item,  price, plusQnty, minusQnty  } = this.props;
         const { product, qnty } = item;
-        const { id, name, attributes, gallery, brand, chosenAttributes } = product;
+        const { id, name, attributes, gallery, brand, chosenAttributes, chooseAttribute } = product;
      
         return(
             <Container key={item.product.id}>
@@ -58,6 +58,7 @@ export class BasketItem extends Component {
                                     attribute={attribute}
                                     attrIdx={attrIdx}
                                     chosenAttributes={chosenAttributes}
+                                    chooseAttribute={chooseAttribute}
                                 />
                             );
                         })}

@@ -19,7 +19,7 @@ const CartNav = styled.div`
 
 export class Basket extends Component {
     render(){
-    const { basket, shownCurrency, plusQnty, minusQnty, order, sumTotal, taxSum } = this.props;
+    const { basket, shownCurrency, plusQnty, minusQnty, order, sumTotal, taxSum,chosenAttributes, chooseAttribute } = this.props;
    
       return(
         <Container>
@@ -37,6 +37,8 @@ export class Basket extends Component {
                         minusQnty={minusQnty}
                         plusQnty={plusQnty}
                         price={price}
+                        chosenAttributes={chosenAttributes}
+                        chooseAttribute={chooseAttribute}
                         />
                     );
                 })}

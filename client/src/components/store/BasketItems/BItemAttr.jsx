@@ -34,18 +34,15 @@ margin-bottom: 16px;
     margin-right: 8px;
     margin-bottom: 5px;
     padding: 0px 5px;
-    &:hover{
-        cursor: pointer;
-        transform: scale(1.06);
-    }
 }
 
 & .chosenItemAttr{
     background-color: #26282a;
     color: white;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 & .chosenItemAttrSwatch{
-    box-shadow: 5px 7px 4px -3px pink;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 `;
 
@@ -53,11 +50,13 @@ export class BItemAttr extends Component {
 
     render() {
         const { attrIdx, attribute, chosenAttributes } = this.props;
+        // attributes are static in main basket
         const { id, type, name } = attribute;
 
         return(
             <div>
                 <AttrName>{name}:</AttrName>
+                
                 <AttrOptions>
                     {attribute.items.map((itemAttr, itemIdx) => {
                         const { value, displayValue } = itemAttr;
@@ -74,12 +73,12 @@ export class BItemAttr extends Component {
 
                         if (type === "swatch" && value ==="#000"){
                             style = {
-                                backgroundColor: `${value}`,
+                                backgroundColor: value,
                                 color: "white",
                             };
                         } else if (type === "swatch"){
                             style = {
-                                backgroundColor: `${value}`,
+                                backgroundColor: value,
                             };
                         }
                   

@@ -25,17 +25,13 @@ const MBAttr = styled.div.attrs(props => ({
         justify-content: center;
         margin-right: 4px;
         margin-bottom: 4px;
-        &:hover{
-          cursor: pointer;
-          transform: scale(1.06);
-      }
     }
     & .mbAttrChosenItem{
         background-color: #26282a;
         color: white;
     }
     & .swatchmbChosenAttrItem{
-        box-shadow: 2px 2px 5px 0px green;
+      box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     }
 `;
 const Name = styled.div`
