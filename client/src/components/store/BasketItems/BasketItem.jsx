@@ -18,7 +18,7 @@ const Info = styled.div`
     color: #26282a;
         h3{
             margin: 0px 0px 12px 0px;
-        font-weight: 600;
+            font-weight: 600;
         }
         h4{
             margin: 0px 0px 10px 0px;

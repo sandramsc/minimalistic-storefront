@@ -36,8 +36,9 @@ const Button = styled.div.attrs(props => ({
         background-color: white;
         border: 1px solid #26282a;
       &:hover{
-        background: #cdf0d2;
-        border:1px solid #3fa35a;
+        background-color: #5ece7b;
+        border: 0px;
+        color: white;
         cursor: pointer;
       }
       &:active{
@@ -52,17 +53,18 @@ const Button = styled.div.attrs(props => ({
           font-weight: 600;
           font-size: 14px;
           line-height: 14px;
-      background-color: #5ece7b;
-      border: 0px;
-      color: white;
+          background-color: #5ece7b;
+          border: 0px;
+          color: white;
       &:hover{
-        background: #3fa35a;
-      cursor: pointer;
-      border:1px solid #cdf0d2;
+        background-color: #5ece7b;
+        cursor: pointer;
+        color: black;
       }
       &:active{
-        background: #3fa35a;
-      color: #26282a;
+        background: #9adfa6;
+        border: 0px;
+ 
       }
     }
 `;

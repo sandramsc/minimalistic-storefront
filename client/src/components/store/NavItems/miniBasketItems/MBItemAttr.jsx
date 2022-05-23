@@ -26,12 +26,13 @@ const MBAttr = styled.div.attrs(props => ({
         margin-right: 4px;
         margin-bottom: 4px;
     }
-    & .mbAttrChosenItem{
+    & .activeAttr{
         background-color: #26282a;
         color: white;
+        box-shadow: rgba(0, 230, 64, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     }
     & .swatchmbChosenAttrItem{
-      box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+      box-shadow: rgba(0, 230, 64, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     }
 `;
 const Name = styled.div`
@@ -61,7 +62,7 @@ export class MBItemAttr extends Component {
             if (type === "swatch"){
                className += " swatchmbChosenAttrItem";
             }else {
-               className += " mbAttrChosenItem";
+               className += " activeAttr";
             }
           }
 

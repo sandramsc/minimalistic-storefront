@@ -129,6 +129,8 @@ export class Main extends Component {
   return symbol + "" + tax.toFixed(2);
   };
 
+
+
   render() {
     const {  shownCurrency, shownCategory } = this.state;
 

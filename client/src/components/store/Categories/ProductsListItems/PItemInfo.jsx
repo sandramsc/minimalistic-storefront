@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PItemAttr from './PItemAttr';
-import JsxParser from 'react-jsx-parser';
+import DOMPurify from 'dompurify';
 
 const Info= styled.div`
     width: 30%;
@@ -161,8 +161,10 @@ export class PItemInfo extends Component {
                 {inStock ? ( <button onClick={addToBasket}>ADD TO CART</button>
                 ) : (<NoStock>OUT OF STOCK</NoStock>
                 )}
-                {/* */}
-                <ItemDesc><JsxParser jsx={description} /></ItemDesc>
+                {/* convert pure HTML to text */}
+                <ItemDesc dangerouslySetInnerHTML={{
+                    __html: DOMPurify.sanitize(description),
+                  }}></ItemDesc>
             </Info>
         );
     }
