@@ -13,27 +13,31 @@ const Wrapper = styled.div`
   flex-flow: column;
   height: 25rem;
   width: 40rem;
-  background-color: #9adfa6;
+  background-color: red;
   border-radius: 15px;
   justify-content: center;
+  opacity: 0.8;
 `;
 const PaymentContainer = styled.div`
   font-family: "Urbanist";
   flex-flow: row;
-  margin-bottom: 2.5rem;
+  margin-bottom: 5.5rem;
   display: flex;
   align-items: center;
-  gap: 46px;
 `;
 const PaymentMode = styled.div`
-  width: 60px;
-  height: 60px;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   margin-right: 32px;
   margin-left: -12px;
+  img{
+    width: 100px;
+    height: 100px;
+  }
 `;
-const Title = styled.h1`
+const Title = styled.h2`
   margin-bottom: 5rem;
   color: white;
   justify-contet: center;
@@ -43,7 +47,6 @@ const Button = styled.div.attrs(props => ({
   className: props.className,
 }))`
   display: flex;
-  margin-bottom: 2rem;
   color: white;
   justify-contet: center;
   align-items: center;
@@ -57,7 +60,7 @@ const Button = styled.div.attrs(props => ({
             font-family: "Urbanist";
             font-weight: 600;
             line-height: 14px;
-            background-color: #5ece7b;
+            background-color:  #3fa35a;
             border: 0px;
             color: white;
     &:hover{
