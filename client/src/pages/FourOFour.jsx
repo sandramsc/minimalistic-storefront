@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import NotFound from '../assets/img/404.png'
 
 const Container = styled.div`
-  padding: 150px 0px 200px 250px;
+  padding: 150px 0px 200px 350px;
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -84,7 +84,7 @@ class FourOFour extends Component {
             
               <PaymentContainer>
                 <PaymentMode>
-                <img src={NotFound} alt="" />
+                <img src={NotFound} alt="owl_notfound_img" />
                 </PaymentMode>
               </PaymentContainer>
 

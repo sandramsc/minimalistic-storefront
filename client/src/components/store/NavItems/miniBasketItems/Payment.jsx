@@ -6,7 +6,7 @@ import CreditCard from '../../../../assets/icons/mode1_icon';
 import {Link} from 'react-router-dom';
 
 const Container = styled.div`
-  padding: 150px 0px 200px 250px;
+  padding: 150px 0px 200px 350px;
 `;
 const Wrapper = styled.div`
   display: flex;
