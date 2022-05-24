@@ -12,7 +12,7 @@ class Text extends Component {
 	render() {
 		const { text, checked } = this.props;
 		return (
-			<Attr id={checked ? 'SelectedText' : 'TextItem'}>{text}</Attr >
+			<Attr id={checked ? 'chosenTextAttr' : 'textAttrItem'}>{text}</Attr >
 		);
 	}
 }

@@ -6,6 +6,7 @@ import MBItem from '../miniBasketItems/MBItem';
 import Header from '../miniBasketItems/Header';
 import Footer from '../miniBasketItems/Footer';
 
+
 const Container = styled.div.attrs(props => ({
   className: props.className,
 }))`

@@ -48,8 +48,8 @@ const Container = styled.div.attrs(props => ({
         display: flex;
         flex-direction: column;
         img{
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: 250px;
             object-fit: cover;
         }
         &:hover{box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);}

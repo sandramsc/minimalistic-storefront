@@ -33,33 +33,26 @@ export class BItemAttr extends Component {
                 <AttrName>{name}:</AttrName>
                 
                 <AttrOptions>
-{attribute.items.map((itemAttr, itemIdx) => {
-                        const { value } = itemAttr;
-                const checked =
-				Object.keys(chosenAttributes).length !== 0 &&
-				chosenAttributes[attrIdx] === itemIdx;
-                let choiceItem = null;
+                {attribute.items.map((itemAttr, itemIdx) => {
+                    const { value } = itemAttr;
+                    const checked = Object.keys(chosenAttributes).length !== 0 &&
+                        chosenAttributes[attrIdx] === itemIdx;
+                        let choiceItem = null;
                 
-                if(type === 'text')
-                choiceItem = <Text 
-                    text={value}
-                    checked={checked}
-                    />
+                    if(type === 'text') 
+                        choiceItem = <Text text={value} checked={checked} />
 
-                else if (type === 'swatch')
-                choiceItem = <Swatch 
-                    color={value}
-                    checked={checked}/>;
+                    else if (type === 'swatch')
+                        choiceItem = <Swatch color={value} checked={checked}/>;
 
-                    return (
-                        <div
-                        key={id}
-                        >
-                        {choiceItem}
-                        </div>
-                    );
-            })}
-            </AttrOptions>
+                        return (
+                            <div key={id}>
+                                
+                            {choiceItem}
+                            </div>
+                        );
+                })}
+                </AttrOptions>
             </div>
         );
     }

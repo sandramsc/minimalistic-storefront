@@ -1,6 +1,8 @@
 /* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Text from '../../../../components/store/Categories/ProductsListItems/Text';
+import Swatch from '../../../../components/store/Categories/ProductsListItems/Swatch';
 
 const MBAttr = styled.div.attrs(props => ({
   className: props.className,
@@ -9,33 +11,6 @@ const MBAttr = styled.div.attrs(props => ({
   flex-wrap: wrap;
   margin: 10px 0px;
   text-transform: uppercase;
-  
-    & .mbAttrItem {
-        min-width: 30px;
-        height: 30px;
-        border: 0.2px solid #ddd;
-        border: 1px solid #26282a;
-        box-sizing: border-box;
-        padding: 1px;
-        font-family: "Urbanist";
-        font-weight: 500;
-        font-size: 12px;
-        color: #26282a;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 4px;
-        margin-bottom: 4px;
-    }
-    & .activeAttr{
-        background-color: #26282a;
-        color: white;
-        box-shadow: rgba(0, 230, 64, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-    }
-    & .swatchmbChosenAttrItem{
-      box-shadow: rgba(0, 230, 64, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-      border: 2px solid lime;
-    }
 `;
 const Name = styled.div`
   font-family: "Urbanist";
@@ -56,34 +31,26 @@ export class MBItemAttr extends Component {
       <Name>{name}: </Name>
       <MBAttr>
         {items.map((item, itemIdx) => {
-          const {id, value, displayValue} = item;
+          const {id, value} = item;
 
-          let className = "mbAttrItem";
-          let style = {};
-          if (chosenAttributes[attrIdx] === itemIdx){
-            if (type === "swatch"){
-               className += " swatchmbChosenAttrItem";
-            }else {
-               className += " activeAttr";
-            }
-          }
+          const checked = Object.keys(chosenAttributes).length !== 0 &&
+              chosenAttributes[attrIdx] === itemIdx;
+              let choiceItem = null;
+      
+              if(type === 'text') 
+                  choiceItem = <Text text={value} checked={checked} />
 
-          if (type === "swatch" && value === "#000"){
-            style = { backgroundColor: value, color: "white", };
-          } else if (type === "swatch")
-            { style = { backgroundColor: value, };
-          }
+              else if (type === 'swatch')
+                  choiceItem = <Swatch color={value} checked={checked}/>;
 
-          return (
-            <div
-            htmlFor={item.value}
-            key={name + id}
-            className={className}
-            style={style}>
-              
-              {displayValue}
-            </div>
-          );
+              return (
+                <div
+                htmlFor={item.value}
+                key={name+ id}>
+
+                  {choiceItem}
+                </div>
+              );
         })}
       </MBAttr>
       </>
