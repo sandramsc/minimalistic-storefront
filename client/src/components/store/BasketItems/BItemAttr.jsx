@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Text from '../../../components/store/Categories/ProductsListItems/Text';
+import Swatch from '../../../components/store/Categories/ProductsListItems/Swatch';
 
 const AttrName = styled.div`
 font-family: "Urbanist";
@@ -17,35 +19,6 @@ const AttrOptions = styled.div.attrs(props => ({
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 16px;
-
-    & .basketItemAttr{
-        text-transform: uppercase;
-        min-width: 30px;
-        height: 30px;
-        border: 0.2px solid #ddd;
-        box-sizing: border-box;
-        font-family: "Urbanist";
-        font-weight: 400;
-        font-size: 16px;
-        color: #26282a;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 12px;
-        margin-bottom: 8px;
-        padding: 0px 5px;
-        
-    }
-
-    & .chosenItemAttr{
-        background-color: #26282a;
-        color: white;
-        box-shadow: rgba(0, 230, 64, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-    }
-    & .chosenItemAttrSwatch{
-        box-shadow: rgba(0, 230, 64, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-        border: 2px solid lime;
-    }
 `;
 
 export class BItemAttr extends Component { 
@@ -60,42 +33,33 @@ export class BItemAttr extends Component {
                 <AttrName>{name}:</AttrName>
                 
                 <AttrOptions>
-                    {attribute.items.map((itemAttr, itemIdx) => {
-                        const { value, displayValue } = itemAttr;
-                        let className = " basketItemAttr";
-                        let style = {};
+{attribute.items.map((itemAttr, itemIdx) => {
+                        const { value } = itemAttr;
+                const checked =
+				Object.keys(chosenAttributes).length !== 0 &&
+				chosenAttributes[attrIdx] === itemIdx;
+                let choiceItem = null;
+                
+                if(type === 'text')
+                choiceItem = <Text 
+                    text={value}
+                    checked={checked}
+                    />
 
-                        if (chosenAttributes[attrIdx] === itemIdx){
-                            if (type === "swatch"){
-                                className += " chosenItemAttrSwatch";
-                            } else {
-                                className += " chosenItemAttr";
-                            }
-                        }
+                else if (type === 'swatch')
+                choiceItem = <Swatch 
+                    color={value}
+                    checked={checked}/>;
 
-                        if (type === "swatch" && value ==="#000"){
-                            style = {
-                                backgroundColor: value,
-                                color: "white",
-                            };
-                        } else if (type === "swatch"){
-                            style = {
-                                backgroundColor: value,
-                            };
-                        }
-                  
-
-                        return (
-                            <div
-                            key={id + value}
-                            className={className}
-                            style={style}>
-
-                            {displayValue}
-                            </div>
-                        );
-                    })}
-                </AttrOptions>
+                    return (
+                        <div
+                        key={id}
+                        >
+                        {choiceItem}
+                        </div>
+                    );
+            })}
+            </AttrOptions>
             </div>
         );
     }
