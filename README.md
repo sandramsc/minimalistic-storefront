@@ -29,6 +29,10 @@ a minimalistic storefront
 
 ## Screenshots
 
+![mini_basket](https://user-images.githubusercontent.com/19821445/170105780-57071640-89fd-44fa-ad12-186cc2049c3e.JPG)
+![main_basket](https://user-images.githubusercontent.com/19821445/170105852-fdccc09b-0a00-45ae-b928-5da45b35ec05.JPG)
+![payment_page](https://user-images.githubusercontent.com/19821445/170105908-629eb261-8866-46fa-a9ea-45988f32784d.JPG)
+
 ## Technology Stack
 
 | Technology                                                    | Description                                                          |
