@@ -12,7 +12,6 @@ a minimalistic storefront
 
 - [Application Description](#application-description)
 - [Table of Contents](#table-of-contents)
-- [Project Demo](#demo)
 - [Screenshots](#screenshots)
 - [Figma Wireframe](#figma-wireframe)
 - [Technology Stack](#technology-stack)
