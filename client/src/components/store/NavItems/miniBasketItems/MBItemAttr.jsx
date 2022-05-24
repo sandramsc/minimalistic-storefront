@@ -11,8 +11,9 @@ const MBAttr = styled.div.attrs(props => ({
   text-transform: uppercase;
   
     & .mbAttrItem {
-        min-width: 23px;
-        height: 20px;
+        min-width: 30px;
+        height: 30px;
+        border: 0.2px solid #ddd;
         border: 1px solid #26282a;
         box-sizing: border-box;
         padding: 1px;

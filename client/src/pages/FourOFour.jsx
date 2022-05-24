@@ -21,20 +21,20 @@ const Wrapper = styled.div`
 const PaymentContainer = styled.div`
   font-family: "Urbanist";
   flex-flow: row;
-  margin-bottom: 5.5rem;
+  margin-bottom: 4.5rem;
   display: flex;
   align-items: center;
 `;
 const PaymentMode = styled.div`
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   margin-right: 32px;
   margin-left: -12px;
   img{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
 `;
 const Title = styled.h2`

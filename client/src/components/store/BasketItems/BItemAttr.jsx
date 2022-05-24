@@ -20,20 +20,21 @@ const AttrOptions = styled.div.attrs(props => ({
 
     & .basketItemAttr{
         text-transform: uppercase;
-        min-width: 45px;
-        height: 25px;
-        border: 1px solid #26282a;
+        min-width: 30px;
+        height: 30px;
+        border: 0.2px solid #ddd;
         box-sizing: border-box;
         font-family: "Urbanist";
         font-weight: 400;
-        font-size: 14px;
+        font-size: 16px;
         color: #26282a;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-right: 8px;
-        margin-bottom: 5px;
+        margin-right: 12px;
+        margin-bottom: 8px;
         padding: 0px 5px;
+        
     }
 
     & .chosenItemAttr{
@@ -86,7 +87,6 @@ export class BItemAttr extends Component {
 
                         return (
                             <div
-                            htmlFor = {value}
                             key={id + value}
                             className={className}
                             style={style}>
