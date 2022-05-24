@@ -23,10 +23,6 @@ a minimalistic storefront
 
 </details>
 
-## Project Demo
-
-<!--Explore the [App](..)-->
-
 ## Screenshots
 
 ![mini_basket](https://user-images.githubusercontent.com/19821445/170105780-57071640-89fd-44fa-ad12-186cc2049c3e.JPG)
