@@ -5,7 +5,7 @@ import { GridLoader } from 'react-spinners'
 import { css } from '@emotion/react';
 
 const Container = styled.div`
-  padding: 200px 0px 200px 400px;
+  padding: 200px 0px 200px 295px;
 `;
 const cssOverride = css`
   display: block;

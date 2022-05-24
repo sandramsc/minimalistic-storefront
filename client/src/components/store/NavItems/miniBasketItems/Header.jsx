@@ -43,7 +43,7 @@ export class Header extends Component {
       {length === 0? (
           <Empty>YOUR CART IS EMPTY
           <div>
-          <img src={EmptyBasket} alt=""/>
+          <img src={EmptyBasket} alt="empty basket img"/>
           </div>
           </Empty>
       ) : ("")

@@ -1,8 +1,8 @@
 /* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Text from './Text';
-import Swatch from './Swatch';
+import TextAttr from './TextAttr';
+import SwatchAttr from './SwatchAttr';
 
 const Attr = styled.div`
     margin: 0px 0px 5px 0px;
@@ -71,21 +71,17 @@ render(){
             <AttrOptions>
             {items.map((item, itemIdx) => {
                 const {displayValue, value} = item;
-                const checked =
+                const confirmed =
 				Object.keys(chosenAttributes).length !== 0 &&
 				chosenAttributes[attrIdx] === itemIdx;
                 let choiceItem = null;
                 
                 if(type === 'text')
-                choiceItem = <Text 
-                    text={value}
-                    checked={checked}
-                    displayValue={displayValue}/>
+                choiceItem = <TextAttr text={value} confirmed={confirmed}
+                    displayValue={displayValue} />
 
                 else if (type === 'swatch')
-                choiceItem = <Swatch 
-                    color={value}
-                    checked={checked}/>;
+                choiceItem = <SwatchAttr color={value} confirmed={confirmed} />;
 
                 return (
                     <div

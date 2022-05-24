@@ -1,4 +1,4 @@
-<!-- PROJECT TITLE -->
+<!-- Designed & coded by Sandra Ashipala <https://github.com/sandramsc> -->
   <h1 align="center">Storefront</h1>
 
 ## Application Description

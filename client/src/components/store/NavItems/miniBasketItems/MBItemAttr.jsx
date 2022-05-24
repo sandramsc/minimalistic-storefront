@@ -1,8 +1,8 @@
 /* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Text from '../../../../components/store/Categories/ProductsListItems/Text';
-import Swatch from '../../../../components/store/Categories/ProductsListItems/Swatch';
+import TextAttr from '../../Categories/ProductsListItems/TextAttr';
+import SwatchAttr from '../../Categories/ProductsListItems/SwatchAttr';
 
 const MBAttr = styled.div.attrs(props => ({
   className: props.className,
@@ -33,20 +33,18 @@ export class MBItemAttr extends Component {
         {items.map((item, itemIdx) => {
           const {id, value} = item;
 
-          const checked = Object.keys(chosenAttributes).length !== 0 &&
+          const confirmed = Object.keys(chosenAttributes).length !== 0 &&
               chosenAttributes[attrIdx] === itemIdx;
               let choiceItem = null;
       
               if(type === 'text') 
-                  choiceItem = <Text text={value} checked={checked} />
+                  choiceItem = <TextAttr text={value} confirmed={confirmed} />
 
               else if (type === 'swatch')
-                  choiceItem = <Swatch color={value} checked={checked}/>;
+                  choiceItem = <SwatchAttr color={value} confirmed={confirmed} />;
 
               return (
-                <div
-                htmlFor={item.value}
-                key={name+ id}>
+                <div key={name+ id}>
 
                   {choiceItem}
                 </div>

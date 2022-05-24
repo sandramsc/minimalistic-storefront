@@ -90,7 +90,7 @@ const {shownCurrency, basket, plusQnty, minusQnty, sumTotal} = this.props;
         setViewMB={this.setViewMB} />
         <div className={this.state.viewMB ? "mbItems" : "hidden"}>
             <Header length={basket.length} />
-            { //basket items
+            { // basket items
                 basket.map((item, idx)=>{
                     return(
                         <MBItem  

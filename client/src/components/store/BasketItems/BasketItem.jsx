@@ -69,8 +69,8 @@ export class BasketItem extends Component {
                     idx={idx}
                     qnty={qnty}
                     plusQnty={plusQnty}
-                    minusQnty={minusQnty}
-                />
+                    minusQnty={minusQnty} />
+                    
                 <BItemImg gallery={gallery}  id={id} />   
                 </ItemOptions>
             </Container>

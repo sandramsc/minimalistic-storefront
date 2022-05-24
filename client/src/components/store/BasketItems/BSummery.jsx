@@ -60,7 +60,7 @@ const Button = styled.div.attrs(props => ({
 export class BSummery extends Component {
 
     render() {
-        const {length, order, sumTotal, taxSum, sumQnty, plusQnty, minusQnty} = this.props;
+        const { length, order, sumTotal, taxSum, sumQnty } = this.props;
         if (length === 0 ? "" : "");
       return(
         <Container>

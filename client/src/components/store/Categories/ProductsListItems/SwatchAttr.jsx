@@ -8,7 +8,7 @@ const Attr = styled.div`
     margin-bottom: 20px;
 `;
 
-class Swatch extends Component {
+class SwatchAttr extends Component {
 	isDark = (hexColor) => {
 		const rgb = parseInt(hexColor.substring(1), 16);
 		const r = (rgb >> 16) & 0xff;
@@ -19,20 +19,16 @@ class Swatch extends Component {
 	};
 
 	render() {
-		const { color, text, checked } = this.props;
+		const { color, text, confirmed } = this.props;
 		return (
 
-
-
-			
-			<Attr id={checked ? 'SelectedSwatchItem' : 'SwatchItem'}
-				style={{
-					backgroundColor: color,
-					color: this.isDark(color) ? 'white' : '#000',
-				}}
-			>{text}</Attr >
+			<Attr id={confirmed ? 'chosenSwatchAttr' : 'swatchItem'}
+				style={{ backgroundColor: color, color: this.isDark(color) ? 'white' : '#000',
+					}}>
+				{text}
+			</Attr >
 		);
 	}
 }
 
-export default Swatch;
+export default SwatchAttr;

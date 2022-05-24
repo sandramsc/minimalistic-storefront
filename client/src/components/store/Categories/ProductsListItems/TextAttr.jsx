@@ -8,13 +8,13 @@ const Attr = styled.div`
     margin-bottom: 20px;
 `;
 
-class Text extends Component {
+class TextAttr extends Component {
 	render() {
-		const { text, checked } = this.props;
+		const { text, confirmed } = this.props;
 		return (
-			<Attr id={checked ? 'chosenTextAttr' : 'textAttrItem'}>{text}</Attr >
+			<Attr id={confirmed ? 'chosenTextAttr' : 'textAttrItem'}>{text}</Attr >
 		);
 	}
 }
 
-export default Text;
+export default TextAttr;

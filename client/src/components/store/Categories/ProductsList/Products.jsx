@@ -69,12 +69,13 @@ export class Products extends Component {
         }
     }
 
-        render() {
-            return(
-                <Container>
-                    <CategoryNav>
-                        <span>{this.props.shownCategory.toUpperCase()}</span>
-                    </CategoryNav>
+    render() {
+
+        return(
+            <Container>
+                <CategoryNav>
+                    <span>{this.props.shownCategory.toUpperCase()}</span>
+                </CategoryNav>
                     <ProductList>
                         {this.state.products.map((product) => {
                             return(
@@ -87,10 +88,9 @@ export class Products extends Component {
                             );
                         })}
                     </ProductList>
-                </Container>
-            );
-        }
-
+            </Container>
+        );
+    }
 }
 
 export default Products;

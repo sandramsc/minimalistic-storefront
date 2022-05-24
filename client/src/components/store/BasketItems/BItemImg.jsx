@@ -90,7 +90,7 @@ export class ItemImg extends Component {
                 <Left direction="left" onClick={ this.previousImg } >
                 	<LeftArrow/>
                 </Left>
-                <img src={gallery[this.state.lastImg]} alt={id + " image"} />
+                <img src={gallery[this.state.lastImg]} alt={id + " img"} />
                 <Right direction="right" onClick={ this.nextImg } >
                 	<RightArrow/>
                 </Right>

@@ -113,7 +113,9 @@ componentDidMount(){
     }
 
     render(){
-    const { popCurrencyList, currencies, shownCurrencySymbol} = this.state;
+
+    const { popCurrencyList, currencies, shownCurrencySymbol } = this.state;
+    
     return(
         <Container ref={this.ref}>
             <ChosenCurr className="chosenCurrency" onClick={this.setPopCurrencyList}>

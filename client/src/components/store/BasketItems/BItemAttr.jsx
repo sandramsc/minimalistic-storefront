@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Text from '../../../components/store/Categories/ProductsListItems/Text';
-import Swatch from '../../../components/store/Categories/ProductsListItems/Swatch';
+import TextAttr from '../Categories/ProductsListItems/TextAttr';
+import SwatchAttr from '../Categories/ProductsListItems/SwatchAttr';
 
 const AttrName = styled.div`
 font-family: "Urbanist";
@@ -12,7 +12,6 @@ margin: 5px 0px;
 color: #26282a;
 text-transform:uppercase;
 `;
-
 const AttrOptions = styled.div.attrs(props => ({
     className: props.className,
 }))`
@@ -25,7 +24,7 @@ export class BItemAttr extends Component {
 
     render() {
         const { attrIdx, attribute, chosenAttributes } = this.props;
-        // attributes are static in main basket
+        // attribute selection is static in main basket
         const { id, type, name } = attribute;
 
         return(
@@ -35,19 +34,19 @@ export class BItemAttr extends Component {
                 <AttrOptions>
                 {attribute.items.map((itemAttr, itemIdx) => {
                     const { value } = itemAttr;
-                    const checked = Object.keys(chosenAttributes).length !== 0 &&
+                    const confirmed = Object.keys(chosenAttributes).length !== 0 &&
                         chosenAttributes[attrIdx] === itemIdx;
                         let choiceItem = null;
                 
                     if(type === 'text') 
-                        choiceItem = <Text text={value} checked={checked} />
+                        choiceItem = <TextAttr text={value} confirmed={confirmed} />
 
                     else if (type === 'swatch')
-                        choiceItem = <Swatch color={value} checked={checked}/>;
+                        choiceItem = <SwatchAttr color={value} confirmed={confirmed}/>;
 
                         return (
                             <div key={id}>
-                                
+
                             {choiceItem}
                             </div>
                         );

@@ -100,8 +100,6 @@ export class Main extends Component {
       })
     }
 
-
-
   // amount total based on set qnty & currency
   sumTotal = () => {
     let sum = 0;
@@ -145,8 +143,6 @@ export class Main extends Component {
   })
   return symbol + "" + tax.toFixed(2);
   };
-
-
 
   render() {
     const {  shownCurrency, shownCategory } = this.state;
@@ -199,7 +195,7 @@ export class Main extends Component {
                 </Route>
                 <Route
                   path="*"
-                  element={<FourOFour />}/>
+                  element={<FourOFour />} />
                 <Route 
                   path="/product/:productID"
                   element={

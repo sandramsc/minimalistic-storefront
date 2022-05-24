@@ -89,8 +89,8 @@ class FourOFour extends Component {
               </PaymentContainer>
 
               <Button>
-                <Link to ="/">
-                  <button className="home">GO BACK HOME</button>
+                <Link to ="/payment">
+                  <button className="home">PAYMENT PAGE</button>
                 </Link>
               </Button>
             </Wrapper>

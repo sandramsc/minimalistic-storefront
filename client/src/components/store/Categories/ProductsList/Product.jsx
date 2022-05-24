@@ -24,7 +24,7 @@ const Container = styled.div.attrs(props => ({
         & .bIcon {
             display: none;
             position: absolute;
-            bottom: 70px;
+            bottom: 83px;
             right: 25px;
             border-radius: 50%;
             background-color: rgba(94, 206, 123, 1);
@@ -48,8 +48,8 @@ const Container = styled.div.attrs(props => ({
         display: flex;
         flex-direction: column;
         img{
-            width: 250px;
-            height: 250px;
+            width: 300px;
+            height: 300px;
             object-fit: cover;
         }
         &:hover{box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);}
@@ -124,28 +124,24 @@ export class Product extends Component {
             return due.currency.label === this.props.shownCurrency;
         });
 
-            return (
-                <Container>
-                    <Link to={"/product/" + id}>
-                    <div className={inStock ? "addToBasket" : "outOfStock"}>
-                    <img
-                        src={gallery[0]}
-                        alt=""
-                      />
-                    <Name>{name}</Name>
-                    
-                    <Price>{price.currency.symbol + "" + price.amount}</Price>
-                    {inStock ? "" : <NoStock>OUT OF STOCK</NoStock>}
-                    </div>
-                    </Link>
-                    {inStock ? 
-                    (<div className="bIcon" onClick ={this.addToBasket}>
-                      <BasketIcon />
-                    </div>
-                    ) : ("")}
-                </Container>
-            );
-    
+        return (
+          <Container>
+            <Link to={"/product/" + id}>
+              <div className={inStock ? "addToBasket" : "outOfStock"}>
+                <img src={gallery[0]} alt="gallery" />
+                <Name>{name}</Name>
+                <Price>{price.currency.symbol + "" + price.amount}</Price>
+                  {inStock ? "" : <NoStock>OUT OF STOCK</NoStock>}
+              </div>
+            </Link>
+                  {inStock ? (
+                  <div className="bIcon" onClick ={this.addToBasket}>
+                    <BasketIcon />
+                  </div>
+                ) : ("")}
+          </Container>
+      );
     }
 }
+
 export default Product;

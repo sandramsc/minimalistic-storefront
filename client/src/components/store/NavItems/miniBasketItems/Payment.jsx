@@ -91,7 +91,6 @@ class Payment extends Component {
                 </Link>
                 </PaymentMode>
               </PaymentContainer>
-
               <Button>
                 <Link to ="/">
                   <button className="home">CONTINUE SHOPPING</button>
