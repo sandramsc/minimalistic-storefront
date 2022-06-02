@@ -49,8 +49,8 @@ const Container = styled.div.attrs(props => ({
         flex-direction: column;
         img{
             width: 300px;
-            height: 300px;
-            object-fit: cover;
+            height: 355px;
+            object-fit: fill;
         }
         &:hover{box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);}
       }
@@ -63,8 +63,8 @@ const Container = styled.div.attrs(props => ({
           opacity: 0.5;
           img{
               width: 300px;
-              height: 300px;
-              object-fit: cover;
+              height: 355px;
+              object-fit: fill;
           }
           &:hover{box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);}
         }

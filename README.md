@@ -74,10 +74,10 @@ cd backend
 
 ## Author
 
-| Name            | Link                         |
-| --------------- | ---------------------------- |
+| Name            | Link                                   |
+| --------------- | -------------------------------------- |
 | Sandra Ashipala | https://linkedin.com/in/sandraashipala |
 
 ## License
 
-[![GitLicense](https://img.shields.io/badge/License-Apache-lime.svg)](https://github.com/sandramsc/minimilistic-storefront/blob/main/LICENSE)
+[![GitLicense](https://img.shields.io/badge/License-Apache-lime.svg)](https://github.com/sandramsc/minimalistic-storefront/blob/main/LICENSE)
