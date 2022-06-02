@@ -24,7 +24,7 @@ const CategoryNav = styled.div`
 const ProductList = styled.div`
     display: grid;
     justify-content: space-between;
-    grid-template-columns: repeat(auto-fill, 320px);
+    grid-template-columns: repeat(3, 320px);
     margin-bottom: 80px;
    
 `;
