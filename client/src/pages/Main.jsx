@@ -42,7 +42,7 @@ export class Main extends Component {
       this.setState((exist)=> {
         const basket = [...exist.basket];
         basket.push({product, qnty: 1 });
-        return { ...exist, basket}
+        return { ...exist, basket }
       });
     }
   };
@@ -54,11 +54,11 @@ export class Main extends Component {
       const product = exist.basket[idx].product;
       const qnty = exist.basket[idx].qnty + 1;
       basket[idx] = {product, qnty};
-      return { ...exist, basket}
+      return { ...exist, basket }
     });
   };
 
-  // Basket item quantity increase
+  // Basket item quantity decrease
   minusQnty = (idx) => {
     if (this.state.basket[idx].qnty > 1) {
     this.setState((exist) => {
@@ -66,14 +66,14 @@ export class Main extends Component {
       const product = exist.basket[idx].product;
       const qnty = exist.basket[idx].qnty - 1;
       basket[idx] = {product, qnty};
-      return { ...exist, basket}
+      return { ...exist, basket }
     });
  } else {
    this.setState((exist) => {
      const basket = exist.basket.filter((item, itemIdx) => {
        return idx !== itemIdx;
      });
-     return { ...exist, basket}
+     return { ...exist, basket }
    });
   }
 };
@@ -81,7 +81,7 @@ export class Main extends Component {
   // currency label
   setCurrency = (shownCurrency) => {
     this.setState((previous) => {
-      return { ...previous, shownCurrency};
+      return { ...previous, shownCurrency };
     });
   };
 
@@ -96,7 +96,7 @@ export class Main extends Component {
     order = () => {
       this.state((previous)=> {
         const basket = [];
-        return { ...previous, basket}
+        return { ...previous, basket }
       })
     }
 

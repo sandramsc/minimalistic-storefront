@@ -12,8 +12,8 @@ const MBImg = styled.div`
   width: 120px;
     img{
       width: 100px;
-      height: 120px;
-      object-fit: cover;
+      height: 125px;
+      object-fit: fill;
     }
 `;
 const Info = styled.div`

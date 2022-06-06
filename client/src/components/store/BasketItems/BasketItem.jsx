@@ -54,7 +54,7 @@ export class BasketItem extends Component {
                         {attributes.map((attribute, attrIdx) => {
                             return(
                                 <BItemAttr
-                                    key= {id + attrIdx}
+                                    key={id + attrIdx}
                                     attribute={attribute}
                                     attrIdx={attrIdx}
                                     chosenAttributes={chosenAttributes}

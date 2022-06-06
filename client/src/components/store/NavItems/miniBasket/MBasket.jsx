@@ -42,7 +42,7 @@ const Container = styled.div.attrs(props => ({
     }
 `;
 
-export class MBItemQnty extends Component {
+export class MBasket extends Component {
     constructor(props){
         super(props);
 
@@ -82,7 +82,7 @@ export class MBItemQnty extends Component {
     }
 
 render() {
-const {shownCurrency, basket, plusQnty, minusQnty, sumTotal} = this.props;
+const { shownCurrency, basket, plusQnty, minusQnty, sumTotal } = this.props;
     return(
         <Container>
         <div className={this.state.viewMB ? "mbBackground" : "hidden"}></div>
@@ -116,4 +116,4 @@ const {shownCurrency, basket, plusQnty, minusQnty, sumTotal} = this.props;
   }
 }
 
-export default MBItemQnty;
+export default MBasket;

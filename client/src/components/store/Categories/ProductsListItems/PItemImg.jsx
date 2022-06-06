@@ -38,12 +38,12 @@ const ImgShowcase= styled.div`
 
         img{
             width: 100px;
-            height: 100px;
-            object-fit: cover;
+            height: 120px;
+            object-fit: fill;
             margin: 0px 0px 10px 0px;
             &:hover{
                 cursor: pointer;
-                transform: scale(1.1);
+                border: 2px solid green;
             }
 
         }

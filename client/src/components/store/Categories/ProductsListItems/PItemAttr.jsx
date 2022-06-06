@@ -29,7 +29,7 @@ const AttrOptions = styled.div.attrs(props => ({
 
 export class PItemAttr extends Component {
 render(){
-    const { attribute, chooseAttribute, chosenAttributes, attrIdx} = this.props;
+    const { attribute, chooseAttribute, chosenAttributes, attrIdx } = this.props;
     const {id, items, type, name} = attribute;
  
     return(

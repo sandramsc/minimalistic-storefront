@@ -65,7 +65,7 @@ export class ProductDecs extends Component {
 		 return "";
 	 }
 	 
-	 const {prices, description, attributes, inStock, id, name, brand, gallery } = this.state.product;
+	 const { prices, description, attributes, inStock, id, name, brand, gallery } = this.state.product;
 	 const { shownCurrency } = this.props;
 
 	 let price = prices.find((due) => { return due.currency.label === shownCurrency;
@@ -74,7 +74,7 @@ export class ProductDecs extends Component {
 		 <ItemDesc>
 			<PItemImg gallery={gallery} name={name} />
 			<PItemInfo id={id}
-			price ={price}
+			price={price}
 			brand={brand}
 			description={description}
 			inStock={inStock}

@@ -21,7 +21,7 @@ const Button = styled.div`
 `;
 const Container = styled.div`
   width: 20px;
-  height: 120px;
+  height: 125px;
   margin-right: 8px;
   display: flex;
   flex-direction: column;

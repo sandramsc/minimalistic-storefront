@@ -10,7 +10,7 @@ const BasketItemImgSlider = styled.div`
 		img{
 			width: 120px;
 			height: 170px;
-			object-fit: cover;
+			object-fit: fill;
 		}
 `;
 const Left = styled.div`
@@ -90,7 +90,7 @@ export class ItemImg extends Component {
                 <Left direction="left" onClick={ this.previousImg } >
                 	<LeftArrow/>
                 </Left>
-                <img src={gallery[this.state.lastImg]} alt={id + " img"} />
+                <img src={gallery[this.state.lastImg]} alt={id + " Bimg"} />
                 <Right direction="right" onClick={ this.nextImg } >
                 	<RightArrow/>
                 </Right>

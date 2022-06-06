@@ -14,7 +14,7 @@ const MBSum = styled.div.attrs(props => ({
     line-height: 20px;
     margin-bottom: 20px;
       p{
-        font-weight: 700
+        font-weight: 700;
       }
 `;
 const Button = styled.div.attrs(props => ({
@@ -80,10 +80,10 @@ export class Footer extends Component {
           <p>{sumTotal()}</p>
         </MBSum>
         <Button>
-          <Link to ="/basket" onClick={setViewMB}>
+          <Link to="/basket" onClick={setViewMB}>
             <button className="viewBag">VIEW BAG</button>
           </Link>
-          <Link to ="/payment">
+          <Link to="/payment">
             <button className="checkout">CHECKOUT</button>
           </Link>
         </Button>
