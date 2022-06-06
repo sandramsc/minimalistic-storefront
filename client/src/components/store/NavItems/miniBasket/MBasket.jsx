@@ -47,7 +47,7 @@ export class MBItemQnty extends Component {
         super(props);
 
         this.handleClick = this.handleClick.bind(this);
-        this.handleOutsideClick = this.handleOutsideClick.bind(this);
+        this.handleBasketClick = this.handleBasketClick.bind(this);
 
         this.state = {
             viewMB: false,
@@ -59,9 +59,9 @@ export class MBItemQnty extends Component {
     handleClick() {
         if (!this.state.popupVisible) {
           // attach/remove event handler
-          document.addEventListener('click', this.handleOutsideClick, false);
+          document.addEventListener('click', this.handleBasketClick, false);
         } else {
-          document.removeEventListener('click', this.handleOutsideClick, false);
+          document.removeEventListener('click', this.handleBasketClick, false);
         }
       }
 
@@ -73,7 +73,7 @@ export class MBItemQnty extends Component {
         });
     };
       
-    handleOutsideClick(e) {
+    handleBasketClick(e) {
         // ignore clicks on the component itself
         if (this.ref.current.contains(e.target)) {
           return;
