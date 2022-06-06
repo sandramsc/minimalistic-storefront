@@ -1,5 +1,5 @@
 /* Designed & coded by Sandra Ashipala <https://github.com/sandramsc> */
-import React, { Component } from 'react';
+import React, { Component, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import MBIcon from '../miniBasketItems/MBIcon';
 import MBItem from '../miniBasketItems/MBItem';
@@ -45,38 +45,40 @@ const Container = styled.div.attrs(props => ({
 export class MBItemQnty extends Component {
     constructor(props){
         super(props);
+
+        this.handleClick = this.handleClick.bind(this);
+        this.handleOutsideClick = this.handleOutsideClick.bind(this);
+
         this.state = {
             viewMB: false,
         }
         // component ref
         this.ref = React.createRef();
     }
-    // event listener for outside click on document
-    componentDidMount() {
-        document.addEventListener("click", this.handleClick.bind(this));
-    }
 
-    // remove event listener from document
-    componentWillUnmount() {
-        document.removeEventListener("click", this.handleClick.bind(this));
-    }
+    handleClick() {
+        if (!this.state.popupVisible) {
+          // attach/remove event handler
+          document.addEventListener('click', this.handleOutsideClick, false);
+        } else {
+          document.removeEventListener('click', this.handleOutsideClick, false);
+        }
+      }
 
     // handle mini basket (open&close)
     setViewMB = () => {
         const viewMB = !this.state.viewMB;
-        this.setState((previous) => {
+            this.setState((previous) => {
             return {...previous, viewMB}
         });
     };
-
-    // closes mini basket if user clicks outside
-    handleClick(event){
-        if (this.ref.current && !this.ref.current.contains(event.target)) {
-            if (this.state.viewMB){
-                // closes mini basket if curreny list is open
-                this.setViewMB();
-            }
+      
+    handleOutsideClick(e) {
+        // ignore clicks on the component itself
+        if (this.ref.current.contains(e.target)) {
+          return;
         }
+        this.setViewMB();
     }
 
 render() {

@@ -40,7 +40,7 @@ const ItemOptions = styled.div`
 export class BasketItem extends Component {
 
     render() {
-        const { idx, item,  price, plusQnty, minusQnty  } = this.props;
+        const { idx, item,  price, plusQnty, minusQnty } = this.props;
         const { product, qnty } = item;
         const { id, name, attributes, gallery, brand, chosenAttributes, chooseAttribute } = product;
      

@@ -10,7 +10,7 @@ font-size: 14px;
 line-height: 20px;
 margin: 5px 0px;
 color: #26282a;
-text-transform:uppercase;
+text-transform: uppercase;
 `;
 const AttrOptions = styled.div.attrs(props => ({
     className: props.className,

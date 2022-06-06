@@ -40,7 +40,7 @@ export class Header extends Component {
       <h1>My Bag.&nbsp;</h1>
           <h2>{length + " items"}</h2>
       </Main>
-      {length === 0? (
+      {length === 0 ? (
           <Empty>YOUR CART IS EMPTY
           <div>
           <img src={EmptyBasket} alt="empty basket img"/>

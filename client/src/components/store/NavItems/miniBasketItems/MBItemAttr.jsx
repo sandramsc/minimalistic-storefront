@@ -38,10 +38,10 @@ export class MBItemAttr extends Component {
               let choiceItem = null;
       
               if(type === 'text') 
-                  choiceItem = <TextAttr text={value} confirmed={confirmed} />
+                  choiceItem = <TextAttr className="test" text={value} confirmed={confirmed} />
 
               else if (type === 'swatch')
-                  choiceItem = <SwatchAttr color={value} confirmed={confirmed} />;
+                  choiceItem = <SwatchAttr className="test" color={value} confirmed={confirmed} />;
 
               return (
                 <div key={name+ id}>

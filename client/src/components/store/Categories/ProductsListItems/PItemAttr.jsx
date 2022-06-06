@@ -25,39 +25,6 @@ const AttrOptions = styled.div.attrs(props => ({
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 20px;
-
-        & .attrItem{
-            text-transform: uppercase;
-            min-width: 50px;
-            height: 30px;
-            border: 1px solid #26282a;
-            box-sizing: border-box;
-            font-family: "Urbanist";
-            font-weight: 400;
-            font-size: 16px;
-            color: #26282a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 6px;
-            margin-bottom: 8px;
-            padding: 0px 5px;
-
-            &:hover{
-                cursor: pointer;
-                transform: scale(1.05);
-            }
-        }
-
-        & .chosenAttribute{
-            background-color: #26282a;
-            color: white; 
-            box-shadow: rgba(0, 230, 64, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-        }
-        & .swatchActiveAttr{
-            box-shadow: rgba(0, 230, 64, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-            border: 2px solid lime;
-        }
 `;
 
 export class PItemAttr extends Component {
