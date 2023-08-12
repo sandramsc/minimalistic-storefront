@@ -42,10 +42,6 @@ a minimalistic storefront
 - PDP - product description page, a.k.a. product page
 - Cart page + Cart overlay (minicart)
 
-## Figma Wireframe
-
-[storefront wireframes](https://www.figma.com/file/MSyCAqVy1UgNap0pvqH6H3/Junior-Frontend-Test-Designs-Public)
-
 ## How to use the app
 
 **Step #1** - Clone the project
